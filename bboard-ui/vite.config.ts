@@ -57,9 +57,11 @@ export default defineConfig({
     react(),
     wasm(),
     // Polyfill `buffer` for browser builds: map 'buffer' -> npm buffer package
+    // enforce:'pre' ensures this runs BEFORE vite:resolve externalizes Node built-ins
     {
       name: 'buffer-polyfill',
-      resolveId(id) {
+      enforce: 'pre' as const,
+      resolveId(id: string) {
         if (id === 'buffer') {
           return getModulePath('buffer/index.js');
         }
