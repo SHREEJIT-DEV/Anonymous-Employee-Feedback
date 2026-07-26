@@ -17,6 +17,7 @@
   },
   "optionalDependencies": {
     "@rollup/rollup-linux-x64-gnu": "^4.22.4",
-    "@swc/core-linux-x64-gnu": "^1.15.41"
+    "@swc/core-linux-x64-gnu": "^1.15.41",
+    "@rolldown/binding-linux-x64-gnu": "*"
   }
 }
