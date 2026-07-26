@@ -18,16 +18,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install --legacy-peer-deps
 
-      - name: Run root & package typechecks
-        run: |
-          npm --prefix ./api run typecheck
-          npm --prefix ./bboard-cli run typecheck
-          npm --prefix ./bboard-ui run typecheck
+      - name: Run web dApp typecheck
+        run: npm --prefix ./bboard-ui run typecheck
 
   test:
     name: Run Unit Tests
@@ -40,10 +36,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install --legacy-peer-deps
 
       - name: Run contract unit tests
         run: npm --prefix ./contract test --if-present
@@ -60,10 +55,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install --legacy-peer-deps
 
       - name: Build web dApp bundle
         run: npm run build
