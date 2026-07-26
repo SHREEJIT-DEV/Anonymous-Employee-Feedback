@@ -145,6 +145,38 @@ export default defineConfig({
         replacement: getModulePath('@midnight-ntwrk/midnight-js-protocol/dist/platform.mjs'),
       },
       {
+        find: '@midnight-ntwrk/midnight-js-contracts',
+        replacement: getModulePath('@midnight-ntwrk/midnight-js-contracts'),
+      },
+      {
+        find: '@midnight-ntwrk/midnight-js-fetch-zk-config-provider',
+        replacement: getModulePath('@midnight-ntwrk/midnight-js-fetch-zk-config-provider'),
+      },
+      {
+        find: '@midnight-ntwrk/midnight-js-http-client-proof-provider',
+        replacement: getModulePath('@midnight-ntwrk/midnight-js-http-client-proof-provider'),
+      },
+      {
+        find: '@midnight-ntwrk/midnight-js-indexer-public-data-provider',
+        replacement: getModulePath('@midnight-ntwrk/midnight-js-indexer-public-data-provider'),
+      },
+      {
+        find: '@midnight-ntwrk/midnight-js-network-id',
+        replacement: getModulePath('@midnight-ntwrk/midnight-js-network-id'),
+      },
+      {
+        find: '@midnight-ntwrk/midnight-js-types',
+        replacement: getModulePath('@midnight-ntwrk/midnight-js-types'),
+      },
+      {
+        find: '@midnight-ntwrk/midnight-js-utils',
+        replacement: getModulePath('@midnight-ntwrk/midnight-js-utils'),
+      },
+      {
+        find: '@midnight-ntwrk/dapp-connector-api',
+        replacement: getModulePath('@midnight-ntwrk/dapp-connector-api'),
+      },
+      {
         find: 'pino',
         replacement: getModulePath('pino/browser.js'),
       },
