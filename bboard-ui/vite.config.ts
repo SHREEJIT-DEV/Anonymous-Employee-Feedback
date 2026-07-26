@@ -106,6 +106,7 @@ export default defineConfig({
       },
     },
     include: [
+      'buffer',
       '@midnight-ntwrk/midnight-js-protocol/compact-runtime',
       '@midnight-ntwrk/midnight-js-protocol/compact-js',
       '@midnight-ntwrk/midnight-js-protocol/ledger',
