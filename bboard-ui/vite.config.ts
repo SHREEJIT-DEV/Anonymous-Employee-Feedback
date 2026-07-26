@@ -18,7 +18,6 @@ import react from '@vitejs/plugin-react';
 import wasm from 'vite-plugin-wasm';
 import topLevelAwait from 'vite-plugin-top-level-await';
 import { fileURLToPath, URL } from 'node:url';
-// import { nodePolyfills } from 'vite-plugin-node-polyfills';
 
 const localModulesDir = fileURLToPath(new URL('./node_modules', import.meta.url));
 const rootModulesDir = fileURLToPath(new URL('../node_modules', import.meta.url));
@@ -26,7 +25,6 @@ const getModulePath = (subpath: string) => {
   const localPath = `${localModulesDir}/${subpath}`;
   return fs.existsSync(localPath) ? localPath : `${rootModulesDir}/${subpath}`;
 };
-const localNodeModules = fs.existsSync(`${localModulesDir}/@midnight-ntwrk`) ? localModulesDir : rootModulesDir;
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -41,7 +39,7 @@ export default defineConfig({
           if (id.includes('onchain-runtime-v3')) return 'wasm';
         },
       },
-      },
+    },
     commonjsOptions: {
       // Transform CommonJS to ESM more aggressively
       transformMixedEsModules: true,
@@ -102,10 +100,6 @@ export default defineConfig({
     ],
   },
   define: {},
-  checks: {
-    importIsUndefined: false,
-    pluginTimings: false,
-  },
   // Add specific import configuration for more control
   resolve: {
     // Ensure WASM files are loaded properly
@@ -113,7 +107,8 @@ export default defineConfig({
       {
         find: 'isomorphic-ws/browser.js',
         replacement: fileURLToPath(new URL('./src/shims/isomorphic-ws-browser.ts', import.meta.url)),
-      },      {
+      },
+      {
         find: '@midnight-ntwrk/midnight-js-protocol/compact-js/effect/Contract',
         replacement: getModulePath('@midnight-ntwrk/midnight-js-protocol/dist/compact-js-effect-contract.mjs'),
       },
@@ -149,7 +144,6 @@ export default defineConfig({
         find: '@midnight-ntwrk/midnight-js-protocol/platform-js',
         replacement: getModulePath('@midnight-ntwrk/midnight-js-protocol/dist/platform.mjs'),
       },
-
       {
         find: 'pino',
         replacement: getModulePath('pino/browser.js'),
@@ -158,7 +152,8 @@ export default defineConfig({
         find: 'rxjs',
         replacement: getModulePath('rxjs/dist/esm5/index.js'),
       },
-    ],    extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.wasm'],
+    ],
+    extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.wasm'],
     mainFields: ['browser', 'module', 'main'],
   },
 });
