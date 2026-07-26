@@ -56,6 +56,16 @@ export default defineConfig({
   plugins: [
     react(),
     wasm(),
+    // Polyfill `buffer` for browser builds: map 'buffer' -> npm buffer package
+    {
+      name: 'buffer-polyfill',
+      resolveId(id) {
+        if (id === 'buffer') {
+          return getModulePath('buffer/index.js');
+        }
+        return null;
+      },
+    },
     topLevelAwait({
       // Be more permissive with top-level await
       promiseExportName: '__tla',
@@ -104,7 +114,10 @@ export default defineConfig({
       '@midnight-ntwrk/onchain-runtime-v3/midnight_onchain_runtime_wasm.js',
     ],
   },
-  define: {},
+  define: {
+    // Ensure Buffer is available globally
+    global: 'globalThis',
+  },
   // Add specific import configuration for more control
   resolve: {
     // Ensure WASM files are loaded properly

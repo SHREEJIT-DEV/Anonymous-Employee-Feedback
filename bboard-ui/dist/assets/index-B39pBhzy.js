@@ -1,4 +1,4 @@
-import { g as getDefaultExportFromCjs, a as getAugmentedNamespace, c as commonjsGlobal, m as maxField$1, d as dummyContractAddress$1, b as bigIntToValue$1, v as valueToBigInt$1, p as persistentHash$2, e as encodeShieldedCoinInfo$1, f as encodeQualifiedShieldedCoinInfo$1, h as encodeCoinPublicKey$1, i as encodeContractAddress$1, C as CostModel$1, Q as QueryContext$1, j as ContractState$1, k as ChargedState$1, S as StateValue$1, l as ContractOperation$1, n as commonjsRequire, _ as __vite__initWasm, __tla as __tla_0 } from './wasm-Dv--JTVp.js';
+import { g as getDefaultExportFromCjs, a as getAugmentedNamespace, m as maxField$1, d as dummyContractAddress$1, b as bigIntToValue$1, v as valueToBigInt$1, p as persistentHash$2, e as encodeShieldedCoinInfo$1, c as encodeQualifiedShieldedCoinInfo$1, f as encodeCoinPublicKey$1, h as encodeContractAddress$1, C as CostModel$1, Q as QueryContext$1, i as ContractState$1, j as ChargedState$1, S as StateValue$1, k as ContractOperation$1, l as commonjsRequire, _ as __vite__initWasm, n as commonjsGlobal, __tla as __tla_0 } from './wasm-BZLq7AFe.js';
 import { deployContract, findDeployedContract } from '@midnight-ntwrk/midnight-js-contracts';
 import { indexerPublicDataProvider } from '@midnight-ntwrk/midnight-js-indexer-public-data-provider';
 Promise.all([
@@ -110,7 +110,7 @@ Promise.all([
         this.refs = D$1;
         this.updater = e || B$1;
     }
-    var H$1 = G$1.prototype = new F;
+    var H$1 = G$1.prototype = new F();
     H$1.constructor = G$1;
     C$1(H$1, E$1.prototype);
     H$1.isPureReactComponent = true;
@@ -159,8 +159,8 @@ Promise.all([
             "=": "=0",
             ":": "=2"
         };
-        return "$" + a.replace(/[=:]/g, function(a) {
-            return b[a];
+        return "$" + a.replace(/[=:]/g, function(a2) {
+            return b[a2];
         });
     }
     var P$1 = /\/+/g;
@@ -184,8 +184,8 @@ Promise.all([
                         h = true;
                 }
         }
-        if (h) return h = a, c = c(h), a = "" === d ? "." + Q$1(h, 0) : d, I$1(c) ? (e = "", null != a && (e = a.replace(P$1, "$&/") + "/"), R$1(c, b, e, "", function(a) {
-            return a;
+        if (h) return h = a, c = c(h), a = "" === d ? "." + Q$1(h, 0) : d, I$1(c) ? (e = "", null != a && (e = a.replace(P$1, "$&/") + "/"), R$1(c, b, e, "", function(a2) {
+            return a2;
         })) : null != c && (O$1(c) && (c = N$1(c, e + (!c.key || h && h.key === c.key ? "" : ("" + c.key).replace(P$1, "$&/") + "/") + a)), b.push(c)), 1;
         h = 0;
         d = "" === d ? "." : d + ":";
@@ -201,8 +201,8 @@ Promise.all([
     function S$1(a, b, e) {
         if (null == a) return a;
         var d = [], c = 0;
-        R$1(a, d, "", "", function(a) {
-            return b.call(e, a, c++);
+        R$1(a, d, "", "", function(a2) {
+            return b.call(e, a2, c++);
         });
         return d;
     }
@@ -210,10 +210,10 @@ Promise.all([
         if (-1 === a._status) {
             var b = a._result;
             b = b();
-            b.then(function(b) {
-                if (0 === a._status || -1 === a._status) a._status = 1, a._result = b;
-            }, function(b) {
-                if (0 === a._status || -1 === a._status) a._status = 2, a._result = b;
+            b.then(function(b2) {
+                if (0 === a._status || -1 === a._status) a._status = 1, a._result = b2;
+            }, function(b2) {
+                if (0 === a._status || -1 === a._status) a._status = 2, a._result = b2;
             });
             -1 === a._status && (a._status = 0, a._result = b);
         }
@@ -247,8 +247,8 @@ Promise.all([
             return b;
         },
         toArray: function(a) {
-            return S$1(a, function(a) {
-                return a;
+            return S$1(a, function(a2) {
+                return a2;
             }) || [];
         },
         only: function(a) {
@@ -9688,14 +9688,16 @@ Promise.all([
     function middleware(collection) {
         var length = sizeof(collection);
         return function(element, index, children, callback) {
-            var output = '';
-            for(var i = 0; i < length; i++)output += collection[i](element, index, children, callback) || '';
+            var output = "";
+            for(var i = 0; i < length; i++)output += collection[i](element, index, children, callback) || "";
             return output;
         };
     }
     function rulesheet(callback) {
         return function(element) {
-            if (!element.root) if (element = element.return) callback(element);
+            if (!element.root) {
+                if (element = element.return) callback(element);
+            }
         };
     }
     function memoize$1(fn) {
@@ -10134,9 +10136,9 @@ Promise.all([
     TYPE_STATICS[reactIs$1.Memo] = MEMO_STATICS;
     var isBrowser = true;
     function getRegisteredStyles(registered, registeredStyles, classNames) {
-        var rawClassName = '';
-        classNames.split(' ').forEach(function(className) {
-            if (registered[className] !== undefined) {
+        var rawClassName = "";
+        classNames.split(" ").forEach(function(className) {
+            if (registered[className] !== void 0) {
                 registeredStyles.push(registered[className] + ";");
             } else if (className) {
                 rawClassName += className + " ";
@@ -10144,21 +10146,21 @@ Promise.all([
         });
         return rawClassName;
     }
-    var registerStyles = function registerStyles(cache, serialized, isStringTag) {
+    var registerStyles = function registerStyles2(cache, serialized, isStringTag) {
         var className = cache.key + "-" + serialized.name;
-        if ((isStringTag === false || isBrowser === false) && cache.registered[className] === undefined) {
+        if ((isStringTag === false || isBrowser === false) && cache.registered[className] === void 0) {
             cache.registered[className] = serialized.styles;
         }
     };
-    var insertStyles = function insertStyles(cache, serialized, isStringTag) {
+    var insertStyles = function insertStyles2(cache, serialized, isStringTag) {
         registerStyles(cache, serialized, isStringTag);
         var className = cache.key + "-" + serialized.name;
-        if (cache.inserted[serialized.name] === undefined) {
+        if (cache.inserted[serialized.name] === void 0) {
             var current = serialized;
             do {
-                cache.insert(serialized === current ? "." + className : '', current, cache.sheet, true);
+                cache.insert(serialized === current ? "." + className : "", current, cache.sheet, true);
                 current = current.next;
-            }while (current !== undefined);
+            }while (current !== void 0);
         }
     };
     function murmur2(str) {
@@ -10234,21 +10236,21 @@ Promise.all([
     };
     var hyphenateRegex = /[A-Z]|^ms/g;
     var animationRegex = /_EMO_([^_]+?)_([^]*?)_EMO_/g;
-    var isCustomProperty = function isCustomProperty(property) {
+    var isCustomProperty = function isCustomProperty2(property) {
         return property.charCodeAt(1) === 45;
     };
-    var isProcessableValue = function isProcessableValue(value) {
-        return value != null && typeof value !== 'boolean';
+    var isProcessableValue = function isProcessableValue2(value) {
+        return value != null && typeof value !== "boolean";
     };
     var processStyleName = memoize$1(function(styleName) {
-        return isCustomProperty(styleName) ? styleName : styleName.replace(hyphenateRegex, '-$&').toLowerCase();
+        return isCustomProperty(styleName) ? styleName : styleName.replace(hyphenateRegex, "-$&").toLowerCase();
     });
-    var processStyleValue = function processStyleValue(key, value) {
+    var processStyleValue = function processStyleValue2(key, value) {
         switch(key){
-            case 'animation':
-            case 'animationName':
+            case "animation":
+            case "animationName":
                 {
-                    if (typeof value === 'string') {
+                    if (typeof value === "string") {
                         return value.replace(animationRegex, function(match, p1, p2) {
                             cursor = {
                                 name: p1,
@@ -10260,25 +10262,25 @@ Promise.all([
                     }
                 }
         }
-        if (unitlessKeys[key] !== 1 && !isCustomProperty(key) && typeof value === 'number' && value !== 0) {
-            return value + 'px';
+        if (unitlessKeys[key] !== 1 && !isCustomProperty(key) && typeof value === "number" && value !== 0) {
+            return value + "px";
         }
         return value;
     };
     function handleInterpolation(mergedProps, registered, interpolation) {
         if (interpolation == null) {
-            return '';
+            return "";
         }
         var componentSelector = interpolation;
-        if (componentSelector.__emotion_styles !== undefined) {
+        if (componentSelector.__emotion_styles !== void 0) {
             return componentSelector;
         }
         switch(typeof interpolation){
-            case 'boolean':
+            case "boolean":
                 {
-                    return '';
+                    return "";
                 }
-            case 'object':
+            case "object":
                 {
                     var keyframes = interpolation;
                     if (keyframes.anim === 1) {
@@ -10290,10 +10292,10 @@ Promise.all([
                         return keyframes.name;
                     }
                     var serializedStyles = interpolation;
-                    if (serializedStyles.styles !== undefined) {
+                    if (serializedStyles.styles !== void 0) {
                         var next = serializedStyles.next;
-                        if (next !== undefined) {
-                            while(next !== undefined){
+                        if (next !== void 0) {
+                            while(next !== void 0){
                                 cursor = {
                                     name: next.name,
                                     styles: next.styles,
@@ -10307,9 +10309,9 @@ Promise.all([
                     }
                     return createStringFromObject(mergedProps, registered, interpolation);
                 }
-            case 'function':
+            case "function":
                 {
-                    if (mergedProps !== undefined) {
+                    if (mergedProps !== void 0) {
                         var previousCursor = cursor;
                         var result = interpolation(mergedProps);
                         cursor = previousCursor;
@@ -10323,10 +10325,10 @@ Promise.all([
             return asString;
         }
         var cached = registered[asString];
-        return cached !== undefined ? cached : asString;
+        return cached !== void 0 ? cached : asString;
     }
     function createStringFromObject(mergedProps, registered, obj) {
-        var string = '';
+        var string = "";
         if (Array.isArray(obj)) {
             for(var i = 0; i < obj.length; i++){
                 string += handleInterpolation(mergedProps, registered, obj[i]) + ";";
@@ -10334,15 +10336,15 @@ Promise.all([
         } else {
             for(var key in obj){
                 var value = obj[key];
-                if (typeof value !== 'object') {
+                if (typeof value !== "object") {
                     var asString = value;
-                    if (registered != null && registered[asString] !== undefined) {
+                    if (registered != null && registered[asString] !== void 0) {
                         string += key + "{" + registered[asString] + "}";
                     } else if (isProcessableValue(asString)) {
                         string += processStyleName(key) + ":" + processStyleValue(key, asString) + ";";
                     }
                 } else {
-                    if (Array.isArray(value) && typeof value[0] === 'string' && (registered == null || registered[value[0]] === undefined)) {
+                    if (Array.isArray(value) && typeof value[0] === "string" && (registered == null || registered[value[0]] === void 0)) {
                         for(var _i = 0; _i < value.length; _i++){
                             if (isProcessableValue(value[_i])) {
                                 string += processStyleName(key) + ":" + processStyleValue(key, value[_i]) + ";";
@@ -10351,8 +10353,8 @@ Promise.all([
                     } else {
                         var interpolated = handleInterpolation(mergedProps, registered, value);
                         switch(key){
-                            case 'animation':
-                            case 'animationName':
+                            case "animation":
+                            case "animationName":
                                 {
                                     string += processStyleName(key) + ":" + interpolated + ";";
                                     break;
@@ -10371,14 +10373,14 @@ Promise.all([
     var labelPattern = /label:\s*([^\s;{]+)\s*(;|$)/g;
     var cursor;
     function serializeStyles(args, registered, mergedProps) {
-        if (args.length === 1 && typeof args[0] === 'object' && args[0] !== null && args[0].styles !== undefined) {
+        if (args.length === 1 && typeof args[0] === "object" && args[0] !== null && args[0].styles !== void 0) {
             return args[0];
         }
         var stringMode = true;
-        var styles = '';
-        cursor = undefined;
+        var styles = "";
+        cursor = void 0;
         var strings = args[0];
-        if (strings == null || strings.raw === undefined) {
+        if (strings == null || strings.raw === void 0) {
             stringMode = false;
             styles += handleInterpolation(mergedProps, registered, strings);
         } else {
@@ -10393,15 +10395,15 @@ Promise.all([
             }
         }
         labelPattern.lastIndex = 0;
-        var identifierName = '';
+        var identifierName = "";
         var match;
         while((match = labelPattern.exec(styles)) !== null){
-            identifierName += '-' + match[1];
+            identifierName += "-" + match[1];
         }
         var name = murmur2(styles) + identifierName;
         return {
-            name: name,
-            styles: styles,
+            name,
+            styles,
             next: cursor
         };
     }
@@ -10476,10 +10478,10 @@ Promise.all([
         }), reactExports.createElement(WrappedComponent, newProps));
     });
     var Emotion$1 = Emotion;
-    var jsx = function jsx(type, props) {
+    var jsx = function jsx2(type, props) {
         var args = arguments;
-        if (props == null || !hasOwn$1.call(props, 'css')) {
-            return reactExports.createElement.apply(undefined, args);
+        if (props == null || !hasOwn$1.call(props, "css")) {
+            return reactExports.createElement.apply(void 0, args);
         }
         var argsLength = args.length;
         var createElementArgArray = new Array(argsLength);
@@ -10498,24 +10500,24 @@ Promise.all([
         var styles = props.styles;
         var serialized = serializeStyles([
             styles
-        ], undefined, reactExports.useContext(ThemeContext$1));
+        ], void 0, reactExports.useContext(ThemeContext$1));
         var sheetRef = reactExports.useRef();
         useInsertionEffectWithLayoutFallback(function() {
             var key = cache.key + "-global";
             var sheet = new cache.sheet.constructor({
-                key: key,
+                key,
                 nonce: cache.sheet.nonce,
                 container: cache.sheet.container,
                 speedy: cache.sheet.isSpeedy
             });
             var rehydrating = false;
-            var node = document.querySelector("style[data-emotion=\"" + key + " " + serialized.name + "\"]");
+            var node = document.querySelector('style[data-emotion="' + key + " " + serialized.name + '"]');
             if (cache.sheet.tags.length) {
                 sheet.before = cache.sheet.tags[0];
             }
             if (node !== null) {
                 rehydrating = true;
-                node.setAttribute('data-emotion', key);
+                node.setAttribute("data-emotion", key);
                 sheet.hydrate([
                     node
                 ]);
@@ -10537,7 +10539,7 @@ Promise.all([
                 sheetRefCurrent[1] = false;
                 return;
             }
-            if (serialized.next !== undefined) {
+            if (serialized.next !== void 0) {
                 insertStyles(cache, serialized.next, true);
             }
             if (sheet.tags.length) {
@@ -10562,7 +10564,7 @@ Promise.all([
         var insertable = css.apply(void 0, arguments);
         var name = "animation-" + insertable.name;
         return {
-            name: name,
+            name,
             styles: "@keyframes " + name + "{" + insertable.styles + "}",
             anim: 1,
             toString: function toString() {
@@ -12278,24 +12280,24 @@ Promise.all([
         return Box;
     }
     const globalStateClasses = {
-        active: 'active',
-        checked: 'checked',
-        completed: 'completed',
-        disabled: 'disabled',
-        error: 'error',
-        expanded: 'expanded',
-        focused: 'focused',
-        focusVisible: 'focusVisible',
-        open: 'open',
-        readOnly: 'readOnly',
-        required: 'required',
-        selected: 'selected'
+        active: "active",
+        checked: "checked",
+        completed: "completed",
+        disabled: "disabled",
+        error: "error",
+        expanded: "expanded",
+        focused: "focused",
+        focusVisible: "focusVisible",
+        open: "open",
+        readOnly: "readOnly",
+        required: "required",
+        selected: "selected"
     };
-    function generateUtilityClass(componentName, slot, globalStatePrefix = 'Mui') {
+    function generateUtilityClass(componentName, slot, globalStatePrefix = "Mui") {
         const globalStateClass = globalStateClasses[slot];
         return globalStateClass ? `${globalStatePrefix}-${globalStateClass}` : `${ClassNameGenerator.generate(componentName)}-${slot}`;
     }
-    function generateUtilityClasses(componentName, slots, globalStatePrefix = 'Mui') {
+    function generateUtilityClasses(componentName, slots, globalStatePrefix = "Mui") {
         const result = {};
         slots.forEach((slot)=>{
             result[slot] = generateUtilityClass(componentName, slot, globalStatePrefix);
@@ -12826,7 +12828,7 @@ Promise.all([
     };
     const maybeReactUseId = safeReact.useId;
     function useId(idOverride) {
-        if (maybeReactUseId !== undefined) {
+        if (maybeReactUseId !== void 0) {
             const reactId = maybeReactUseId();
             return idOverride ?? reactId;
         }
@@ -13169,28 +13171,28 @@ Promise.all([
     }
     function useLayerOrder(theme) {
         const upperTheme = useTheme$3();
-        const id = useId() || '';
+        const id = useId() || "";
         const { modularCssLayers } = theme;
-        let layerOrder = 'mui.global, mui.components, mui.theme, mui.custom, mui.sx';
+        let layerOrder = "mui.global, mui.components, mui.theme, mui.custom, mui.sx";
         if (!modularCssLayers || upperTheme !== null) {
-            layerOrder = '';
-        } else if (typeof modularCssLayers === 'string') {
+            layerOrder = "";
+        } else if (typeof modularCssLayers === "string") {
             layerOrder = modularCssLayers.replace(/mui(?!\.)/g, layerOrder);
         } else {
             layerOrder = `@layer ${layerOrder};`;
         }
         useEnhancedEffect(()=>{
-            const head = document.querySelector('head');
+            const head = document.querySelector("head");
             if (!head) {
                 return;
             }
             const firstChild = head.firstChild;
             if (layerOrder) {
-                if (firstChild && firstChild.hasAttribute?.('data-mui-layer-order') && firstChild.getAttribute('data-mui-layer-order') === id) {
+                if (firstChild && firstChild.hasAttribute?.("data-mui-layer-order") && firstChild.getAttribute("data-mui-layer-order") === id) {
                     return;
                 }
-                const styleElement = document.createElement('style');
-                styleElement.setAttribute('data-mui-layer-order', id);
+                const styleElement = document.createElement("style");
+                styleElement.setAttribute("data-mui-layer-order", id);
                 styleElement.textContent = layerOrder;
                 head.prepend(styleElement);
             } else {
@@ -14482,7 +14484,7 @@ try {
         };
     }
     const zIndex = {
-        mobileStepper: 1000,
+        mobileStepper: 1e3,
         fab: 1050,
         speedDial: 1050,
         appBar: 1100,
@@ -15175,7 +15177,7 @@ export default theme;`;
     function globalCss(styles) {
         return function GlobalStylesWrapper(props) {
             return (jsxRuntimeExports.jsx(GlobalStyles$1, {
-                styles: typeof styles === 'function' ? (theme)=>styles({
+                styles: typeof styles === "function" ? (theme)=>styles({
                         theme,
                         ...props
                     }) : styles
@@ -21822,9 +21824,9 @@ export default theme;`;
     }
     function ariaHidden(element, hide) {
         if (hide) {
-            element.setAttribute('aria-hidden', 'true');
+            element.setAttribute("aria-hidden", "true");
         } else {
-            element.removeAttribute('aria-hidden');
+            element.removeAttribute("aria-hidden");
         }
     }
     function getPaddingRight(element) {
@@ -21832,23 +21834,23 @@ export default theme;`;
     }
     function isAriaHiddenForbiddenOnElement(element) {
         const forbiddenTagNames = [
-            'TEMPLATE',
-            'SCRIPT',
-            'STYLE',
-            'LINK',
-            'MAP',
-            'META',
-            'NOSCRIPT',
-            'PICTURE',
-            'COL',
-            'COLGROUP',
-            'PARAM',
-            'SLOT',
-            'SOURCE',
-            'TRACK'
+            "TEMPLATE",
+            "SCRIPT",
+            "STYLE",
+            "LINK",
+            "MAP",
+            "META",
+            "NOSCRIPT",
+            "PICTURE",
+            "COL",
+            "COLGROUP",
+            "PARAM",
+            "SLOT",
+            "SOURCE",
+            "TRACK"
         ];
         const isForbiddenTagName = forbiddenTagNames.includes(element.tagName);
-        const isInputHidden = element.tagName === 'INPUT' && element.getAttribute('type') === 'hidden';
+        const isInputHidden = element.tagName === "INPUT" && element.getAttribute("type") === "hidden";
         return isForbiddenTagName || isInputHidden;
     }
     function ariaHiddenSiblings(container, mountElement, currentElement, elementsToExclude, hide) {
@@ -21884,15 +21886,15 @@ export default theme;`;
                 const scrollbarSize = getScrollbarSize(ownerWindow(container));
                 restoreStyle.push({
                     value: container.style.paddingRight,
-                    property: 'padding-right',
+                    property: "padding-right",
                     el: container
                 });
                 container.style.paddingRight = `${getPaddingRight(container) + scrollbarSize}px`;
-                const fixedElements = ownerDocument(container).querySelectorAll('.mui-fixed');
+                const fixedElements = ownerDocument(container).querySelectorAll(".mui-fixed");
                 [].forEach.call(fixedElements, (element)=>{
                     restoreStyle.push({
                         value: element.style.paddingRight,
-                        property: 'padding-right',
+                        property: "padding-right",
                         el: element
                     });
                     element.style.paddingRight = `${getPaddingRight(element) + scrollbarSize}px`;
@@ -21904,22 +21906,22 @@ export default theme;`;
             } else {
                 const parent = container.parentElement;
                 const containerWindow = ownerWindow(container);
-                scrollContainer = parent?.nodeName === 'HTML' && containerWindow.getComputedStyle(parent).overflowY === 'scroll' ? parent : container;
+                scrollContainer = parent?.nodeName === "HTML" && containerWindow.getComputedStyle(parent).overflowY === "scroll" ? parent : container;
             }
             restoreStyle.push({
                 value: scrollContainer.style.overflow,
-                property: 'overflow',
+                property: "overflow",
                 el: scrollContainer
             }, {
                 value: scrollContainer.style.overflowX,
-                property: 'overflow-x',
+                property: "overflow-x",
                 el: scrollContainer
             }, {
                 value: scrollContainer.style.overflowY,
-                property: 'overflow-y',
+                property: "overflow-y",
                 el: scrollContainer
             });
-            scrollContainer.style.overflow = 'hidden';
+            scrollContainer.style.overflow = "hidden";
         }
         const restore = ()=>{
             restoreStyle.forEach(({ value, el, property })=>{
@@ -21935,7 +21937,7 @@ export default theme;`;
     function getHiddenSiblings(container) {
         const hiddenSiblings = [];
         [].forEach.call(container.children, (element)=>{
-            if (element.getAttribute('aria-hidden') === 'true') {
+            if (element.getAttribute("aria-hidden") === "true") {
                 hiddenSiblings.push(element);
             }
         });
@@ -27047,18 +27049,18 @@ export default theme;`;
         const timerAutoHide = useTimeout();
         reactExports.useEffect(()=>{
             if (!open) {
-                return undefined;
+                return void 0;
             }
             function handleKeyDown(nativeEvent) {
                 if (!nativeEvent.defaultPrevented) {
-                    if (nativeEvent.key === 'Escape') {
-                        onClose?.(nativeEvent, 'escapeKeyDown');
+                    if (nativeEvent.key === "Escape") {
+                        onClose?.(nativeEvent, "escapeKeyDown");
                     }
                 }
             }
-            document.addEventListener('keydown', handleKeyDown);
+            document.addEventListener("keydown", handleKeyDown);
             return ()=>{
-                document.removeEventListener('keydown', handleKeyDown);
+                document.removeEventListener("keydown", handleKeyDown);
             };
         }, [
             open,
@@ -27072,7 +27074,7 @@ export default theme;`;
                 return;
             }
             timerAutoHide.start(autoHideDurationParam, ()=>{
-                handleClose(null, 'timeout');
+                handleClose(null, "timeout");
             });
         });
         reactExports.useEffect(()=>{
@@ -27087,7 +27089,7 @@ export default theme;`;
             timerAutoHide
         ]);
         const handleClickAway = (event)=>{
-            onClose?.(event, 'clickaway');
+            onClose?.(event, "clickaway");
         };
         const handlePause = timerAutoHide.clear;
         const handleResume = reactExports.useCallback(()=>{
@@ -27121,14 +27123,14 @@ export default theme;`;
             };
         reactExports.useEffect(()=>{
             if (!disableWindowBlurListener && open) {
-                window.addEventListener('focus', handleResume);
-                window.addEventListener('blur', handlePause);
+                window.addEventListener("focus", handleResume);
+                window.addEventListener("blur", handlePause);
                 return ()=>{
-                    window.removeEventListener('focus', handleResume);
-                    window.removeEventListener('blur', handlePause);
+                    window.removeEventListener("focus", handleResume);
+                    window.removeEventListener("blur", handlePause);
                 };
             }
-            return undefined;
+            return void 0;
         }, [
             disableWindowBlurListener,
             open,
@@ -27141,7 +27143,7 @@ export default theme;`;
                 ...extractEventHandlers(externalProps)
             };
             return {
-                role: 'presentation',
+                role: "presentation",
                 ...externalProps,
                 ...externalEventHandlers,
                 onBlur: createHandleBlur(externalEventHandlers),
@@ -28658,19 +28660,19 @@ export default theme;`;
         value: 'Module'
     }));
     const require$$2 = getAugmentedNamespace(__viteBrowserExternal$1);
-    var hasMap = typeof Map === 'function' && Map.prototype;
-    var mapSizeDescriptor = Object.getOwnPropertyDescriptor && hasMap ? Object.getOwnPropertyDescriptor(Map.prototype, 'size') : null;
-    var mapSize = hasMap && mapSizeDescriptor && typeof mapSizeDescriptor.get === 'function' ? mapSizeDescriptor.get : null;
+    var hasMap = typeof Map === "function" && Map.prototype;
+    var mapSizeDescriptor = Object.getOwnPropertyDescriptor && hasMap ? Object.getOwnPropertyDescriptor(Map.prototype, "size") : null;
+    var mapSize = hasMap && mapSizeDescriptor && typeof mapSizeDescriptor.get === "function" ? mapSizeDescriptor.get : null;
     var mapForEach = hasMap && Map.prototype.forEach;
-    var hasSet = typeof Set === 'function' && Set.prototype;
-    var setSizeDescriptor = Object.getOwnPropertyDescriptor && hasSet ? Object.getOwnPropertyDescriptor(Set.prototype, 'size') : null;
-    var setSize = hasSet && setSizeDescriptor && typeof setSizeDescriptor.get === 'function' ? setSizeDescriptor.get : null;
+    var hasSet = typeof Set === "function" && Set.prototype;
+    var setSizeDescriptor = Object.getOwnPropertyDescriptor && hasSet ? Object.getOwnPropertyDescriptor(Set.prototype, "size") : null;
+    var setSize = hasSet && setSizeDescriptor && typeof setSizeDescriptor.get === "function" ? setSizeDescriptor.get : null;
     var setForEach = hasSet && Set.prototype.forEach;
-    var hasWeakMap = typeof WeakMap === 'function' && WeakMap.prototype;
+    var hasWeakMap = typeof WeakMap === "function" && WeakMap.prototype;
     var weakMapHas = hasWeakMap ? WeakMap.prototype.has : null;
-    var hasWeakSet = typeof WeakSet === 'function' && WeakSet.prototype;
+    var hasWeakSet = typeof WeakSet === "function" && WeakSet.prototype;
     var weakSetHas = hasWeakSet ? WeakSet.prototype.has : null;
-    var hasWeakRef = typeof WeakRef === 'function' && WeakRef.prototype;
+    var hasWeakRef = typeof WeakRef === "function" && WeakRef.prototype;
     var weakRefDeref = hasWeakRef ? WeakRef.prototype.deref : null;
     var booleanValueOf = Boolean.prototype.valueOf;
     var objectToString = Object.prototype.toString;
@@ -28685,97 +28687,97 @@ export default theme;`;
     var $join = Array.prototype.join;
     var $arrSlice = Array.prototype.slice;
     var $floor = Math.floor;
-    var bigIntValueOf = typeof BigInt === 'function' ? BigInt.prototype.valueOf : null;
+    var bigIntValueOf = typeof BigInt === "function" ? BigInt.prototype.valueOf : null;
     var gOPS = Object.getOwnPropertySymbols;
-    var symToString = typeof Symbol === 'function' && typeof Symbol.iterator === 'symbol' ? Symbol.prototype.toString : null;
-    var hasShammedSymbols = typeof Symbol === 'function' && typeof Symbol.iterator === 'object';
-    var toStringTag = typeof Symbol === 'function' && Symbol.toStringTag && (typeof Symbol.toStringTag === hasShammedSymbols ? 'object' : 'symbol') ? Symbol.toStringTag : null;
+    var symToString = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? Symbol.prototype.toString : null;
+    var hasShammedSymbols = typeof Symbol === "function" && typeof Symbol.iterator === "object";
+    var toStringTag = typeof Symbol === "function" && Symbol.toStringTag && (typeof Symbol.toStringTag === hasShammedSymbols ? "object" : "symbol") ? Symbol.toStringTag : null;
     var isEnumerable = Object.prototype.propertyIsEnumerable;
-    var gPO = (typeof Reflect === 'function' ? Reflect.getPrototypeOf : Object.getPrototypeOf) || ([].__proto__ === Array.prototype ? function(O) {
+    var gPO = (typeof Reflect === "function" ? Reflect.getPrototypeOf : Object.getPrototypeOf) || ([].__proto__ === Array.prototype ? function(O) {
         return O.__proto__;
     } : null);
     function addNumericSeparator(num, str) {
-        if (num === Infinity || num === -Infinity || num !== num || (num && num > -1e3 && num < 1000) || $test.call(/e/, str)) {
+        if (num === Infinity || num === -Infinity || num !== num || num && num > -1e3 && num < 1e3 || $test.call(/e/, str)) {
             return str;
         }
         var sepRegex = /[0-9](?=(?:[0-9]{3})+(?![0-9]))/g;
-        if (typeof num === 'number') {
+        if (typeof num === "number") {
             var int = num < 0 ? -$floor(-num) : $floor(num);
             if (int !== num) {
                 var intStr = String(int);
                 var dec = $slice.call(str, intStr.length + 1);
-                return $replace.call(intStr, sepRegex, '$&_') + '.' + $replace.call($replace.call(dec, /([0-9]{3})/g, '$&_'), /_$/, '');
+                return $replace.call(intStr, sepRegex, "$&_") + "." + $replace.call($replace.call(dec, /([0-9]{3})/g, "$&_"), /_$/, "");
             }
         }
-        return $replace.call(str, sepRegex, '$&_');
+        return $replace.call(str, sepRegex, "$&_");
     }
     var utilInspect = require$$2;
     var inspectCustom = utilInspect.custom;
     var inspectSymbol = isSymbol(inspectCustom) ? inspectCustom : null;
     var quotes = {
         __proto__: null,
-        'double': '"',
+        "double": '"',
         single: "'"
     };
     var quoteREs = {
         __proto__: null,
-        'double': /(["\\])/g,
+        "double": /(["\\])/g,
         single: /(['\\])/g
     };
     var objectInspect = function inspect_(obj, options, depth, seen) {
         var opts = options || {};
-        if (has(opts, 'quoteStyle') && !has(quotes, opts.quoteStyle)) {
+        if (has(opts, "quoteStyle") && !has(quotes, opts.quoteStyle)) {
             throw new TypeError('option "quoteStyle" must be "single" or "double"');
         }
-        if (has(opts, 'maxStringLength') && (typeof opts.maxStringLength === 'number' ? opts.maxStringLength < 0 && opts.maxStringLength !== Infinity : opts.maxStringLength !== null)) {
+        if (has(opts, "maxStringLength") && (typeof opts.maxStringLength === "number" ? opts.maxStringLength < 0 && opts.maxStringLength !== Infinity : opts.maxStringLength !== null)) {
             throw new TypeError('option "maxStringLength", if provided, must be a positive integer, Infinity, or `null`');
         }
-        var customInspect = has(opts, 'customInspect') ? opts.customInspect : true;
-        if (typeof customInspect !== 'boolean' && customInspect !== 'symbol') {
-            throw new TypeError('option "customInspect", if provided, must be `true`, `false`, or `\'symbol\'`');
+        var customInspect = has(opts, "customInspect") ? opts.customInspect : true;
+        if (typeof customInspect !== "boolean" && customInspect !== "symbol") {
+            throw new TypeError("option \"customInspect\", if provided, must be `true`, `false`, or `'symbol'`");
         }
-        if (has(opts, 'indent') && opts.indent !== null && opts.indent !== '\t' && !(parseInt(opts.indent, 10) === opts.indent && opts.indent > 0)) {
+        if (has(opts, "indent") && opts.indent !== null && opts.indent !== "	" && !(parseInt(opts.indent, 10) === opts.indent && opts.indent > 0)) {
             throw new TypeError('option "indent" must be "\\t", an integer > 0, or `null`');
         }
-        if (has(opts, 'numericSeparator') && typeof opts.numericSeparator !== 'boolean') {
+        if (has(opts, "numericSeparator") && typeof opts.numericSeparator !== "boolean") {
             throw new TypeError('option "numericSeparator", if provided, must be `true` or `false`');
         }
         var numericSeparator = opts.numericSeparator;
-        if (typeof obj === 'undefined') {
-            return 'undefined';
+        if (typeof obj === "undefined") {
+            return "undefined";
         }
         if (obj === null) {
-            return 'null';
+            return "null";
         }
-        if (typeof obj === 'boolean') {
-            return obj ? 'true' : 'false';
+        if (typeof obj === "boolean") {
+            return obj ? "true" : "false";
         }
-        if (typeof obj === 'string') {
+        if (typeof obj === "string") {
             return inspectString(obj, opts);
         }
-        if (typeof obj === 'number') {
+        if (typeof obj === "number") {
             if (obj === 0) {
-                return Infinity / obj > 0 ? '0' : '-0';
+                return Infinity / obj > 0 ? "0" : "-0";
             }
             var str = String(obj);
             return numericSeparator ? addNumericSeparator(obj, str) : str;
         }
-        if (typeof obj === 'bigint') {
-            var bigIntStr = String(obj) + 'n';
+        if (typeof obj === "bigint") {
+            var bigIntStr = String(obj) + "n";
             return numericSeparator ? addNumericSeparator(obj, bigIntStr) : bigIntStr;
         }
-        var maxDepth = typeof opts.depth === 'undefined' ? 5 : opts.depth;
-        if (typeof depth === 'undefined') {
+        var maxDepth = typeof opts.depth === "undefined" ? 5 : opts.depth;
+        if (typeof depth === "undefined") {
             depth = 0;
         }
-        if (depth >= maxDepth && maxDepth > 0 && typeof obj === 'object') {
-            return isArray$2(obj) ? '[Array]' : '[Object]';
+        if (depth >= maxDepth && maxDepth > 0 && typeof obj === "object") {
+            return isArray$2(obj) ? "[Array]" : "[Object]";
         }
         var indent = getIndent(opts, depth);
-        if (typeof seen === 'undefined') {
+        if (typeof seen === "undefined") {
             seen = [];
         } else if (indexOf(seen, obj) >= 0) {
-            return '[Circular]';
+            return "[Circular]";
         }
         function inspect(value, from, noIndent) {
             if (from) {
@@ -28786,61 +28788,61 @@ export default theme;`;
                 var newOpts = {
                     depth: opts.depth
                 };
-                if (has(opts, 'quoteStyle')) {
+                if (has(opts, "quoteStyle")) {
                     newOpts.quoteStyle = opts.quoteStyle;
                 }
                 return inspect_(value, newOpts, depth + 1, seen);
             }
             return inspect_(value, opts, depth + 1, seen);
         }
-        if (typeof obj === 'function' && !isRegExp(obj)) {
+        if (typeof obj === "function" && !isRegExp(obj)) {
             var name = nameOf(obj);
             var keys = arrObjKeys(obj, inspect);
-            return '[Function' + (name ? ': ' + name : ' (anonymous)') + ']' + (keys.length > 0 ? ' { ' + $join.call(keys, ', ') + ' }' : '');
+            return "[Function" + (name ? ": " + name : " (anonymous)") + "]" + (keys.length > 0 ? " { " + $join.call(keys, ", ") + " }" : "");
         }
         if (isSymbol(obj)) {
-            var symString = hasShammedSymbols ? $replace.call(String(obj), /^(Symbol\(.*\))_[^)]*$/, '$1') : symToString.call(obj);
-            return typeof obj === 'object' && !hasShammedSymbols ? markBoxed(symString) : symString;
+            var symString = hasShammedSymbols ? $replace.call(String(obj), /^(Symbol\(.*\))_[^)]*$/, "$1") : symToString.call(obj);
+            return typeof obj === "object" && !hasShammedSymbols ? markBoxed(symString) : symString;
         }
         if (isElement(obj)) {
-            var s = '<' + $toLowerCase.call(String(obj.nodeName));
+            var s = "<" + $toLowerCase.call(String(obj.nodeName));
             var attrs = obj.attributes || [];
             for(var i = 0; i < attrs.length; i++){
-                s += ' ' + attrs[i].name + '=' + wrapQuotes(quote(attrs[i].value), 'double', opts);
+                s += " " + attrs[i].name + "=" + wrapQuotes(quote(attrs[i].value), "double", opts);
             }
-            s += '>';
+            s += ">";
             if (obj.childNodes && obj.childNodes.length) {
-                s += '...';
+                s += "...";
             }
-            s += '</' + $toLowerCase.call(String(obj.nodeName)) + '>';
+            s += "</" + $toLowerCase.call(String(obj.nodeName)) + ">";
             return s;
         }
         if (isArray$2(obj)) {
             if (obj.length === 0) {
-                return '[]';
+                return "[]";
             }
             var xs = arrObjKeys(obj, inspect);
             if (indent && !singleLineValues(xs)) {
-                return '[' + indentedJoin(xs, indent) + ']';
+                return "[" + indentedJoin(xs, indent) + "]";
             }
-            return '[ ' + $join.call(xs, ', ') + ' ]';
+            return "[ " + $join.call(xs, ", ") + " ]";
         }
         if (isError(obj)) {
             var parts = arrObjKeys(obj, inspect);
-            if (!('cause' in Error.prototype) && 'cause' in obj && !isEnumerable.call(obj, 'cause')) {
-                return '{ [' + String(obj) + '] ' + $join.call($concat.call('[cause]: ' + inspect(obj.cause), parts), ', ') + ' }';
+            if (!("cause" in Error.prototype) && "cause" in obj && !isEnumerable.call(obj, "cause")) {
+                return "{ [" + String(obj) + "] " + $join.call($concat.call("[cause]: " + inspect(obj.cause), parts), ", ") + " }";
             }
             if (parts.length === 0) {
-                return '[' + String(obj) + ']';
+                return "[" + String(obj) + "]";
             }
-            return '{ [' + String(obj) + '] ' + $join.call(parts, ', ') + ' }';
+            return "{ [" + String(obj) + "] " + $join.call(parts, ", ") + " }";
         }
-        if (typeof obj === 'object' && customInspect) {
-            if (inspectSymbol && typeof obj[inspectSymbol] === 'function' && utilInspect) {
+        if (typeof obj === "object" && customInspect) {
+            if (inspectSymbol && typeof obj[inspectSymbol] === "function" && utilInspect) {
                 return utilInspect(obj, {
                     depth: maxDepth - depth
                 });
-            } else if (customInspect !== 'symbol' && typeof obj.inspect === 'function') {
+            } else if (customInspect !== "symbol" && typeof obj.inspect === "function") {
                 return obj.inspect();
             }
         }
@@ -28848,10 +28850,10 @@ export default theme;`;
             var mapParts = [];
             if (mapForEach) {
                 mapForEach.call(obj, function(value, key) {
-                    mapParts.push(inspect(key, obj, true) + ' => ' + inspect(value, obj));
+                    mapParts.push(inspect(key, obj, true) + " => " + inspect(value, obj));
                 });
             }
-            return collectionOf('Map', mapSize.call(obj), mapParts, indent);
+            return collectionOf("Map", mapSize.call(obj), mapParts, indent);
         }
         if (isSet(obj)) {
             var setParts = [];
@@ -28860,16 +28862,16 @@ export default theme;`;
                     setParts.push(inspect(value, obj));
                 });
             }
-            return collectionOf('Set', setSize.call(obj), setParts, indent);
+            return collectionOf("Set", setSize.call(obj), setParts, indent);
         }
         if (isWeakMap(obj)) {
-            return weakCollectionOf('WeakMap');
+            return weakCollectionOf("WeakMap");
         }
         if (isWeakSet(obj)) {
-            return weakCollectionOf('WeakSet');
+            return weakCollectionOf("WeakSet");
         }
         if (isWeakRef(obj)) {
-            return weakCollectionOf('WeakRef');
+            return weakCollectionOf("WeakRef");
         }
         if (isNumber(obj)) {
             return markBoxed(inspect(Number(obj)));
@@ -28883,26 +28885,26 @@ export default theme;`;
         if (isString(obj)) {
             return markBoxed(inspect(String(obj)));
         }
-        if (typeof window !== 'undefined' && obj === window) {
-            return '{ [object Window] }';
+        if (typeof window !== "undefined" && obj === window) {
+            return "{ [object Window] }";
         }
-        if ((typeof globalThis !== 'undefined' && obj === globalThis) || (typeof commonjsGlobal !== 'undefined' && obj === commonjsGlobal)) {
-            return '{ [object globalThis] }';
+        if (typeof globalThis !== "undefined" && obj === globalThis || typeof globalThis !== "undefined" && obj === globalThis) {
+            return "{ [object globalThis] }";
         }
         if (!isDate(obj) && !isRegExp(obj)) {
             var ys = arrObjKeys(obj, inspect);
             var isPlainObject = gPO ? gPO(obj) === Object.prototype : obj instanceof Object || obj.constructor === Object;
-            var protoTag = obj instanceof Object ? '' : 'null prototype';
-            var stringTag = !isPlainObject && toStringTag && Object(obj) === obj && toStringTag in obj ? $slice.call(toStr(obj), 8, -1) : protoTag ? 'Object' : '';
-            var constructorTag = isPlainObject || typeof obj.constructor !== 'function' ? '' : obj.constructor.name ? obj.constructor.name + ' ' : '';
-            var tag = constructorTag + (stringTag || protoTag ? '[' + $join.call($concat.call([], stringTag || [], protoTag || []), ': ') + '] ' : '');
+            var protoTag = obj instanceof Object ? "" : "null prototype";
+            var stringTag = !isPlainObject && toStringTag && Object(obj) === obj && toStringTag in obj ? $slice.call(toStr(obj), 8, -1) : protoTag ? "Object" : "";
+            var constructorTag = isPlainObject || typeof obj.constructor !== "function" ? "" : obj.constructor.name ? obj.constructor.name + " " : "";
+            var tag = constructorTag + (stringTag || protoTag ? "[" + $join.call($concat.call([], stringTag || [], protoTag || []), ": ") + "] " : "");
             if (ys.length === 0) {
-                return tag + '{}';
+                return tag + "{}";
             }
             if (indent) {
-                return tag + '{' + indentedJoin(ys, indent) + '}';
+                return tag + "{" + indentedJoin(ys, indent) + "}";
             }
-            return tag + '{ ' + $join.call(ys, ', ') + ' }';
+            return tag + "{ " + $join.call(ys, ", ") + " }";
         }
         return String(obj);
     };
@@ -28912,40 +28914,40 @@ export default theme;`;
         return quoteChar + s + quoteChar;
     }
     function quote(s) {
-        return $replace.call(String(s), /"/g, '&quot;');
+        return $replace.call(String(s), /"/g, "&quot;");
     }
     function canTrustToString(obj) {
-        return !toStringTag || !(typeof obj === 'object' && (toStringTag in obj || typeof obj[toStringTag] !== 'undefined'));
+        return !toStringTag || !(typeof obj === "object" && (toStringTag in obj || typeof obj[toStringTag] !== "undefined"));
     }
     function isArray$2(obj) {
-        return toStr(obj) === '[object Array]' && canTrustToString(obj);
+        return toStr(obj) === "[object Array]" && canTrustToString(obj);
     }
     function isDate(obj) {
-        return toStr(obj) === '[object Date]' && canTrustToString(obj);
+        return toStr(obj) === "[object Date]" && canTrustToString(obj);
     }
     function isRegExp(obj) {
-        return toStr(obj) === '[object RegExp]' && canTrustToString(obj);
+        return toStr(obj) === "[object RegExp]" && canTrustToString(obj);
     }
     function isError(obj) {
-        return toStr(obj) === '[object Error]' && canTrustToString(obj);
+        return toStr(obj) === "[object Error]" && canTrustToString(obj);
     }
     function isString(obj) {
-        return toStr(obj) === '[object String]' && canTrustToString(obj);
+        return toStr(obj) === "[object String]" && canTrustToString(obj);
     }
     function isNumber(obj) {
-        return toStr(obj) === '[object Number]' && canTrustToString(obj);
+        return toStr(obj) === "[object Number]" && canTrustToString(obj);
     }
     function isBoolean(obj) {
-        return toStr(obj) === '[object Boolean]' && canTrustToString(obj);
+        return toStr(obj) === "[object Boolean]" && canTrustToString(obj);
     }
     function isSymbol(obj) {
         if (hasShammedSymbols) {
-            return obj && typeof obj === 'object' && obj instanceof Symbol;
+            return obj && typeof obj === "object" && obj instanceof Symbol;
         }
-        if (typeof obj === 'symbol') {
+        if (typeof obj === "symbol") {
             return true;
         }
-        if (!obj || typeof obj !== 'object' || !symToString) {
+        if (!obj || typeof obj !== "object" || !symToString) {
             return false;
         }
         try {
@@ -28955,7 +28957,7 @@ export default theme;`;
         return false;
     }
     function isBigInt(obj) {
-        if (!obj || typeof obj !== 'object' || !bigIntValueOf) {
+        if (!obj || typeof obj !== "object" || !bigIntValueOf) {
             return false;
         }
         try {
@@ -28995,7 +28997,7 @@ export default theme;`;
         return -1;
     }
     function isMap(x) {
-        if (!mapSize || !x || typeof x !== 'object') {
+        if (!mapSize || !x || typeof x !== "object") {
             return false;
         }
         try {
@@ -29010,7 +29012,7 @@ export default theme;`;
         return false;
     }
     function isWeakMap(x) {
-        if (!weakMapHas || !x || typeof x !== 'object') {
+        if (!weakMapHas || !x || typeof x !== "object") {
             return false;
         }
         try {
@@ -29025,7 +29027,7 @@ export default theme;`;
         return false;
     }
     function isWeakRef(x) {
-        if (!weakRefDeref || !x || typeof x !== 'object') {
+        if (!weakRefDeref || !x || typeof x !== "object") {
             return false;
         }
         try {
@@ -29035,7 +29037,7 @@ export default theme;`;
         return false;
     }
     function isSet(x) {
-        if (!setSize || !x || typeof x !== 'object') {
+        if (!setSize || !x || typeof x !== "object") {
             return false;
         }
         try {
@@ -29050,7 +29052,7 @@ export default theme;`;
         return false;
     }
     function isWeakSet(x) {
-        if (!weakSetHas || !x || typeof x !== 'object') {
+        if (!weakSetHas || !x || typeof x !== "object") {
             return false;
         }
         try {
@@ -29065,52 +29067,52 @@ export default theme;`;
         return false;
     }
     function isElement(x) {
-        if (!x || typeof x !== 'object') {
+        if (!x || typeof x !== "object") {
             return false;
         }
-        if (typeof HTMLElement !== 'undefined' && x instanceof HTMLElement) {
+        if (typeof HTMLElement !== "undefined" && x instanceof HTMLElement) {
             return true;
         }
-        return typeof x.nodeName === 'string' && typeof x.getAttribute === 'function';
+        return typeof x.nodeName === "string" && typeof x.getAttribute === "function";
     }
     function inspectString(str, opts) {
         if (str.length > opts.maxStringLength) {
             var remaining = str.length - opts.maxStringLength;
-            var trailer = '... ' + remaining + ' more character' + (remaining > 1 ? 's' : '');
+            var trailer = "... " + remaining + " more character" + (remaining > 1 ? "s" : "");
             return inspectString($slice.call(str, 0, opts.maxStringLength), opts) + trailer;
         }
-        var quoteRE = quoteREs[opts.quoteStyle || 'single'];
+        var quoteRE = quoteREs[opts.quoteStyle || "single"];
         quoteRE.lastIndex = 0;
-        var s = $replace.call($replace.call(str, quoteRE, '\\$1'), /[\x00-\x1f]/g, lowbyte);
-        return wrapQuotes(s, 'single', opts);
+        var s = $replace.call($replace.call(str, quoteRE, "\\$1"), /[\x00-\x1f]/g, lowbyte);
+        return wrapQuotes(s, "single", opts);
     }
     function lowbyte(c) {
         var n = c.charCodeAt(0);
         var x = {
-            8: 'b',
-            9: 't',
-            10: 'n',
-            12: 'f',
-            13: 'r'
+            8: "b",
+            9: "t",
+            10: "n",
+            12: "f",
+            13: "r"
         }[n];
         if (x) {
-            return '\\' + x;
+            return "\\" + x;
         }
-        return '\\x' + (n < 0x10 ? '0' : '') + $toUpperCase.call(n.toString(16));
+        return "\\x" + (n < 16 ? "0" : "") + $toUpperCase.call(n.toString(16));
     }
     function markBoxed(str) {
-        return 'Object(' + str + ')';
+        return "Object(" + str + ")";
     }
     function weakCollectionOf(type) {
-        return type + ' { ? }';
+        return type + " { ? }";
     }
     function collectionOf(type, size, entries, indent) {
-        var joinedEntries = indent ? indentedJoin(entries, indent) : $join.call(entries, ', ');
-        return type + ' (' + size + ') {' + joinedEntries + '}';
+        var joinedEntries = indent ? indentedJoin(entries, indent) : $join.call(entries, ", ");
+        return type + " (" + size + ") {" + joinedEntries + "}";
     }
     function singleLineValues(xs) {
         for(var i = 0; i < xs.length; i++){
-            if (indexOf(xs[i], '\n') >= 0) {
+            if (indexOf(xs[i], "\n") >= 0) {
                 return false;
             }
         }
@@ -29118,10 +29120,10 @@ export default theme;`;
     }
     function getIndent(opts, depth) {
         var baseIndent;
-        if (opts.indent === '\t') {
-            baseIndent = '\t';
-        } else if (typeof opts.indent === 'number' && opts.indent > 0) {
-            baseIndent = $join.call(Array(opts.indent + 1), ' ');
+        if (opts.indent === "	") {
+            baseIndent = "	";
+        } else if (typeof opts.indent === "number" && opts.indent > 0) {
+            baseIndent = $join.call(Array(opts.indent + 1), " ");
         } else {
             return null;
         }
@@ -29132,10 +29134,10 @@ export default theme;`;
     }
     function indentedJoin(xs, indent) {
         if (xs.length === 0) {
-            return '';
+            return "";
         }
-        var lineJoiner = '\n' + indent.prev + indent.base;
-        return lineJoiner + $join.call(xs, ',' + lineJoiner) + '\n' + indent.prev;
+        var lineJoiner = "\n" + indent.prev + indent.base;
+        return lineJoiner + $join.call(xs, "," + lineJoiner) + "\n" + indent.prev;
     }
     function arrObjKeys(obj, inspect) {
         var isArr = isArray$2(obj);
@@ -29143,15 +29145,15 @@ export default theme;`;
         if (isArr) {
             xs.length = obj.length;
             for(var i = 0; i < obj.length; i++){
-                xs[i] = has(obj, i) ? inspect(obj[i], obj) : '';
+                xs[i] = has(obj, i) ? inspect(obj[i], obj) : "";
             }
         }
-        var syms = typeof gOPS === 'function' ? gOPS(obj) : [];
+        var syms = typeof gOPS === "function" ? gOPS(obj) : [];
         var symMap;
         if (hasShammedSymbols) {
             symMap = {};
             for(var k = 0; k < syms.length; k++){
-                symMap['$' + syms[k]] = syms[k];
+                symMap["$" + syms[k]] = syms[k];
             }
         }
         for(var key in obj){
@@ -29161,18 +29163,18 @@ export default theme;`;
             if (isArr && String(Number(key)) === key && key < obj.length) {
                 continue;
             }
-            if (hasShammedSymbols && symMap['$' + key] instanceof Symbol) {
+            if (hasShammedSymbols && symMap["$" + key] instanceof Symbol) {
                 continue;
             } else if ($test.call(/[^\w$]/, key)) {
-                xs.push(inspect(key, obj) + ': ' + inspect(obj[key], obj));
+                xs.push(inspect(key, obj) + ": " + inspect(obj[key], obj));
             } else {
-                xs.push(key + ': ' + inspect(obj[key], obj));
+                xs.push(key + ": " + inspect(obj[key], obj));
             }
         }
-        if (typeof gOPS === 'function') {
+        if (typeof gOPS === "function") {
             for(var j = 0; j < syms.length; j++){
                 if (isEnumerable.call(obj, syms[j])) {
-                    xs.push('[' + inspect(syms[j]) + ']: ' + inspect(obj[syms[j]], obj));
+                    xs.push("[" + inspect(syms[j]) + "]: " + inspect(obj[syms[j]], obj));
                 }
             }
         }
@@ -31204,7 +31206,7 @@ export default theme;`;
         }
         return cachedUint8ArrayMemory0;
     }
-    let cachedTextDecoder = new TextDecoder('utf-8', {
+    let cachedTextDecoder = new TextDecoder("utf-8", {
         ignoreBOM: true,
         fatal: true
     });
@@ -31214,7 +31216,7 @@ export default theme;`;
     function decodeText(ptr, len) {
         numBytesDecoded += len;
         if (numBytesDecoded >= MAX_SAFARI_DECODE_BYTES) {
-            cachedTextDecoder = new TextDecoder('utf-8', {
+            cachedTextDecoder = new TextDecoder("utf-8", {
                 ignoreBOM: true,
                 fatal: true
             });
@@ -31229,7 +31231,7 @@ export default theme;`;
     }
     let WASM_VECTOR_LEN = 0;
     const cachedTextEncoder = new TextEncoder();
-    if (!('encodeInto' in cachedTextEncoder)) {
+    if (!("encodeInto" in cachedTextEncoder)) {
         cachedTextEncoder.encodeInto = function(arg, view) {
             const buf = cachedTextEncoder.encode(arg);
             view.set(buf);
@@ -31240,12 +31242,12 @@ export default theme;`;
         };
     }
     function passStringToWasm0(arg, malloc, realloc) {
-        if (realloc === undefined) {
+        if (realloc === void 0) {
             const buf = cachedTextEncoder.encode(arg);
-            const ptr = malloc(buf.length, 1) >>> 0;
-            getUint8ArrayMemory0().subarray(ptr, ptr + buf.length).set(buf);
+            const ptr2 = malloc(buf.length, 1) >>> 0;
+            getUint8ArrayMemory0().subarray(ptr2, ptr2 + buf.length).set(buf);
             WASM_VECTOR_LEN = buf.length;
-            return ptr;
+            return ptr2;
         }
         let len = arg.length;
         let ptr = malloc(len, 1) >>> 0;
@@ -31253,7 +31255,7 @@ export default theme;`;
         let offset = 0;
         for(; offset < len; offset++){
             const code = arg.charCodeAt(offset);
-            if (code > 0x7F) break;
+            if (code > 127) break;
             mem[ptr + offset] = code;
         }
         if (offset !== len) {
@@ -31271,13 +31273,13 @@ export default theme;`;
     }
     let cachedDataViewMemory0 = null;
     function getDataViewMemory0() {
-        if (cachedDataViewMemory0 === null || cachedDataViewMemory0.buffer.detached === true || (cachedDataViewMemory0.buffer.detached === undefined && cachedDataViewMemory0.buffer !== wasm$1.memory.buffer)) {
+        if (cachedDataViewMemory0 === null || cachedDataViewMemory0.buffer.detached === true || cachedDataViewMemory0.buffer.detached === void 0 && cachedDataViewMemory0.buffer !== wasm$1.memory.buffer) {
             cachedDataViewMemory0 = new DataView(wasm$1.memory.buffer);
         }
         return cachedDataViewMemory0;
     }
     function isLikeNone(x) {
-        return x === undefined || x === null;
+        return x === void 0 || x === null;
     }
     function getArrayU8FromWasm0(ptr, len) {
         ptr = ptr >>> 0;
@@ -31285,38 +31287,38 @@ export default theme;`;
     }
     function debugString(val) {
         const type = typeof val;
-        if (type == 'number' || type == 'boolean' || val == null) {
+        if (type == "number" || type == "boolean" || val == null) {
             return `${val}`;
         }
-        if (type == 'string') {
+        if (type == "string") {
             return `"${val}"`;
         }
-        if (type == 'symbol') {
+        if (type == "symbol") {
             const description = val.description;
             if (description == null) {
-                return 'Symbol';
+                return "Symbol";
             } else {
                 return `Symbol(${description})`;
             }
         }
-        if (type == 'function') {
+        if (type == "function") {
             const name = val.name;
-            if (typeof name == 'string' && name.length > 0) {
+            if (typeof name == "string" && name.length > 0) {
                 return `Function(${name})`;
             } else {
-                return 'Function';
+                return "Function";
             }
         }
         if (Array.isArray(val)) {
             const length = val.length;
-            let debug = '[';
+            let debug = "[";
             if (length > 0) {
                 debug += debugString(val[0]);
             }
             for(let i = 1; i < length; i++){
-                debug += ', ' + debugString(val[i]);
+                debug += ", " + debugString(val[i]);
             }
-            debug += ']';
+            debug += "]";
             return debug;
         }
         const builtInMatches = /\[object ([^\]]+)\]/.exec(toString.call(val));
@@ -31326,15 +31328,16 @@ export default theme;`;
         } else {
             return toString.call(val);
         }
-        if (className == 'Object') {
+        if (className == "Object") {
             try {
-                return 'Object(' + JSON.stringify(val) + ')';
+                return "Object(" + JSON.stringify(val) + ")";
             } catch (_) {
-                return 'Object';
+                return "Object";
             }
         }
         if (val instanceof Error) {
-            return `${val.name}: ${val.message}\n${val.stack}`;
+            return `${val.name}: ${val.message}
+${val.stack}`;
         }
         return className;
     }
@@ -31348,7 +31351,7 @@ export default theme;`;
         wasm$1.__externref_drop_slice(ptr, len);
         return result;
     }
-    const CLOSURE_DTORS = (typeof FinalizationRegistry === 'undefined') ? {
+    const CLOSURE_DTORS = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((state)=>{
@@ -31435,8 +31438,8 @@ export default theme;`;
     function __wbg_adapter_871(arg0, arg1, arg2, arg3) {
         wasm$1.closure3146_externref_shim(arg0, arg1, arg2, arg3);
     }
-    (typeof FinalizationRegistry === 'undefined') ? {} : new FinalizationRegistry((ptr)=>wasm$1.__wbg_authorizedclaim_free(ptr >>> 0, 1));
-    const BindingFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    typeof FinalizationRegistry === "undefined" ? {} : new FinalizationRegistry((ptr)=>wasm$1.__wbg_authorizedclaim_free(ptr >>> 0, 1));
+    const BindingFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_binding_free(ptr >>> 0, 1));
@@ -31499,7 +31502,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.binding_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.binding_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -31509,7 +31512,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) Binding.prototype[Symbol.dispose] = Binding.prototype.free;
-    const ChargedStateFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const ChargedStateFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_chargedstate_free(ptr >>> 0, 1));
@@ -31546,7 +31549,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.chargedstate_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.chargedstate_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -31556,7 +31559,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) ChargedState.prototype[Symbol.dispose] = ChargedState.prototype.free;
-    const ClaimRewardsTransactionFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const ClaimRewardsTransactionFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_claimrewardstransaction_free(ptr >>> 0, 1));
@@ -31711,7 +31714,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.claimrewardstransaction_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.claimrewardstransaction_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -31721,7 +31724,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) ClaimRewardsTransaction.prototype[Symbol.dispose] = ClaimRewardsTransaction.prototype.free;
-    const CoinSecretKeyFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const CoinSecretKeyFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_coinsecretkey_free(ptr >>> 0, 1));
@@ -31783,7 +31786,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) CoinSecretKey.prototype[Symbol.dispose] = CoinSecretKey.prototype.free;
-    const ContractCallFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const ContractCallFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_contractcall_free(ptr >>> 0, 1));
@@ -31872,7 +31875,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.contractcall_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.contractcall_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -31882,7 +31885,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) ContractCall.prototype[Symbol.dispose] = ContractCall.prototype.free;
-    const ContractCallPrototypeFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const ContractCallPrototypeFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_contractcallprototype_free(ptr >>> 0, 1));
@@ -31926,7 +31929,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.contractcallprototype_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.contractcallprototype_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -31936,7 +31939,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) ContractCallPrototype.prototype[Symbol.dispose] = ContractCallPrototype.prototype.free;
-    const ContractDeployFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const ContractDeployFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_contractdeploy_free(ptr >>> 0, 1));
@@ -31992,7 +31995,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.contractdeploy_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.contractdeploy_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -32002,7 +32005,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) ContractDeploy.prototype[Symbol.dispose] = ContractDeploy.prototype.free;
-    const ContractMaintenanceAuthorityFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const ContractMaintenanceAuthorityFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_contractmaintenanceauthority_free(ptr >>> 0, 1));
@@ -32066,7 +32069,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.contractmaintenanceauthority_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.contractmaintenanceauthority_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -32076,7 +32079,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) ContractMaintenanceAuthority.prototype[Symbol.dispose] = ContractMaintenanceAuthority.prototype.free;
-    const ContractOperationFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const ContractOperationFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_contractoperation_free(ptr >>> 0, 1));
@@ -32138,7 +32141,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.contractoperation_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.contractoperation_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -32148,7 +32151,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) ContractOperation.prototype[Symbol.dispose] = ContractOperation.prototype.free;
-    const ContractOperationVersionFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const ContractOperationVersionFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_contractoperationversion_free(ptr >>> 0, 1));
@@ -32197,7 +32200,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.contractoperationversion_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.contractoperationversion_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -32207,7 +32210,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) ContractOperationVersion.prototype[Symbol.dispose] = ContractOperationVersion.prototype.free;
-    const ContractOperationVersionedVerifierKeyFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const ContractOperationVersionedVerifierKeyFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_contractoperationversionedverifierkey_free(ptr >>> 0, 1));
@@ -32263,7 +32266,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.contractoperationversionedverifierkey_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.contractoperationversionedverifierkey_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -32273,7 +32276,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) ContractOperationVersionedVerifierKey.prototype[Symbol.dispose] = ContractOperationVersionedVerifierKey.prototype.free;
-    const ContractStateFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const ContractStateFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_contractstate_free(ptr >>> 0, 1));
@@ -32363,7 +32366,7 @@ export default theme;`;
             if (ret[2]) {
                 throw takeFromExternrefTable0(ret[1]);
             }
-            return ret[0] === 0 ? undefined : ContractOperation.__wrap(ret[0]);
+            return ret[0] === 0 ? void 0 : ContractOperation.__wrap(ret[0]);
         }
         serialize() {
             const ret = wasm$1.contractstate_serialize(this.__wbg_ptr);
@@ -32376,7 +32379,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.contractstate_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.contractstate_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -32386,7 +32389,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) ContractState.prototype[Symbol.dispose] = ContractState.prototype.free;
-    const CostModelFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const CostModelFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_costmodel_free(ptr >>> 0, 1));
@@ -32425,7 +32428,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.costmodel_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.costmodel_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -32435,7 +32438,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) CostModel.prototype[Symbol.dispose] = CostModel.prototype.free;
-    const DustActionsFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const DustActionsFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_dustactions_free(ptr >>> 0, 1));
@@ -32532,7 +32535,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.dustactions_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.dustactions_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -32542,7 +32545,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) DustActions.prototype[Symbol.dispose] = DustActions.prototype.free;
-    const DustGenerationStateFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const DustGenerationStateFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_dustgenerationstate_free(ptr >>> 0, 1));
@@ -32591,7 +32594,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.dustgenerationstate_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.dustgenerationstate_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -32601,7 +32604,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) DustGenerationState.prototype[Symbol.dispose] = DustGenerationState.prototype.free;
-    const DustLocalStateFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const DustLocalStateFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_dustlocalstate_free(ptr >>> 0, 1));
@@ -32827,7 +32830,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.dustlocalstate_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.dustlocalstate_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -32837,7 +32840,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) DustLocalState.prototype[Symbol.dispose] = DustLocalState.prototype.free;
-    const DustLocalStateWithChangesFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const DustLocalStateWithChangesFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_dustlocalstatewithchanges_free(ptr >>> 0, 1));
@@ -32871,7 +32874,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) DustLocalStateWithChanges.prototype[Symbol.dispose] = DustLocalStateWithChanges.prototype.free;
-    const DustParametersFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const DustParametersFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_dustparameters_free(ptr >>> 0, 1));
@@ -32954,7 +32957,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.dustparameters_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.dustparameters_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -32964,7 +32967,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) DustParameters.prototype[Symbol.dispose] = DustParameters.prototype.free;
-    const DustRegistrationFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const DustRegistrationFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_dustregistration_free(ptr >>> 0, 1));
@@ -33079,7 +33082,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.dustregistration_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.dustregistration_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -33089,7 +33092,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) DustRegistration.prototype[Symbol.dispose] = DustRegistration.prototype.free;
-    const DustSecretKeyFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const DustSecretKeyFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_dustsecretkey_free(ptr >>> 0, 1));
@@ -33146,7 +33149,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) DustSecretKey.prototype[Symbol.dispose] = DustSecretKey.prototype.free;
-    const DustSpendFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const DustSpendFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_dustspend_free(ptr >>> 0, 1));
@@ -33200,7 +33203,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.dustspend_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.dustspend_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -33210,7 +33213,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) DustSpend.prototype[Symbol.dispose] = DustSpend.prototype.free;
-    const DustStateFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const DustStateFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_duststate_free(ptr >>> 0, 1));
@@ -33273,7 +33276,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.duststate_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.duststate_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -33283,7 +33286,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) DustState.prototype[Symbol.dispose] = DustState.prototype.free;
-    const DustStateChangesFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const DustStateChangesFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_duststatechanges_free(ptr >>> 0, 1));
@@ -33340,7 +33343,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) DustStateChanges.prototype[Symbol.dispose] = DustStateChanges.prototype.free;
-    const DustStateMerkleTreeCollapsedUpdateFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const DustStateMerkleTreeCollapsedUpdateFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_duststatemerkletreecollapsedupdate_free(ptr >>> 0, 1));
@@ -33405,7 +33408,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.duststatemerkletreecollapsedupdate_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.duststatemerkletreecollapsedupdate_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -33415,7 +33418,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) DustStateMerkleTreeCollapsedUpdate.prototype[Symbol.dispose] = DustStateMerkleTreeCollapsedUpdate.prototype.free;
-    const DustUtxoStateFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const DustUtxoStateFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_dustutxostate_free(ptr >>> 0, 1));
@@ -33464,7 +33467,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.dustutxostate_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.dustutxostate_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -33474,7 +33477,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) DustUtxoState.prototype[Symbol.dispose] = DustUtxoState.prototype.free;
-    const EncryptionSecretKeyFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const EncryptionSecretKeyFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_encryptionsecretkey_free(ptr >>> 0, 1));
@@ -33565,7 +33568,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) EncryptionSecretKey.prototype[Symbol.dispose] = EncryptionSecretKey.prototype.free;
-    const EventFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const EventFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_event_free(ptr >>> 0, 1));
@@ -33634,7 +33637,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.event_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.event_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -33644,7 +33647,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) Event.prototype[Symbol.dispose] = Event.prototype.free;
-    const IntentFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const IntentFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_intent_free(ptr >>> 0, 1));
@@ -33767,11 +33770,11 @@ export default theme;`;
         }
         get fallibleUnshieldedOffer() {
             const ret = wasm$1.intent_fallibleUnshieldedOffer(this.__wbg_ptr);
-            return ret === 0 ? undefined : UnshieldedOffer.__wrap(ret);
+            return ret === 0 ? void 0 : UnshieldedOffer.__wrap(ret);
         }
         get guaranteedUnshieldedOffer() {
             const ret = wasm$1.intent_guaranteedUnshieldedOffer(this.__wbg_ptr);
-            return ret === 0 ? undefined : UnshieldedOffer.__wrap(ret);
+            return ret === 0 ? void 0 : UnshieldedOffer.__wrap(ret);
         }
         set fallibleUnshieldedOffer(offer) {
             const ret = wasm$1.intent_set_fallibleUnshieldedOffer(this.__wbg_ptr, offer);
@@ -33847,7 +33850,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.intent_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.intent_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -33857,10 +33860,10 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) Intent.prototype[Symbol.dispose] = Intent.prototype.free;
-    (typeof FinalizationRegistry === 'undefined') ? {} : new FinalizationRegistry((ptr)=>wasm$1.__wbg_intounderlyingbytesource_free(ptr >>> 0, 1));
-    (typeof FinalizationRegistry === 'undefined') ? {} : new FinalizationRegistry((ptr)=>wasm$1.__wbg_intounderlyingsink_free(ptr >>> 0, 1));
-    (typeof FinalizationRegistry === 'undefined') ? {} : new FinalizationRegistry((ptr)=>wasm$1.__wbg_intounderlyingsource_free(ptr >>> 0, 1));
-    const LedgerParametersFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    typeof FinalizationRegistry === "undefined" ? {} : new FinalizationRegistry((ptr)=>wasm$1.__wbg_intounderlyingbytesource_free(ptr >>> 0, 1));
+    typeof FinalizationRegistry === "undefined" ? {} : new FinalizationRegistry((ptr)=>wasm$1.__wbg_intounderlyingsink_free(ptr >>> 0, 1));
+    typeof FinalizationRegistry === "undefined" ? {} : new FinalizationRegistry((ptr)=>wasm$1.__wbg_intounderlyingsource_free(ptr >>> 0, 1));
+    const LedgerParametersFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_ledgerparameters_free(ptr >>> 0, 1));
@@ -33942,7 +33945,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.ledgerparameters_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.ledgerparameters_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -33952,7 +33955,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) LedgerParameters.prototype[Symbol.dispose] = LedgerParameters.prototype.free;
-    const LedgerStateFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const LedgerStateFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_ledgerstate_free(ptr >>> 0, 1));
@@ -34096,7 +34099,7 @@ export default theme;`;
             if (ret[2]) {
                 throw takeFromExternrefTable0(ret[1]);
             }
-            return ret[0] === 0 ? undefined : ContractState.__wrap(ret[0]);
+            return ret[0] === 0 ? void 0 : ContractState.__wrap(ret[0]);
         }
         get zswap() {
             const ret = wasm$1.ledgerstate_zswap(this.__wbg_ptr);
@@ -34113,7 +34116,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.ledgerstate_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.ledgerstate_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -34123,7 +34126,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) LedgerState.prototype[Symbol.dispose] = LedgerState.prototype.free;
-    const MaintenanceUpdateFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const MaintenanceUpdateFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_maintenanceupdate_free(ptr >>> 0, 1));
@@ -34213,7 +34216,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.maintenanceupdate_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.maintenanceupdate_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -34223,7 +34226,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) MaintenanceUpdate.prototype[Symbol.dispose] = MaintenanceUpdate.prototype.free;
-    const MerkleTreeCollapsedUpdateFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const MerkleTreeCollapsedUpdateFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_merkletreecollapsedupdate_free(ptr >>> 0, 1));
@@ -34273,7 +34276,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.merkletreecollapsedupdate_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.merkletreecollapsedupdate_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -34283,7 +34286,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) MerkleTreeCollapsedUpdate.prototype[Symbol.dispose] = MerkleTreeCollapsedUpdate.prototype.free;
-    const NoBindingFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const NoBindingFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_nobinding_free(ptr >>> 0, 1));
@@ -34346,7 +34349,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.nobinding_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.nobinding_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -34356,7 +34359,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) NoBinding.prototype[Symbol.dispose] = NoBinding.prototype.free;
-    const NoProofFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const NoProofFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_noproof_free(ptr >>> 0, 1));
@@ -34403,7 +34406,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.noproof_toString(this.__wbg_ptr, isLikeNone(_compact) ? 0xFFFFFF : _compact ? 1 : 0);
+                const ret = wasm$1.noproof_toString(this.__wbg_ptr, isLikeNone(_compact) ? 16777215 : _compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -34413,7 +34416,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) NoProof.prototype[Symbol.dispose] = NoProof.prototype.free;
-    const PreBindingFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const PreBindingFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_prebinding_free(ptr >>> 0, 1));
@@ -34476,7 +34479,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.prebinding_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.prebinding_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -34486,7 +34489,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) PreBinding.prototype[Symbol.dispose] = PreBinding.prototype.free;
-    const PrePartitionContractCallFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const PrePartitionContractCallFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_prepartitioncontractcall_free(ptr >>> 0, 1));
@@ -34524,7 +34527,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.prepartitioncontractcall_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.prepartitioncontractcall_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -34534,7 +34537,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) PrePartitionContractCall.prototype[Symbol.dispose] = PrePartitionContractCall.prototype.free;
-    const PreProofFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const PreProofFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_preproof_free(ptr >>> 0, 1));
@@ -34597,7 +34600,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.preproof_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.preproof_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -34607,7 +34610,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) PreProof.prototype[Symbol.dispose] = PreProof.prototype.free;
-    const PreTranscriptFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const PreTranscriptFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_pretranscript_free(ptr >>> 0, 1));
@@ -34636,7 +34639,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.pretranscript_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.pretranscript_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -34646,7 +34649,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) PreTranscript.prototype[Symbol.dispose] = PreTranscript.prototype.free;
-    const ProofFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const ProofFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_proof_free(ptr >>> 0, 1));
@@ -34709,7 +34712,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.proof_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.proof_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -34719,7 +34722,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) Proof.prototype[Symbol.dispose] = Proof.prototype.free;
-    const QueryContextFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const QueryContextFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_querycontext_free(ptr >>> 0, 1));
@@ -34849,7 +34852,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.querycontext_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.querycontext_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -34859,7 +34862,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) QueryContext.prototype[Symbol.dispose] = QueryContext.prototype.free;
-    const QueryResultsFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const QueryResultsFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_queryresults_free(ptr >>> 0, 1));
@@ -34912,7 +34915,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.queryresults_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.queryresults_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -34922,7 +34925,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) QueryResults.prototype[Symbol.dispose] = QueryResults.prototype.free;
-    const ReplaceAuthorityFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const ReplaceAuthorityFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_replaceauthority_free(ptr >>> 0, 1));
@@ -34959,7 +34962,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.replaceauthority_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.replaceauthority_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -34969,7 +34972,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) ReplaceAuthority.prototype[Symbol.dispose] = ReplaceAuthority.prototype.free;
-    const SignatureEnabledFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const SignatureEnabledFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_signatureenabled_free(ptr >>> 0, 1));
@@ -35032,7 +35035,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.signatureenabled_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.signatureenabled_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -35042,7 +35045,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) SignatureEnabled.prototype[Symbol.dispose] = SignatureEnabled.prototype.free;
-    const SignatureErasedFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const SignatureErasedFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_signatureerased_free(ptr >>> 0, 1));
@@ -35089,7 +35092,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.signatureerased_toString(this.__wbg_ptr, isLikeNone(_compact) ? 0xFFFFFF : _compact ? 1 : 0);
+                const ret = wasm$1.signatureerased_toString(this.__wbg_ptr, isLikeNone(_compact) ? 16777215 : _compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -35099,7 +35102,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) SignatureErased.prototype[Symbol.dispose] = SignatureErased.prototype.free;
-    const StateBoundedMerkleTreeFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const StateBoundedMerkleTreeFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_stateboundedmerkletree_free(ptr >>> 0, 1));
@@ -35129,7 +35132,7 @@ export default theme;`;
             return takeFromExternrefTable0(ret[0]);
         }
         findPathForLeaf(leaf, index_start, index_end, already_hashed) {
-            const ret = wasm$1.stateboundedmerkletree_findPathForLeaf(this.__wbg_ptr, leaf, !isLikeNone(index_start), isLikeNone(index_start) ? BigInt(0) : index_start, !isLikeNone(index_end), isLikeNone(index_end) ? BigInt(0) : index_end, isLikeNone(already_hashed) ? 0xFFFFFF : already_hashed ? 1 : 0);
+            const ret = wasm$1.stateboundedmerkletree_findPathForLeaf(this.__wbg_ptr, leaf, !isLikeNone(index_start), isLikeNone(index_start) ? BigInt(0) : index_start, !isLikeNone(index_end), isLikeNone(index_end) ? BigInt(0) : index_end, isLikeNone(already_hashed) ? 16777215 : already_hashed ? 1 : 0);
             if (ret[2]) {
                 throw takeFromExternrefTable0(ret[1]);
             }
@@ -35171,7 +35174,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.stateboundedmerkletree_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.stateboundedmerkletree_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -35181,7 +35184,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) StateBoundedMerkleTree.prototype[Symbol.dispose] = StateBoundedMerkleTree.prototype.free;
-    const StateMapFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const StateMapFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_statemap_free(ptr >>> 0, 1));
@@ -35208,7 +35211,7 @@ export default theme;`;
             if (ret[2]) {
                 throw takeFromExternrefTable0(ret[1]);
             }
-            return ret[0] === 0 ? undefined : StateValue.__wrap(ret[0]);
+            return ret[0] === 0 ? void 0 : StateValue.__wrap(ret[0]);
         }
         constructor(){
             const ret = wasm$1.statemap_new();
@@ -35244,7 +35247,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.statemap_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.statemap_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -35254,7 +35257,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) StateMap.prototype[Symbol.dispose] = StateMap.prototype.free;
-    const StateValueFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const StateValueFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_statevalue_free(ptr >>> 0, 1));
@@ -35289,7 +35292,7 @@ export default theme;`;
             if (ret[2]) {
                 throw takeFromExternrefTable0(ret[1]);
             }
-            return ret[0] === 0 ? undefined : StateBoundedMerkleTree.__wrap(ret[0]);
+            return ret[0] === 0 ? void 0 : StateBoundedMerkleTree.__wrap(ret[0]);
         }
         static newBoundedMerkleTree(tree) {
             _assertClass(tree, StateBoundedMerkleTree);
@@ -35322,7 +35325,7 @@ export default theme;`;
             if (ret[2]) {
                 throw takeFromExternrefTable0(ret[1]);
             }
-            return ret[0] === 0 ? undefined : StateMap.__wrap(ret[0]);
+            return ret[0] === 0 ? void 0 : StateMap.__wrap(ret[0]);
         }
         static decode(value) {
             const ret = wasm$1.statevalue_decode(value);
@@ -35385,7 +35388,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.statevalue_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.statevalue_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -35395,7 +35398,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) StateValue.prototype[Symbol.dispose] = StateValue.prototype.free;
-    const SystemTransactionFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const SystemTransactionFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_systemtransaction_free(ptr >>> 0, 1));
@@ -35444,7 +35447,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.systemtransaction_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.systemtransaction_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -35454,7 +35457,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) SystemTransaction.prototype[Symbol.dispose] = SystemTransaction.prototype.free;
-    const TransactionFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const TransactionFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_transaction_free(ptr >>> 0, 1));
@@ -35580,7 +35583,7 @@ export default theme;`;
         }
         get guaranteedOffer() {
             const ret = wasm$1.transaction_guaranteedOffer(this.__wbg_ptr);
-            return ret === 0 ? undefined : ZswapOffer.__wrap(ret);
+            return ret === 0 ? void 0 : ZswapOffer.__wrap(ret);
         }
         transactionHash() {
             let deferred2_0;
@@ -35647,7 +35650,7 @@ export default theme;`;
         }
         cost(params, enforce_time_to_dismiss) {
             _assertClass(params, LedgerParameters);
-            const ret = wasm$1.transaction_cost(this.__wbg_ptr, params.__wbg_ptr, isLikeNone(enforce_time_to_dismiss) ? 0xFFFFFF : enforce_time_to_dismiss ? 1 : 0);
+            const ret = wasm$1.transaction_cost(this.__wbg_ptr, params.__wbg_ptr, isLikeNone(enforce_time_to_dismiss) ? 16777215 : enforce_time_to_dismiss ? 1 : 0);
             if (ret[2]) {
                 throw takeFromExternrefTable0(ret[1]);
             }
@@ -35655,7 +35658,7 @@ export default theme;`;
         }
         fees(params, enforce_time_to_dismiss) {
             _assertClass(params, LedgerParameters);
-            const ret = wasm$1.transaction_fees(this.__wbg_ptr, params.__wbg_ptr, isLikeNone(enforce_time_to_dismiss) ? 0xFFFFFF : enforce_time_to_dismiss ? 1 : 0);
+            const ret = wasm$1.transaction_fees(this.__wbg_ptr, params.__wbg_ptr, isLikeNone(enforce_time_to_dismiss) ? 16777215 : enforce_time_to_dismiss ? 1 : 0);
             if (ret[2]) {
                 throw takeFromExternrefTable0(ret[1]);
             }
@@ -35680,7 +35683,7 @@ export default theme;`;
         }
         get rewards() {
             const ret = wasm$1.transaction_rewards(this.__wbg_ptr);
-            return ret === 0 ? undefined : ClaimRewardsTransaction.__wrap(ret);
+            return ret === 0 ? void 0 : ClaimRewardsTransaction.__wrap(ret);
         }
         addCalls(segment, calls, params, ttl, zswap_inputs, zswap_outputs, zswap_transient) {
             _assertClass(params, LedgerParameters);
@@ -35701,7 +35704,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.transaction_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.transaction_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -35711,7 +35714,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) Transaction.prototype[Symbol.dispose] = Transaction.prototype.free;
-    const TransactionContextFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const TransactionContextFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_transactioncontext_free(ptr >>> 0, 1));
@@ -35740,7 +35743,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.transactioncontext_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.transactioncontext_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -35750,7 +35753,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) TransactionContext.prototype[Symbol.dispose] = TransactionContext.prototype.free;
-    const TransactionCostModelFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const TransactionCostModelFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_transactioncostmodel_free(ptr >>> 0, 1));
@@ -35814,7 +35817,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.transactioncostmodel_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.transactioncostmodel_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -35824,7 +35827,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) TransactionCostModel.prototype[Symbol.dispose] = TransactionCostModel.prototype.free;
-    const TransactionResultFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const TransactionResultFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_transactionresult_free(ptr >>> 0, 1));
@@ -35890,7 +35893,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.transactionresult_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.transactionresult_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -35900,7 +35903,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) TransactionResult.prototype[Symbol.dispose] = TransactionResult.prototype.free;
-    const UnshieldedOfferFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const UnshieldedOfferFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_unshieldedoffer_free(ptr >>> 0, 1));
@@ -35991,7 +35994,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.unshieldedoffer_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.unshieldedoffer_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -36001,7 +36004,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) UnshieldedOffer.prototype[Symbol.dispose] = UnshieldedOffer.prototype.free;
-    const UtxoMetaFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const UtxoMetaFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_utxometa_free(ptr >>> 0, 1));
@@ -36041,7 +36044,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) UtxoMeta.prototype[Symbol.dispose] = UtxoMeta.prototype.free;
-    const UtxoStateFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const UtxoStateFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_utxostate_free(ptr >>> 0, 1));
@@ -36068,7 +36071,7 @@ export default theme;`;
             if (ret[2]) {
                 throw takeFromExternrefTable0(ret[1]);
             }
-            return ret[0] === 0 ? undefined : UtxoMeta.__wrap(ret[0]);
+            return ret[0] === 0 ? void 0 : UtxoMeta.__wrap(ret[0]);
         }
         static new(utxo_map) {
             const ret = wasm$1.utxostate_new(utxo_map);
@@ -36103,7 +36106,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) UtxoState.prototype[Symbol.dispose] = UtxoState.prototype.free;
-    const VerifiedTransactionFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const VerifiedTransactionFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_verifiedtransaction_free(ptr >>> 0, 1));
@@ -36131,7 +36134,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) VerifiedTransaction.prototype[Symbol.dispose] = VerifiedTransaction.prototype.free;
-    const VerifierKeyInsertFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const VerifierKeyInsertFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_verifierkeyinsert_free(ptr >>> 0, 1));
@@ -36175,7 +36178,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.verifierkeyinsert_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.verifierkeyinsert_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -36185,7 +36188,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) VerifierKeyInsert.prototype[Symbol.dispose] = VerifierKeyInsert.prototype.free;
-    const VerifierKeyRemoveFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const VerifierKeyRemoveFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_verifierkeyremove_free(ptr >>> 0, 1));
@@ -36229,7 +36232,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.verifierkeyremove_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.verifierkeyremove_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -36239,8 +36242,8 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) VerifierKeyRemove.prototype[Symbol.dispose] = VerifierKeyRemove.prototype.free;
-    (typeof FinalizationRegistry === 'undefined') ? {} : new FinalizationRegistry((ptr)=>wasm$1.__wbg_vmresults_free(ptr >>> 0, 1));
-    const VmStackFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    typeof FinalizationRegistry === "undefined" ? {} : new FinalizationRegistry((ptr)=>wasm$1.__wbg_vmresults_free(ptr >>> 0, 1));
+    const VmStackFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_vmstack_free(ptr >>> 0, 1));
@@ -36267,7 +36270,7 @@ export default theme;`;
         }
         get(idx) {
             const ret = wasm$1.vmstack_get(this.__wbg_ptr, idx);
-            return ret === 0 ? undefined : StateValue.__wrap(ret);
+            return ret === 0 ? void 0 : StateValue.__wrap(ret);
         }
         constructor(){
             const ret = wasm$1.vmstack_new();
@@ -36285,13 +36288,13 @@ export default theme;`;
         }
         isStrong(idx) {
             const ret = wasm$1.vmstack_isStrong(this.__wbg_ptr, idx);
-            return ret === 0xFFFFFF ? undefined : ret !== 0;
+            return ret === 16777215 ? void 0 : ret !== 0;
         }
         toString(compact) {
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.vmstack_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.vmstack_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -36301,7 +36304,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) VmStack.prototype[Symbol.dispose] = VmStack.prototype.free;
-    const WellFormedStrictnessFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const WellFormedStrictnessFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_wellformedstrictness_free(ptr >>> 0, 1));
@@ -36359,7 +36362,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) WellFormedStrictness.prototype[Symbol.dispose] = WellFormedStrictness.prototype.free;
-    const ZswapChainStateFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const ZswapChainStateFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_zswapchainstate_free(ptr >>> 0, 1));
@@ -36429,7 +36432,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.zswapchainstate_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.zswapchainstate_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -36447,7 +36450,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) ZswapChainState.prototype[Symbol.dispose] = ZswapChainState.prototype.free;
-    const ZswapInputFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const ZswapInputFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_zswapinput_free(ptr >>> 0, 1));
@@ -36494,7 +36497,7 @@ export default theme;`;
             const ptr0 = passStringToWasm0(contract, wasm$1.__wbindgen_malloc, wasm$1.__wbindgen_realloc);
             const len0 = WASM_VECTOR_LEN;
             _assertClass(state, ZswapChainState);
-            const ret = wasm$1.zswapinput_newContractOwned(coin, isLikeNone(segment) ? 0xFFFFFF : segment, ptr0, len0, state.__wbg_ptr);
+            const ret = wasm$1.zswapinput_newContractOwned(coin, isLikeNone(segment) ? 16777215 : segment, ptr0, len0, state.__wbg_ptr);
             if (ret[2]) {
                 throw takeFromExternrefTable0(ret[1]);
             }
@@ -36546,7 +36549,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.zswapinput_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.zswapinput_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -36556,7 +36559,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) ZswapInput.prototype[Symbol.dispose] = ZswapInput.prototype.free;
-    const ZswapLocalStateFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const ZswapLocalStateFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_zswaplocalstate_free(ptr >>> 0, 1));
@@ -36647,7 +36650,7 @@ export default theme;`;
         spendFromOutput(secret_keys, coin, segment, output, _ttl) {
             _assertClass(secret_keys, ZswapSecretKeys);
             _assertClass(output, ZswapOutput);
-            const ret = wasm$1.zswaplocalstate_spendFromOutput(this.__wbg_ptr, secret_keys.__wbg_ptr, coin, isLikeNone(segment) ? 0xFFFFFF : segment, output.__wbg_ptr, isLikeNone(_ttl) ? 0 : addToExternrefTable0(_ttl));
+            const ret = wasm$1.zswaplocalstate_spendFromOutput(this.__wbg_ptr, secret_keys.__wbg_ptr, coin, isLikeNone(segment) ? 16777215 : segment, output.__wbg_ptr, isLikeNone(_ttl) ? 0 : addToExternrefTable0(_ttl));
             if (ret[2]) {
                 throw takeFromExternrefTable0(ret[1]);
             }
@@ -36718,7 +36721,7 @@ export default theme;`;
         }
         spend(secret_keys, coin, segment, _ttl) {
             _assertClass(secret_keys, ZswapSecretKeys);
-            const ret = wasm$1.zswaplocalstate_spend(this.__wbg_ptr, secret_keys.__wbg_ptr, coin, isLikeNone(segment) ? 0xFFFFFF : segment, isLikeNone(_ttl) ? 0 : addToExternrefTable0(_ttl));
+            const ret = wasm$1.zswaplocalstate_spend(this.__wbg_ptr, secret_keys.__wbg_ptr, coin, isLikeNone(segment) ? 16777215 : segment, isLikeNone(_ttl) ? 0 : addToExternrefTable0(_ttl));
             if (ret[2]) {
                 throw takeFromExternrefTable0(ret[1]);
             }
@@ -36735,7 +36738,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.zswaplocalstate_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.zswaplocalstate_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -36754,7 +36757,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) ZswapLocalState.prototype[Symbol.dispose] = ZswapLocalState.prototype.free;
-    const ZswapLocalStateWithChangesFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const ZswapLocalStateWithChangesFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_zswaplocalstatewithchanges_free(ptr >>> 0, 1));
@@ -36788,7 +36791,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) ZswapLocalStateWithChanges.prototype[Symbol.dispose] = ZswapLocalStateWithChanges.prototype.free;
-    const ZswapOfferFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const ZswapOfferFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_zswapoffer_free(ptr >>> 0, 1));
@@ -36900,7 +36903,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.zswapoffer_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.zswapoffer_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -36910,7 +36913,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) ZswapOffer.prototype[Symbol.dispose] = ZswapOffer.prototype.free;
-    const ZswapOutputFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const ZswapOutputFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_zswapoutput_free(ptr >>> 0, 1));
@@ -36975,7 +36978,7 @@ export default theme;`;
         static newContractOwned(coin, segment, contract) {
             const ptr0 = passStringToWasm0(contract, wasm$1.__wbindgen_malloc, wasm$1.__wbindgen_realloc);
             const len0 = WASM_VECTOR_LEN;
-            const ret = wasm$1.zswapoutput_newContractOwned(coin, isLikeNone(segment) ? 0xFFFFFF : segment, ptr0, len0);
+            const ret = wasm$1.zswapoutput_newContractOwned(coin, isLikeNone(segment) ? 16777215 : segment, ptr0, len0);
             if (ret[2]) {
                 throw takeFromExternrefTable0(ret[1]);
             }
@@ -36986,7 +36989,7 @@ export default theme;`;
             const len0 = WASM_VECTOR_LEN;
             const ptr1 = passStringToWasm0(target_epk, wasm$1.__wbindgen_malloc, wasm$1.__wbindgen_realloc);
             const len1 = WASM_VECTOR_LEN;
-            const ret = wasm$1.zswapoutput_new(coin, isLikeNone(segment) ? 0xFFFFFF : segment, ptr0, len0, ptr1, len1);
+            const ret = wasm$1.zswapoutput_new(coin, isLikeNone(segment) ? 16777215 : segment, ptr0, len0, ptr1, len1);
             if (ret[2]) {
                 throw takeFromExternrefTable0(ret[1]);
             }
@@ -37019,7 +37022,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.zswapoutput_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.zswapoutput_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -37029,7 +37032,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) ZswapOutput.prototype[Symbol.dispose] = ZswapOutput.prototype.free;
-    const ZswapSecretKeysFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const ZswapSecretKeysFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_zswapsecretkeys_free(ptr >>> 0, 1));
@@ -37131,7 +37134,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) ZswapSecretKeys.prototype[Symbol.dispose] = ZswapSecretKeys.prototype.free;
-    const ZswapStateChangesFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const ZswapStateChangesFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_zswapstatechanges_free(ptr >>> 0, 1));
@@ -37188,7 +37191,7 @@ export default theme;`;
         }
     }
     if (Symbol.dispose) ZswapStateChanges.prototype[Symbol.dispose] = ZswapStateChanges.prototype.free;
-    const ZswapTransientFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const ZswapTransientFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_zswaptransient_free(ptr >>> 0, 1));
@@ -37266,7 +37269,7 @@ export default theme;`;
         }
         static newFromContractOwnedOutput(coin, segment, output) {
             _assertClass(output, ZswapOutput);
-            const ret = wasm$1.zswaptransient_newFromContractOwnedOutput(coin, isLikeNone(segment) ? 0xFFFFFF : segment, output.__wbg_ptr);
+            const ret = wasm$1.zswaptransient_newFromContractOwnedOutput(coin, isLikeNone(segment) ? 16777215 : segment, output.__wbg_ptr);
             if (ret[2]) {
                 throw takeFromExternrefTable0(ret[1]);
             }
@@ -37311,7 +37314,7 @@ export default theme;`;
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.zswaptransient_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.zswaptransient_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -37471,11 +37474,11 @@ export default theme;`;
                 a: arg1,
                 b: arg2
             };
-            var cb0 = (arg0, arg1, arg2)=>{
+            var cb0 = (arg02, arg12, arg22)=>{
                 const a = state0.a;
                 state0.a = 0;
                 try {
-                    return __wbg_adapter_816(a, state0.b, arg0, arg1, arg2);
+                    return __wbg_adapter_816(a, state0.b, arg02, arg12, arg22);
                 } finally{
                     state0.a = a;
                 }
@@ -37491,11 +37494,11 @@ export default theme;`;
                 a: arg1,
                 b: arg2
             };
-            var cb0 = (arg0, arg1)=>{
+            var cb0 = (arg02, arg12)=>{
                 const a = state0.a;
                 state0.a = 0;
                 try {
-                    return __wbg_adapter_871(a, state0.b, arg0, arg1);
+                    return __wbg_adapter_871(a, state0.b, arg02, arg12);
                 } finally{
                     state0.a = a;
                 }
@@ -37668,11 +37671,11 @@ export default theme;`;
                 a: arg0,
                 b: arg1
             };
-            var cb0 = (arg0, arg1)=>{
+            var cb0 = (arg02, arg12)=>{
                 const a = state0.a;
                 state0.a = 0;
                 try {
-                    return __wbg_adapter_871(a, state0.b, arg0, arg1);
+                    return __wbg_adapter_871(a, state0.b, arg02, arg12);
                 } finally{
                     state0.a = a;
                 }
@@ -37821,19 +37824,19 @@ export default theme;`;
         return ret;
     }
     function __wbg_static_accessor_GLOBAL_8921f820c2ce3f12() {
-        const ret = typeof global === 'undefined' ? null : global;
+        const ret = typeof globalThis === "undefined" ? null : globalThis;
         return isLikeNone(ret) ? 0 : addToExternrefTable0(ret);
     }
     function __wbg_static_accessor_GLOBAL_THIS_f0a4409105898184() {
-        const ret = typeof globalThis === 'undefined' ? null : globalThis;
+        const ret = typeof globalThis === "undefined" ? null : globalThis;
         return isLikeNone(ret) ? 0 : addToExternrefTable0(ret);
     }
     function __wbg_static_accessor_SELF_995b214ae681ff99() {
-        const ret = typeof self === 'undefined' ? null : self;
+        const ret = typeof self === "undefined" ? null : self;
         return isLikeNone(ret) ? 0 : addToExternrefTable0(ret);
     }
     function __wbg_static_accessor_WINDOW_cde3890479c675ea() {
-        const ret = typeof window === 'undefined' ? null : window;
+        const ret = typeof window === "undefined" ? null : window;
         return isLikeNone(ret) ? 0 : addToExternrefTable0(ret);
     }
     function __wbg_subarray_70fd07feefe14294(arg0, arg1, arg2) {
@@ -37892,14 +37895,14 @@ export default theme;`;
     }
     function __wbg_wbindgenbigintgetasi64_ac743ece6ab9bba1(arg0, arg1) {
         const v = arg1;
-        const ret = typeof (v) === 'bigint' ? v : undefined;
+        const ret = typeof v === "bigint" ? v : void 0;
         getDataViewMemory0().setBigInt64(arg0 + 8 * 1, isLikeNone(ret) ? BigInt(0) : ret, true);
         getDataViewMemory0().setInt32(arg0 + 4 * 0, !isLikeNone(ret), true);
     }
     function __wbg_wbindgenbooleanget_3fe6f642c7d97746(arg0) {
         const v = arg0;
-        const ret = typeof (v) === 'boolean' ? v : undefined;
-        return isLikeNone(ret) ? 0xFFFFFF : ret ? 1 : 0;
+        const ret = typeof v === "boolean" ? v : void 0;
+        return isLikeNone(ret) ? 16777215 : ret ? 1 : 0;
     }
     function __wbg_wbindgencbdrop_eb10308566512b88(arg0) {
         const obj = arg0.original;
@@ -37922,11 +37925,11 @@ export default theme;`;
         return ret;
     }
     function __wbg_wbindgenisbigint_ecb90cc08a5a9154(arg0) {
-        const ret = typeof (arg0) === 'bigint';
+        const ret = typeof arg0 === "bigint";
         return ret;
     }
     function __wbg_wbindgenisfunction_8cee7dce3725ae74(arg0) {
-        const ret = typeof (arg0) === 'function';
+        const ret = typeof arg0 === "function";
         return ret;
     }
     function __wbg_wbindgenisnull_f3037694abe4d97a(arg0) {
@@ -37935,15 +37938,15 @@ export default theme;`;
     }
     function __wbg_wbindgenisobject_307a53c6bd97fbf8(arg0) {
         const val = arg0;
-        const ret = typeof (val) === 'object' && val !== null;
+        const ret = typeof val === "object" && val !== null;
         return ret;
     }
     function __wbg_wbindgenisstring_d4fa939789f003b0(arg0) {
-        const ret = typeof (arg0) === 'string';
+        const ret = typeof arg0 === "string";
         return ret;
     }
     function __wbg_wbindgenisundefined_c4b71d073b92f3c5(arg0) {
-        const ret = arg0 === undefined;
+        const ret = arg0 === void 0;
         return ret;
     }
     function __wbg_wbindgenjsvaleq_e6f2ad59ccae1b58(arg0, arg1) {
@@ -37956,7 +37959,7 @@ export default theme;`;
     }
     function __wbg_wbindgennumberget_f74b4c7525ac05cb(arg0, arg1) {
         const obj = arg1;
-        const ret = typeof (obj) === 'number' ? obj : undefined;
+        const ret = typeof obj === "number" ? obj : void 0;
         getDataViewMemory0().setFloat64(arg0 + 8 * 1, isLikeNone(ret) ? 0 : ret, true);
         getDataViewMemory0().setInt32(arg0 + 4 * 0, !isLikeNone(ret), true);
     }
@@ -37966,7 +37969,7 @@ export default theme;`;
     }
     function __wbg_wbindgenstringget_0f16a6ddddef376f(arg0, arg1) {
         const obj = arg1;
-        const ret = typeof (obj) === 'string' ? obj : undefined;
+        const ret = typeof obj === "string" ? obj : void 0;
         var ptr1 = isLikeNone(ret) ? 0 : passStringToWasm0(ret, wasm$1.__wbindgen_malloc, wasm$1.__wbindgen_realloc);
         var len1 = WASM_VECTOR_LEN;
         getDataViewMemory0().setInt32(arg0 + 4 * 1, len1, true);
@@ -38014,7 +38017,7 @@ export default theme;`;
         return ret;
     }
     function __wbindgen_cast_2ddd8a25ff58642a(arg0, arg1) {
-        const ret = (BigInt.asUintN(64, arg0) | (arg1 << BigInt(64)));
+        const ret = BigInt.asUintN(64, arg0) | arg1 << BigInt(64);
         return ret;
     }
     function __wbindgen_cast_4625c577ab2ec9ee(arg0) {
@@ -38038,14 +38041,14 @@ export default theme;`;
         return ret;
     }
     function __wbindgen_cast_e7b45dd881f38ce3(arg0, arg1) {
-        const ret = (BigInt.asUintN(64, arg0) | (BigInt.asUintN(64, arg1) << BigInt(64)));
+        const ret = BigInt.asUintN(64, arg0) | BigInt.asUintN(64, arg1) << BigInt(64);
         return ret;
     }
     function __wbindgen_init_externref_table() {
         const table = wasm$1.__wbindgen_export_2;
         const offset = table.grow(4);
-        table.set(0, undefined);
-        table.set(offset + 0, undefined);
+        table.set(0, void 0);
+        table.set(offset + 0, void 0);
         table.set(offset + 1, null);
         table.set(offset + 2, true);
         table.set(offset + 3, false);
@@ -39045,12 +39048,12 @@ export default theme;`;
         return bytes;
     };
     var extendStatics = function(d, b) {
-        extendStatics = Object.setPrototypeOf || ({
+        extendStatics = Object.setPrototypeOf || {
             __proto__: []
-        } instanceof Array && function(d, b) {
-            d.__proto__ = b;
-        }) || function(d, b) {
-            for(var p in b)if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p];
+        } instanceof Array && function(d2, b2) {
+            d2.__proto__ = b2;
+        } || function(d2, b2) {
+            for(var p in b2)if (Object.prototype.hasOwnProperty.call(b2, p)) d2[p] = b2[p];
         };
         return extendStatics(d, b);
     };
@@ -39145,7 +39148,7 @@ export default theme;`;
                             _ = 0;
                             continue;
                         }
-                        if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) {
+                        if (op[0] === 3 && (!t || op[1] > t[0] && op[1] < t[3])) {
                             _.label = op[1];
                             break;
                         }
@@ -39202,7 +39205,7 @@ export default theme;`;
             while((n === void 0 || n-- > 0) && !(r = i.next()).done)ar.push(r.value);
         } catch (error) {
             e = {
-                error: error
+                error
             };
         } finally{
             try {
@@ -39285,9 +39288,9 @@ export default theme;`;
             };
         }
         function settle(resolve, reject, d, v) {
-            Promise.resolve(v).then(function(v) {
+            Promise.resolve(v).then(function(v2) {
                 resolve({
-                    value: v,
+                    value: v2,
                     done: d
                 });
             }, reject);
@@ -44565,62 +44568,62 @@ export default theme;`;
         exports: {}
     };
     (function(module, exports) {
-        var __global__ = (typeof globalThis !== 'undefined' && globalThis) || (typeof self !== 'undefined' && self) || (typeof commonjsGlobal !== 'undefined' && commonjsGlobal);
-        var __globalThis__ = (function() {
+        var __global__ = typeof globalThis !== "undefined" && globalThis || typeof self !== "undefined" && self || typeof globalThis !== "undefined" && globalThis;
+        var __globalThis__ = function() {
             function F() {
                 this.fetch = false;
                 this.DOMException = __global__.DOMException;
             }
             F.prototype = __global__;
             return new F();
-        })();
-        (function(globalThis) {
-            ((function(exports) {
-                var g = (typeof globalThis !== 'undefined' && globalThis) || (typeof self !== 'undefined' && self) || (typeof commonjsGlobal !== 'undefined' && commonjsGlobal) || {};
+        }();
+        (function(globalThis2) {
+            (function(exports2) {
+                var g = typeof globalThis2 !== "undefined" && globalThis2 || typeof self !== "undefined" && self || typeof globalThis2 !== "undefined" && globalThis2 || {};
                 var support = {
-                    searchParams: 'URLSearchParams' in g,
-                    iterable: 'Symbol' in g && 'iterator' in Symbol,
-                    blob: 'FileReader' in g && 'Blob' in g && (function() {
+                    searchParams: "URLSearchParams" in g,
+                    iterable: "Symbol" in g && "iterator" in Symbol,
+                    blob: "FileReader" in g && "Blob" in g && function() {
                         try {
                             new Blob();
                             return true;
                         } catch (e) {
                             return false;
                         }
-                    })(),
-                    formData: 'FormData' in g,
-                    arrayBuffer: 'ArrayBuffer' in g
+                    }(),
+                    formData: "FormData" in g,
+                    arrayBuffer: "ArrayBuffer" in g
                 };
                 function isDataView(obj) {
                     return obj && DataView.prototype.isPrototypeOf(obj);
                 }
                 if (support.arrayBuffer) {
                     var viewClasses = [
-                        '[object Int8Array]',
-                        '[object Uint8Array]',
-                        '[object Uint8ClampedArray]',
-                        '[object Int16Array]',
-                        '[object Uint16Array]',
-                        '[object Int32Array]',
-                        '[object Uint32Array]',
-                        '[object Float32Array]',
-                        '[object Float64Array]'
+                        "[object Int8Array]",
+                        "[object Uint8Array]",
+                        "[object Uint8ClampedArray]",
+                        "[object Int16Array]",
+                        "[object Uint16Array]",
+                        "[object Int32Array]",
+                        "[object Uint32Array]",
+                        "[object Float32Array]",
+                        "[object Float64Array]"
                     ];
                     var isArrayBufferView = ArrayBuffer.isView || function(obj) {
                         return obj && viewClasses.indexOf(Object.prototype.toString.call(obj)) > -1;
                     };
                 }
                 function normalizeName(name) {
-                    if (typeof name !== 'string') {
+                    if (typeof name !== "string") {
                         name = String(name);
                     }
-                    if (/[^a-z0-9\-#$%&'*+.^_`|~!]/i.test(name) || name === '') {
+                    if (/[^a-z0-9\-#$%&'*+.^_`|~!]/i.test(name) || name === "") {
                         throw new TypeError('Invalid character in header field name: "' + name + '"');
                     }
                     return name.toLowerCase();
                 }
                 function normalizeValue(value) {
-                    if (typeof value !== 'string') {
+                    if (typeof value !== "string") {
                         value = String(value);
                     }
                     return value;
@@ -44630,8 +44633,8 @@ export default theme;`;
                         next: function() {
                             var value = items.shift();
                             return {
-                                done: value === undefined,
-                                value: value
+                                done: value === void 0,
+                                value
                             };
                         }
                     };
@@ -44651,7 +44654,7 @@ export default theme;`;
                     } else if (Array.isArray(headers)) {
                         headers.forEach(function(header) {
                             if (header.length != 2) {
-                                throw new TypeError('Headers constructor: expected name/value pair to be length 2, found' + header.length);
+                                throw new TypeError("Headers constructor: expected name/value pair to be length 2, found" + header.length);
                             }
                             this.append(header[0], header[1]);
                         }, this);
@@ -44665,9 +44668,9 @@ export default theme;`;
                     name = normalizeName(name);
                     value = normalizeValue(value);
                     var oldValue = this.map[name];
-                    this.map[name] = oldValue ? oldValue + ', ' + value : value;
+                    this.map[name] = oldValue ? oldValue + ", " + value : value;
                 };
-                Headers.prototype['delete'] = function(name) {
+                Headers.prototype["delete"] = function(name) {
                     delete this.map[normalizeName(name)];
                 };
                 Headers.prototype.get = function(name) {
@@ -44717,7 +44720,7 @@ export default theme;`;
                 function consumed(body) {
                     if (body._noBody) return;
                     if (body.bodyUsed) {
-                        return Promise.reject(new TypeError('Already read'));
+                        return Promise.reject(new TypeError("Already read"));
                     }
                     body.bodyUsed = true;
                 }
@@ -44741,7 +44744,7 @@ export default theme;`;
                     var reader = new FileReader();
                     var promise = fileReaderReady(reader);
                     var match = /charset=([A-Za-z0-9_-]+)/.exec(blob.type);
-                    var encoding = match ? match[1] : 'utf-8';
+                    var encoding = match ? match[1] : "utf-8";
                     reader.readAsText(blob, encoding);
                     return promise;
                 }
@@ -44751,7 +44754,7 @@ export default theme;`;
                     for(var i = 0; i < view.length; i++){
                         chars[i] = String.fromCharCode(view[i]);
                     }
-                    return chars.join('');
+                    return chars.join("");
                 }
                 function bufferClone(buf) {
                     if (buf.slice) {
@@ -44769,8 +44772,8 @@ export default theme;`;
                         this._bodyInit = body;
                         if (!body) {
                             this._noBody = true;
-                            this._bodyText = '';
-                        } else if (typeof body === 'string') {
+                            this._bodyText = "";
+                        } else if (typeof body === "string") {
                             this._bodyText = body;
                         } else if (support.blob && Blob.prototype.isPrototypeOf(body)) {
                             this._bodyBlob = body;
@@ -44788,13 +44791,13 @@ export default theme;`;
                         } else {
                             this._bodyText = body = Object.prototype.toString.call(body);
                         }
-                        if (!this.headers.get('content-type')) {
-                            if (typeof body === 'string') {
-                                this.headers.set('content-type', 'text/plain;charset=UTF-8');
+                        if (!this.headers.get("content-type")) {
+                            if (typeof body === "string") {
+                                this.headers.set("content-type", "text/plain;charset=UTF-8");
                             } else if (this._bodyBlob && this._bodyBlob.type) {
-                                this.headers.set('content-type', this._bodyBlob.type);
+                                this.headers.set("content-type", this._bodyBlob.type);
                             } else if (support.searchParams && URLSearchParams.prototype.isPrototypeOf(body)) {
-                                this.headers.set('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
+                                this.headers.set("content-type", "application/x-www-form-urlencoded;charset=UTF-8");
                             }
                         }
                     };
@@ -44811,7 +44814,7 @@ export default theme;`;
                                     this._bodyArrayBuffer
                                 ]));
                             } else if (this._bodyFormData) {
-                                throw new Error('could not read FormData body as blob');
+                                throw new Error("could not read FormData body as blob");
                             } else {
                                 return Promise.resolve(new Blob([
                                     this._bodyText
@@ -44832,7 +44835,7 @@ export default theme;`;
                         } else if (support.blob) {
                             return this.blob().then(readBlobAsArrayBuffer);
                         } else {
-                            throw new Error('could not read as ArrayBuffer');
+                            throw new Error("could not read as ArrayBuffer");
                         }
                     };
                     this.text = function() {
@@ -44845,7 +44848,7 @@ export default theme;`;
                         } else if (this._bodyArrayBuffer) {
                             return Promise.resolve(readArrayBufferAsText(this._bodyArrayBuffer));
                         } else if (this._bodyFormData) {
-                            throw new Error('could not read FormData body as text');
+                            throw new Error("could not read FormData body as text");
                         } else {
                             return Promise.resolve(this._bodyText);
                         }
@@ -44861,15 +44864,15 @@ export default theme;`;
                     return this;
                 }
                 var methods = [
-                    'CONNECT',
-                    'DELETE',
-                    'GET',
-                    'HEAD',
-                    'OPTIONS',
-                    'PATCH',
-                    'POST',
-                    'PUT',
-                    'TRACE'
+                    "CONNECT",
+                    "DELETE",
+                    "GET",
+                    "HEAD",
+                    "OPTIONS",
+                    "PATCH",
+                    "POST",
+                    "PUT",
+                    "TRACE"
                 ];
                 function normalizeMethod(method) {
                     var upcased = method.toUpperCase();
@@ -44883,7 +44886,7 @@ export default theme;`;
                     var body = options.body;
                     if (input instanceof Request) {
                         if (input.bodyUsed) {
-                            throw new TypeError('Already read');
+                            throw new TypeError("Already read");
                         }
                         this.url = input.url;
                         this.credentials = input.credentials;
@@ -44900,31 +44903,31 @@ export default theme;`;
                     } else {
                         this.url = String(input);
                     }
-                    this.credentials = options.credentials || this.credentials || 'same-origin';
+                    this.credentials = options.credentials || this.credentials || "same-origin";
                     if (options.headers || !this.headers) {
                         this.headers = new Headers(options.headers);
                     }
-                    this.method = normalizeMethod(options.method || this.method || 'GET');
+                    this.method = normalizeMethod(options.method || this.method || "GET");
                     this.mode = options.mode || this.mode || null;
-                    this.signal = options.signal || this.signal || (function() {
-                        if ('AbortController' in g) {
+                    this.signal = options.signal || this.signal || function() {
+                        if ("AbortController" in g) {
                             var ctrl = new AbortController();
                             return ctrl.signal;
                         }
-                    }());
+                    }();
                     this.referrer = null;
-                    if ((this.method === 'GET' || this.method === 'HEAD') && body) {
-                        throw new TypeError('Body not allowed for GET or HEAD requests');
+                    if ((this.method === "GET" || this.method === "HEAD") && body) {
+                        throw new TypeError("Body not allowed for GET or HEAD requests");
                     }
                     this._initBody(body);
-                    if (this.method === 'GET' || this.method === 'HEAD') {
-                        if (options.cache === 'no-store' || options.cache === 'no-cache') {
+                    if (this.method === "GET" || this.method === "HEAD") {
+                        if (options.cache === "no-store" || options.cache === "no-cache") {
                             var reParamSearch = /([?&])_=[^&]*/;
                             if (reParamSearch.test(this.url)) {
-                                this.url = this.url.replace(reParamSearch, '$1_=' + new Date().getTime());
+                                this.url = this.url.replace(reParamSearch, "$1_=" + (new Date()).getTime());
                             } else {
                                 var reQueryString = /\?/;
-                                this.url += (reQueryString.test(this.url) ? '&' : '?') + '_=' + new Date().getTime();
+                                this.url += (reQueryString.test(this.url) ? "&" : "?") + "_=" + (new Date()).getTime();
                             }
                         }
                     }
@@ -44936,11 +44939,11 @@ export default theme;`;
                 };
                 function decode(body) {
                     var form = new FormData();
-                    body.trim().split('&').forEach(function(bytes) {
+                    body.trim().split("&").forEach(function(bytes) {
                         if (bytes) {
-                            var split = bytes.split('=');
-                            var name = split.shift().replace(/\+/g, ' ');
-                            var value = split.join('=').replace(/\+/g, ' ');
+                            var split = bytes.split("=");
+                            var name = split.shift().replace(/\+/g, " ");
+                            var value = split.join("=").replace(/\+/g, " ");
                             form.append(decodeURIComponent(name), decodeURIComponent(value));
                         }
                     });
@@ -44948,18 +44951,18 @@ export default theme;`;
                 }
                 function parseHeaders(rawHeaders) {
                     var headers = new Headers();
-                    var preProcessedHeaders = rawHeaders.replace(/\r?\n[\t ]+/g, ' ');
-                    preProcessedHeaders.split('\r').map(function(header) {
-                        return header.indexOf('\n') === 0 ? header.substr(1, header.length) : header;
+                    var preProcessedHeaders = rawHeaders.replace(/\r?\n[\t ]+/g, " ");
+                    preProcessedHeaders.split("\r").map(function(header) {
+                        return header.indexOf("\n") === 0 ? header.substr(1, header.length) : header;
                     }).forEach(function(line) {
-                        var parts = line.split(':');
+                        var parts = line.split(":");
                         var key = parts.shift().trim();
                         if (key) {
-                            var value = parts.join(':').trim();
+                            var value = parts.join(":").trim();
                             try {
                                 headers.append(key, value);
                             } catch (error) {
-                                console.warn('Response ' + error.message);
+                                console.warn("Response " + error.message);
                             }
                         }
                     });
@@ -44973,15 +44976,15 @@ export default theme;`;
                     if (!options) {
                         options = {};
                     }
-                    this.type = 'default';
-                    this.status = options.status === undefined ? 200 : options.status;
+                    this.type = "default";
+                    this.status = options.status === void 0 ? 200 : options.status;
                     if (this.status < 200 || this.status > 599) {
                         throw new RangeError("Failed to construct 'Response': The status provided (0) is outside the range [200, 599].");
                     }
                     this.ok = this.status >= 200 && this.status < 300;
-                    this.statusText = options.statusText === undefined ? '' : '' + options.statusText;
+                    this.statusText = options.statusText === void 0 ? "" : "" + options.statusText;
                     this.headers = new Headers(options.headers);
-                    this.url = options.url || '';
+                    this.url = options.url || "";
                     this._initBody(bodyInit);
                 }
                 Body.call(Response.prototype);
@@ -44996,11 +44999,11 @@ export default theme;`;
                 Response.error = function() {
                     var response = new Response(null, {
                         status: 200,
-                        statusText: ''
+                        statusText: ""
                     });
                     response.ok = false;
                     response.status = 0;
-                    response.type = 'error';
+                    response.type = "error";
                     return response;
                 };
                 var redirectStatuses = [
@@ -45012,33 +45015,33 @@ export default theme;`;
                 ];
                 Response.redirect = function(url, status) {
                     if (redirectStatuses.indexOf(status) === -1) {
-                        throw new RangeError('Invalid status code');
+                        throw new RangeError("Invalid status code");
                     }
                     return new Response(null, {
-                        status: status,
+                        status,
                         headers: {
                             location: url
                         }
                     });
                 };
-                exports.DOMException = g.DOMException;
+                exports2.DOMException = g.DOMException;
                 try {
-                    new exports.DOMException();
+                    new exports2.DOMException();
                 } catch (err) {
-                    exports.DOMException = function(message, name) {
+                    exports2.DOMException = function(message, name) {
                         this.message = message;
                         this.name = name;
                         var error = Error(message);
                         this.stack = error.stack;
                     };
-                    exports.DOMException.prototype = Object.create(Error.prototype);
-                    exports.DOMException.prototype.constructor = exports.DOMException;
+                    exports2.DOMException.prototype = Object.create(Error.prototype);
+                    exports2.DOMException.prototype.constructor = exports2.DOMException;
                 }
                 function fetch(input, init) {
                     return new Promise(function(resolve, reject) {
                         var request = new Request(input, init);
                         if (request.signal && request.signal.aborted) {
-                            return reject(new exports.DOMException('Aborted', 'AbortError'));
+                            return reject(new exports2.DOMException("Aborted", "AbortError"));
                         }
                         var xhr = new XMLHttpRequest();
                         function abortXhr() {
@@ -45047,55 +45050,55 @@ export default theme;`;
                         xhr.onload = function() {
                             var options = {
                                 statusText: xhr.statusText,
-                                headers: parseHeaders(xhr.getAllResponseHeaders() || '')
+                                headers: parseHeaders(xhr.getAllResponseHeaders() || "")
                             };
-                            if (request.url.indexOf('file://') === 0 && (xhr.status < 200 || xhr.status > 599)) {
+                            if (request.url.indexOf("file://") === 0 && (xhr.status < 200 || xhr.status > 599)) {
                                 options.status = 200;
                             } else {
                                 options.status = xhr.status;
                             }
-                            options.url = 'responseURL' in xhr ? xhr.responseURL : options.headers.get('X-Request-URL');
-                            var body = 'response' in xhr ? xhr.response : xhr.responseText;
+                            options.url = "responseURL" in xhr ? xhr.responseURL : options.headers.get("X-Request-URL");
+                            var body = "response" in xhr ? xhr.response : xhr.responseText;
                             setTimeout(function() {
                                 resolve(new Response(body, options));
                             }, 0);
                         };
                         xhr.onerror = function() {
                             setTimeout(function() {
-                                reject(new TypeError('Network request failed'));
+                                reject(new TypeError("Network request failed"));
                             }, 0);
                         };
                         xhr.ontimeout = function() {
                             setTimeout(function() {
-                                reject(new TypeError('Network request timed out'));
+                                reject(new TypeError("Network request timed out"));
                             }, 0);
                         };
                         xhr.onabort = function() {
                             setTimeout(function() {
-                                reject(new exports.DOMException('Aborted', 'AbortError'));
+                                reject(new exports2.DOMException("Aborted", "AbortError"));
                             }, 0);
                         };
                         function fixUrl(url) {
                             try {
-                                return url === '' && g.location.href ? g.location.href : url;
+                                return url === "" && g.location.href ? g.location.href : url;
                             } catch (e) {
                                 return url;
                             }
                         }
                         xhr.open(request.method, fixUrl(request.url), true);
-                        if (request.credentials === 'include') {
+                        if (request.credentials === "include") {
                             xhr.withCredentials = true;
-                        } else if (request.credentials === 'omit') {
+                        } else if (request.credentials === "omit") {
                             xhr.withCredentials = false;
                         }
-                        if ('responseType' in xhr) {
+                        if ("responseType" in xhr) {
                             if (support.blob) {
-                                xhr.responseType = 'blob';
+                                xhr.responseType = "blob";
                             } else if (support.arrayBuffer) {
-                                xhr.responseType = 'arraybuffer';
+                                xhr.responseType = "arraybuffer";
                             }
                         }
-                        if (init && typeof init.headers === 'object' && !(init.headers instanceof Headers || (g.Headers && init.headers instanceof g.Headers))) {
+                        if (init && typeof init.headers === "object" && !(init.headers instanceof Headers || g.Headers && init.headers instanceof g.Headers)) {
                             var names = [];
                             Object.getOwnPropertyNames(init.headers).forEach(function(name) {
                                 names.push(normalizeName(name));
@@ -45112,14 +45115,14 @@ export default theme;`;
                             });
                         }
                         if (request.signal) {
-                            request.signal.addEventListener('abort', abortXhr);
+                            request.signal.addEventListener("abort", abortXhr);
                             xhr.onreadystatechange = function() {
                                 if (xhr.readyState === 4) {
-                                    request.signal.removeEventListener('abort', abortXhr);
+                                    request.signal.removeEventListener("abort", abortXhr);
                                 }
                             };
                         }
-                        xhr.send(typeof request._bodyInit === 'undefined' ? null : request._bodyInit);
+                        xhr.send(typeof request._bodyInit === "undefined" ? null : request._bodyInit);
                     });
                 }
                 fetch.polyfill = true;
@@ -45129,12 +45132,12 @@ export default theme;`;
                     g.Request = Request;
                     g.Response = Response;
                 }
-                exports.Headers = Headers;
-                exports.Request = Request;
-                exports.Response = Response;
-                exports.fetch = fetch;
-                return exports;
-            }))({});
+                exports2.Headers = Headers;
+                exports2.Request = Request;
+                exports2.Response = Response;
+                exports2.fetch = fetch;
+                return exports2;
+            })({});
         })(__globalThis__);
         __globalThis__.fetch.ponyfill = true;
         delete __globalThis__.fetch.polyfill;
@@ -45201,62 +45204,62 @@ export default theme;`;
     (function(module, exports) {
         (function(global, factory) {
             module.exports = factory();
-        })(commonjsGlobal, (function() {
+        })(commonjsGlobal, function() {
             var fetchRetry = function(fetch, defaults) {
                 defaults = defaults || {};
-                if (typeof fetch !== 'function') {
-                    throw new ArgumentError('fetch must be a function');
+                if (typeof fetch !== "function") {
+                    throw new ArgumentError("fetch must be a function");
                 }
-                if (typeof defaults !== 'object') {
-                    throw new ArgumentError('defaults must be an object');
+                if (typeof defaults !== "object") {
+                    throw new ArgumentError("defaults must be an object");
                 }
-                if (defaults.retries !== undefined && !isPositiveInteger(defaults.retries)) {
-                    throw new ArgumentError('retries must be a positive integer');
+                if (defaults.retries !== void 0 && !isPositiveInteger(defaults.retries)) {
+                    throw new ArgumentError("retries must be a positive integer");
                 }
-                if (defaults.retryDelay !== undefined && !isPositiveInteger(defaults.retryDelay) && typeof defaults.retryDelay !== 'function') {
-                    throw new ArgumentError('retryDelay must be a positive integer or a function returning a positive integer');
+                if (defaults.retryDelay !== void 0 && !isPositiveInteger(defaults.retryDelay) && typeof defaults.retryDelay !== "function") {
+                    throw new ArgumentError("retryDelay must be a positive integer or a function returning a positive integer");
                 }
-                if (defaults.retryOn !== undefined && !Array.isArray(defaults.retryOn) && typeof defaults.retryOn !== 'function') {
-                    throw new ArgumentError('retryOn property expects an array or function');
+                if (defaults.retryOn !== void 0 && !Array.isArray(defaults.retryOn) && typeof defaults.retryOn !== "function") {
+                    throw new ArgumentError("retryOn property expects an array or function");
                 }
                 var baseDefaults = {
                     retries: 3,
-                    retryDelay: 1000,
+                    retryDelay: 1e3,
                     retryOn: []
                 };
                 defaults = Object.assign(baseDefaults, defaults);
-                return function fetchRetry(input, init) {
+                return function fetchRetry2(input, init) {
                     var retries = defaults.retries;
                     var retryDelay = defaults.retryDelay;
                     var retryOn = defaults.retryOn;
-                    if (init && init.retries !== undefined) {
+                    if (init && init.retries !== void 0) {
                         if (isPositiveInteger(init.retries)) {
                             retries = init.retries;
                         } else {
-                            throw new ArgumentError('retries must be a positive integer');
+                            throw new ArgumentError("retries must be a positive integer");
                         }
                     }
-                    if (init && init.retryDelay !== undefined) {
-                        if (isPositiveInteger(init.retryDelay) || (typeof init.retryDelay === 'function')) {
+                    if (init && init.retryDelay !== void 0) {
+                        if (isPositiveInteger(init.retryDelay) || typeof init.retryDelay === "function") {
                             retryDelay = init.retryDelay;
                         } else {
-                            throw new ArgumentError('retryDelay must be a positive integer or a function returning a positive integer');
+                            throw new ArgumentError("retryDelay must be a positive integer or a function returning a positive integer");
                         }
                     }
                     if (init && init.retryOn) {
-                        if (Array.isArray(init.retryOn) || (typeof init.retryOn === 'function')) {
+                        if (Array.isArray(init.retryOn) || typeof init.retryOn === "function") {
                             retryOn = init.retryOn;
                         } else {
-                            throw new ArgumentError('retryOn property expects an array or function');
+                            throw new ArgumentError("retryOn property expects an array or function");
                         }
                     }
                     return new Promise(function(resolve, reject) {
                         var wrappedFetch = function(attempt) {
-                            var _input = typeof Request !== 'undefined' && input instanceof Request ? input.clone() : input;
+                            var _input = typeof Request !== "undefined" && input instanceof Request ? input.clone() : input;
                             fetch(_input, init).then(function(response) {
                                 if (Array.isArray(retryOn) && retryOn.indexOf(response.status) === -1) {
                                     resolve(response);
-                                } else if (typeof retryOn === 'function') {
+                                } else if (typeof retryOn === "function") {
                                     try {
                                         return Promise.resolve(retryOn(attempt, null, response)).then(function(retryOnResponse) {
                                             if (retryOnResponse) {
@@ -45276,7 +45279,7 @@ export default theme;`;
                                     }
                                 }
                             }).catch(function(error) {
-                                if (typeof retryOn === 'function') {
+                                if (typeof retryOn === "function") {
                                     try {
                                         Promise.resolve(retryOn(attempt, error, null)).then(function(retryOnResponse) {
                                             if (retryOnResponse) {
@@ -45284,11 +45287,11 @@ export default theme;`;
                                             } else {
                                                 reject(error);
                                             }
-                                        }).catch(function(error) {
-                                            reject(error);
+                                        }).catch(function(error2) {
+                                            reject(error2);
                                         });
-                                    } catch (error) {
-                                        reject(error);
+                                    } catch (error2) {
+                                        reject(error2);
                                     }
                                 } else if (attempt < retries) {
                                     retry(attempt, error, null);
@@ -45298,7 +45301,7 @@ export default theme;`;
                             });
                         };
                         function retry(attempt, error, response) {
-                            var delay = (typeof retryDelay === 'function') ? retryDelay(attempt, error, response) : retryDelay;
+                            var delay = typeof retryDelay === "function" ? retryDelay(attempt, error, response) : retryDelay;
                             setTimeout(function() {
                                 wrappedFetch(++attempt);
                             }, delay);
@@ -45311,11 +45314,11 @@ export default theme;`;
                 return Number.isInteger(value) && value >= 0;
             }
             function ArgumentError(message) {
-                this.name = 'ArgumentError';
+                this.name = "ArgumentError";
                 this.message = message;
             }
             return fetchRetry;
-        }));
+        });
     }(fetchRetry_umd));
     var fetchRetry_umdExports = fetchRetry_umd.exports;
     const fetchBuilder = getDefaultExportFromCjs(fetchRetry_umdExports);
@@ -46139,14 +46142,14 @@ export default theme;`;
                             range
                         ]
                     ];
-                    this.formatted = undefined;
+                    this.formatted = void 0;
                     return this;
                 }
                 this.options = options;
                 this.loose = !!options.loose;
                 this.includePrerelease = !!options.includePrerelease;
-                this.raw = range.trim().replace(SPACE_CHARACTERS, ' ');
-                this.set = this.raw.split('||').map((r)=>this.parseRange(r.trim())).filter((c)=>c.length);
+                this.raw = range.trim().replace(SPACE_CHARACTERS, " ");
+                this.set = this.raw.split("||").map((r)=>this.parseRange(r.trim())).filter((c)=>c.length);
                 if (!this.set.length) {
                     throw new TypeError(`Invalid SemVer Range: ${this.raw}`);
                 }
@@ -46168,19 +46171,19 @@ export default theme;`;
                         }
                     }
                 }
-                this.formatted = undefined;
+                this.formatted = void 0;
             }
             get range() {
-                if (this.formatted === undefined) {
-                    this.formatted = '';
+                if (this.formatted === void 0) {
+                    this.formatted = "";
                     for(let i = 0; i < this.set.length; i++){
                         if (i > 0) {
-                            this.formatted += '||';
+                            this.formatted += "||";
                         }
                         const comps = this.set[i];
                         for(let k = 0; k < comps.length; k++){
                             if (k > 0) {
-                                this.formatted += ' ';
+                                this.formatted += " ";
                             }
                             this.formatted += comps[k].toString().trim();
                         }
@@ -46195,9 +46198,9 @@ export default theme;`;
                 return this.range;
             }
             parseRange(range) {
-                range = range.replace(BUILDSTRIPRE, '');
+                range = range.replace(BUILDSTRIPRE, "");
                 const memoOpts = (this.options.includePrerelease && FLAG_INCLUDE_PRERELEASE) | (this.options.loose && FLAG_LOOSE);
-                const memoKey = memoOpts + ':' + range;
+                const memoKey = memoOpts + ":" + range;
                 const cached = cache.get(memoKey);
                 if (cached) {
                     return cached;
@@ -46205,21 +46208,21 @@ export default theme;`;
                 const loose = this.options.loose;
                 const hr = loose ? re[t.HYPHENRANGELOOSE] : re[t.HYPHENRANGE];
                 range = range.replace(hr, hyphenReplace(this.options.includePrerelease));
-                debug('hyphen replace', range);
+                debug("hyphen replace", range);
                 range = range.replace(re[t.COMPARATORTRIM], comparatorTrimReplace);
-                debug('comparator trim', range);
+                debug("comparator trim", range);
                 range = range.replace(re[t.TILDETRIM], tildeTrimReplace);
-                debug('tilde trim', range);
+                debug("tilde trim", range);
                 range = range.replace(re[t.CARETTRIM], caretTrimReplace);
-                debug('caret trim', range);
-                let rangeList = range.split(' ').map((comp)=>parseComparator(comp, this.options)).join(' ').split(/\s+/).map((comp)=>replaceGTE0(comp, this.options));
+                debug("caret trim", range);
+                let rangeList = range.split(" ").map((comp)=>parseComparator(comp, this.options)).join(" ").split(/\s+/).map((comp)=>replaceGTE0(comp, this.options));
                 if (loose) {
                     rangeList = rangeList.filter((comp)=>{
-                        debug('loose invalid filter', comp, this.options);
+                        debug("loose invalid filter", comp, this.options);
                         return !!comp.match(re[t.COMPARATORLOOSE]);
                     });
                 }
-                debug('range list', rangeList);
+                debug("range list", rangeList);
                 const rangeMap = new Map();
                 const comparators = rangeList.map((comp)=>new Comparator(comp, this.options));
                 for (const comp of comparators){
@@ -46230,8 +46233,8 @@ export default theme;`;
                     }
                     rangeMap.set(comp.value, comp);
                 }
-                if (rangeMap.size > 1 && rangeMap.has('')) {
-                    rangeMap.delete('');
+                if (rangeMap.size > 1 && rangeMap.has("")) {
+                    rangeMap.delete("");
                 }
                 const result = [
                     ...rangeMap.values()
@@ -46241,23 +46244,23 @@ export default theme;`;
             }
             intersects(range, options) {
                 if (!(range instanceof Range)) {
-                    throw new TypeError('a Range is required');
+                    throw new TypeError("a Range is required");
                 }
                 return this.set.some((thisComparators)=>{
-                    return (isSatisfiable(thisComparators, options) && range.set.some((rangeComparators)=>{
-                        return (isSatisfiable(rangeComparators, options) && thisComparators.every((thisComparator)=>{
+                    return isSatisfiable(thisComparators, options) && range.set.some((rangeComparators)=>{
+                        return isSatisfiable(rangeComparators, options) && thisComparators.every((thisComparator)=>{
                             return rangeComparators.every((rangeComparator)=>{
                                 return thisComparator.intersects(rangeComparator, options);
                             });
-                        }));
-                    }));
+                        });
+                    });
                 });
             }
             test(version) {
                 if (!version) {
                     return false;
                 }
-                if (typeof version === 'string') {
+                if (typeof version === "string") {
                     try {
                         version = new SemVer(version, this.options);
                     } catch (er) {
@@ -46281,9 +46284,9 @@ export default theme;`;
         const SemVer = semver$2;
         const { safeRe: re, src, t, comparatorTrimReplace, tildeTrimReplace, caretTrimReplace } = reExports;
         const { FLAG_INCLUDE_PRERELEASE, FLAG_LOOSE } = constants$2;
-        const BUILDSTRIPRE = new RegExp(src[t.BUILD], 'g');
-        const isNullSet = (c)=>c.value === '<0.0.0-0';
-        const isAny = (c)=>c.value === '';
+        const BUILDSTRIPRE = new RegExp(src[t.BUILD], "g");
+        const isNullSet = (c)=>c.value === "<0.0.0-0";
+        const isAny = (c)=>c.value === "";
         const isSatisfiable = (comparators, options)=>{
             let result = true;
             const remainingComparators = comparators.slice();
@@ -46297,69 +46300,69 @@ export default theme;`;
             return result;
         };
         const parseComparator = (comp, options)=>{
-            comp = comp.replace(re[t.BUILD], '');
-            debug('comp', comp, options);
+            comp = comp.replace(re[t.BUILD], "");
+            debug("comp", comp, options);
             comp = replaceCarets(comp, options);
-            debug('caret', comp);
+            debug("caret", comp);
             comp = replaceTildes(comp, options);
-            debug('tildes', comp);
+            debug("tildes", comp);
             comp = replaceXRanges(comp, options);
-            debug('xrange', comp);
+            debug("xrange", comp);
             comp = replaceStars(comp, options);
-            debug('stars', comp);
+            debug("stars", comp);
             return comp;
         };
-        const isX = (id)=>!id || id.toLowerCase() === 'x' || id === '*';
-        const invalidXRangeOrder = (M, m, p)=>((isX(M) && !isX(m)) || (isX(m) && p && !isX(p)));
+        const isX = (id)=>!id || id.toLowerCase() === "x" || id === "*";
+        const invalidXRangeOrder = (M, m, p)=>isX(M) && !isX(m) || isX(m) && p && !isX(p);
         const replaceTildes = (comp, options)=>{
-            return comp.trim().split(/\s+/).map((c)=>replaceTilde(c, options)).join(' ');
+            return comp.trim().split(/\s+/).map((c)=>replaceTilde(c, options)).join(" ");
         };
         const replaceTilde = (comp, options)=>{
             const r = options.loose ? re[t.TILDELOOSE] : re[t.TILDE];
-            const z = options.includePrerelease ? '-0' : '';
+            const z = options.includePrerelease ? "-0" : "";
             return comp.replace(r, (_, M, m, p, pr)=>{
-                debug('tilde', comp, _, M, m, p, pr);
+                debug("tilde", comp, _, M, m, p, pr);
                 let ret;
                 if (isX(M)) {
-                    ret = '';
+                    ret = "";
                 } else if (isX(m)) {
                     ret = `>=${M}.0.0${z} <${+M + 1}.0.0-0`;
                 } else if (isX(p)) {
                     ret = `>=${M}.${m}.0${z} <${M}.${+m + 1}.0-0`;
                 } else if (pr) {
-                    debug('replaceTilde pr', pr);
+                    debug("replaceTilde pr", pr);
                     ret = `>=${M}.${m}.${p}-${pr} <${M}.${+m + 1}.0-0`;
                 } else {
                     ret = `>=${M}.${m}.${p} <${M}.${+m + 1}.0-0`;
                 }
-                debug('tilde return', ret);
+                debug("tilde return", ret);
                 return ret;
             });
         };
         const replaceCarets = (comp, options)=>{
-            return comp.trim().split(/\s+/).map((c)=>replaceCaret(c, options)).join(' ');
+            return comp.trim().split(/\s+/).map((c)=>replaceCaret(c, options)).join(" ");
         };
         const replaceCaret = (comp, options)=>{
-            debug('caret', comp, options);
+            debug("caret", comp, options);
             const r = options.loose ? re[t.CARETLOOSE] : re[t.CARET];
-            const z = options.includePrerelease ? '-0' : '';
+            const z = options.includePrerelease ? "-0" : "";
             return comp.replace(r, (_, M, m, p, pr)=>{
-                debug('caret', comp, _, M, m, p, pr);
+                debug("caret", comp, _, M, m, p, pr);
                 let ret;
                 if (isX(M)) {
-                    ret = '';
+                    ret = "";
                 } else if (isX(m)) {
                     ret = `>=${M}.0.0${z} <${+M + 1}.0.0-0`;
                 } else if (isX(p)) {
-                    if (M === '0') {
+                    if (M === "0") {
                         ret = `>=${M}.${m}.0${z} <${M}.${+m + 1}.0-0`;
                     } else {
                         ret = `>=${M}.${m}.0${z} <${+M + 1}.0.0-0`;
                     }
                 } else if (pr) {
-                    debug('replaceCaret pr', pr);
-                    if (M === '0') {
-                        if (m === '0') {
+                    debug("replaceCaret pr", pr);
+                    if (M === "0") {
+                        if (m === "0") {
                             ret = `>=${M}.${m}.${p}-${pr} <${M}.${m}.${+p + 1}-0`;
                         } else {
                             ret = `>=${M}.${m}.${p}-${pr} <${M}.${+m + 1}.0-0`;
@@ -46368,9 +46371,9 @@ export default theme;`;
                         ret = `>=${M}.${m}.${p}-${pr} <${+M + 1}.0.0-0`;
                     }
                 } else {
-                    debug('no pr');
-                    if (M === '0') {
-                        if (m === '0') {
+                    debug("no pr");
+                    if (M === "0") {
+                        if (m === "0") {
                             ret = `>=${M}.${m}.${p} <${M}.${m}.${+p + 1}-0`;
                         } else {
                             ret = `>=${M}.${m}.${p} <${M}.${+m + 1}.0-0`;
@@ -46379,19 +46382,19 @@ export default theme;`;
                         ret = `>=${M}.${m}.${p} <${+M + 1}.0.0-0`;
                     }
                 }
-                debug('caret return', ret);
+                debug("caret return", ret);
                 return ret;
             });
         };
         const replaceXRanges = (comp, options)=>{
-            debug('replaceXRanges', comp, options);
-            return comp.split(/\s+/).map((c)=>replaceXRange(c, options)).join(' ');
+            debug("replaceXRanges", comp, options);
+            return comp.split(/\s+/).map((c)=>replaceXRange(c, options)).join(" ");
         };
         const replaceXRange = (comp, options)=>{
             comp = comp.trim();
             const r = options.loose ? re[t.XRANGELOOSE] : re[t.XRANGE];
             return comp.replace(r, (ret, gtlt, M, m, p, pr)=>{
-                debug('xRange', comp, ret, gtlt, M, m, p, pr);
+                debug("xRange", comp, ret, gtlt, M, m, p, pr);
                 if (invalidXRangeOrder(M, m, p)) {
                     return comp;
                 }
@@ -46399,23 +46402,23 @@ export default theme;`;
                 const xm = xM || isX(m);
                 const xp = xm || isX(p);
                 const anyX = xp;
-                if (gtlt === '=' && anyX) {
-                    gtlt = '';
+                if (gtlt === "=" && anyX) {
+                    gtlt = "";
                 }
-                pr = options.includePrerelease ? '-0' : '';
+                pr = options.includePrerelease ? "-0" : "";
                 if (xM) {
-                    if (gtlt === '>' || gtlt === '<') {
-                        ret = '<0.0.0-0';
+                    if (gtlt === ">" || gtlt === "<") {
+                        ret = "<0.0.0-0";
                     } else {
-                        ret = '*';
+                        ret = "*";
                     }
                 } else if (gtlt && anyX) {
                     if (xm) {
                         m = 0;
                     }
                     p = 0;
-                    if (gtlt === '>') {
-                        gtlt = '>=';
+                    if (gtlt === ">") {
+                        gtlt = ">=";
                         if (xm) {
                             M = +M + 1;
                             m = 0;
@@ -46424,16 +46427,16 @@ export default theme;`;
                             m = +m + 1;
                             p = 0;
                         }
-                    } else if (gtlt === '<=') {
-                        gtlt = '<';
+                    } else if (gtlt === "<=") {
+                        gtlt = "<";
                         if (xm) {
                             M = +M + 1;
                         } else {
                             m = +m + 1;
                         }
                     }
-                    if (gtlt === '<') {
-                        pr = '-0';
+                    if (gtlt === "<") {
+                        pr = "-0";
                     }
                     ret = `${gtlt + M}.${m}.${p}${pr}`;
                 } else if (xm) {
@@ -46441,32 +46444,32 @@ export default theme;`;
                 } else if (xp) {
                     ret = `>=${M}.${m}.0${pr} <${M}.${+m + 1}.0-0`;
                 }
-                debug('xRange return', ret);
+                debug("xRange return", ret);
                 return ret;
             });
         };
         const replaceStars = (comp, options)=>{
-            debug('replaceStars', comp, options);
-            return comp.trim().replace(re[t.STAR], '');
+            debug("replaceStars", comp, options);
+            return comp.trim().replace(re[t.STAR], "");
         };
         const replaceGTE0 = (comp, options)=>{
-            debug('replaceGTE0', comp, options);
-            return comp.trim().replace(re[options.includePrerelease ? t.GTE0PRE : t.GTE0], '');
+            debug("replaceGTE0", comp, options);
+            return comp.trim().replace(re[options.includePrerelease ? t.GTE0PRE : t.GTE0], "");
         };
         const hyphenReplace = (incPr)=>($0, from, fM, fm, fp, fpr, fb, to, tM, tm, tp, tpr)=>{
                 if (isX(fM)) {
-                    from = '';
+                    from = "";
                 } else if (isX(fm)) {
-                    from = `>=${fM}.0.0${incPr ? '-0' : ''}`;
+                    from = `>=${fM}.0.0${incPr ? "-0" : ""}`;
                 } else if (isX(fp)) {
-                    from = `>=${fM}.${fm}.0${incPr ? '-0' : ''}`;
+                    from = `>=${fM}.${fm}.0${incPr ? "-0" : ""}`;
                 } else if (fpr) {
                     from = `>=${from}`;
                 } else {
-                    from = `>=${from}${incPr ? '-0' : ''}`;
+                    from = `>=${from}${incPr ? "-0" : ""}`;
                 }
                 if (isX(tM)) {
-                    to = '';
+                    to = "";
                 } else if (isX(tm)) {
                     to = `<${+tM + 1}.0.0-0`;
                 } else if (isX(tp)) {
@@ -48965,17 +48968,17 @@ export default theme;`;
         errWithCause: asErrValue
     };
     function levelToValue(level, logger) {
-        return level === 'silent' ? Infinity : logger.levels.values[level];
+        return level === "silent" ? Infinity : logger.levels.values[level];
     }
-    const baseLogFunctionSymbol = Symbol('pino.logFuncs');
-    const hierarchySymbol = Symbol('pino.hierarchy');
+    const baseLogFunctionSymbol = Symbol("pino.logFuncs");
+    const hierarchySymbol = Symbol("pino.hierarchy");
     const logFallbackMap = {
-        error: 'log',
-        fatal: 'error',
-        warn: 'error',
-        info: 'log',
-        debug: 'log',
-        trace: 'log'
+        error: "log",
+        fatal: "error",
+        warn: "error",
+        info: "log",
+        debug: "log",
+        trace: "log"
     };
     function appendChildLogger(parentLogger, childLogger) {
         const newEntry = {
@@ -48987,14 +48990,14 @@ export default theme;`;
     function setupBaseLogFunctions(logger, levels, proto) {
         const logFunctions = {};
         levels.forEach((level)=>{
-            logFunctions[level] = proto[level] ? proto[level] : (_console[level] || _console[logFallbackMap[level] || 'log'] || noop);
+            logFunctions[level] = proto[level] ? proto[level] : _console[level] || _console[logFallbackMap[level] || "log"] || noop;
         });
         logger[baseLogFunctionSymbol] = logFunctions;
     }
     function shouldSerialize(serialize, serializers) {
         if (Array.isArray(serialize)) {
             const hasToFilter = serialize.filter(function(k) {
-                return k !== '!stdSerializers.err';
+                return k !== "!stdSerializers.err";
             });
             return hasToFilter;
         } else if (serialize === true) {
@@ -49005,61 +49008,61 @@ export default theme;`;
     function pino(opts) {
         opts = opts || {};
         opts.browser = opts.browser || {};
-        const transmit = opts.browser.transmit;
-        if (transmit && typeof transmit.send !== 'function') {
-            throw Error('pino: transmit option must have a send function');
+        const transmit2 = opts.browser.transmit;
+        if (transmit2 && typeof transmit2.send !== "function") {
+            throw Error("pino: transmit option must have a send function");
         }
         const proto = opts.browser.write || _console;
         if (opts.browser.write) opts.browser.asObject = true;
         const serializers = opts.serializers || {};
         const serialize = shouldSerialize(opts.browser.serialize, serializers);
         let stdErrSerialize = opts.browser.serialize;
-        if (Array.isArray(opts.browser.serialize) && opts.browser.serialize.indexOf('!stdSerializers.err') > -1) stdErrSerialize = false;
+        if (Array.isArray(opts.browser.serialize) && opts.browser.serialize.indexOf("!stdSerializers.err") > -1) stdErrSerialize = false;
         const customLevels = Object.keys(opts.customLevels || {});
         const levels = [
-            'error',
-            'fatal',
-            'warn',
-            'info',
-            'debug',
-            'trace'
+            "error",
+            "fatal",
+            "warn",
+            "info",
+            "debug",
+            "trace"
         ].concat(customLevels);
-        if (typeof proto === 'function') {
-            levels.forEach(function(level) {
-                proto[level] = proto;
+        if (typeof proto === "function") {
+            levels.forEach(function(level2) {
+                proto[level2] = proto;
             });
         }
-        if (opts.enabled === false || opts.browser.disabled) opts.level = 'silent';
-        const level = opts.level || 'info';
+        if (opts.enabled === false || opts.browser.disabled) opts.level = "silent";
+        const level = opts.level || "info";
         const logger = Object.create(proto);
         if (!logger.log) logger.log = noop;
         setupBaseLogFunctions(logger, levels, proto);
         appendChildLogger({}, logger);
-        Object.defineProperty(logger, 'levelVal', {
+        Object.defineProperty(logger, "levelVal", {
             get: getLevelVal
         });
-        Object.defineProperty(logger, 'level', {
+        Object.defineProperty(logger, "level", {
             get: getLevel,
             set: setLevel
         });
         const setOpts = {
-            transmit,
+            transmit: transmit2,
             serialize,
             asObject: opts.browser.asObject,
             asObjectBindingsOnly: opts.browser.asObjectBindingsOnly,
             formatters: opts.browser.formatters,
             levels,
             timestamp: getTimeFunction(opts),
-            messageKey: opts.messageKey || 'msg',
+            messageKey: opts.messageKey || "msg",
             onChild: opts.onChild || noop
         };
         logger.levels = getLevels(opts);
         logger.level = level;
-        logger.isLevelEnabled = function(level) {
-            if (!this.levels.values[level]) {
+        logger.isLevelEnabled = function(level2) {
+            if (!this.levels.values[level2]) {
                 return false;
             }
-            return this.levels.values[level] >= this.levels.values[this.level];
+            return this.levels.values[level2] >= this.levels.values[this.level];
         };
         logger.setMaxListeners = logger.getMaxListeners = logger.emit = logger.addListener = logger.on = logger.prependListener = logger.once = logger.prependOnceListener = logger.removeListener = logger.removeAllListeners = logger.listeners = logger.listenerCount = logger.eventNames = logger.write = logger.flush = noop;
         logger.serializers = serializers;
@@ -49068,31 +49071,31 @@ export default theme;`;
         logger.child = function(...args) {
             return child.call(this, setOpts, ...args);
         };
-        if (transmit) logger._logEvent = createLogEventShape();
+        if (transmit2) logger._logEvent = createLogEventShape();
         function getLevelVal() {
             return levelToValue(this.level, this);
         }
         function getLevel() {
             return this._level;
         }
-        function setLevel(level) {
-            if (level !== 'silent' && !this.levels.values[level]) {
-                throw Error('unknown level ' + level);
+        function setLevel(level2) {
+            if (level2 !== "silent" && !this.levels.values[level2]) {
+                throw Error("unknown level " + level2);
             }
-            this._level = level;
-            set(this, setOpts, logger, 'error');
-            set(this, setOpts, logger, 'fatal');
-            set(this, setOpts, logger, 'warn');
-            set(this, setOpts, logger, 'info');
-            set(this, setOpts, logger, 'debug');
-            set(this, setOpts, logger, 'trace');
-            customLevels.forEach((level)=>{
-                set(this, setOpts, logger, level);
+            this._level = level2;
+            set(this, setOpts, logger, "error");
+            set(this, setOpts, logger, "fatal");
+            set(this, setOpts, logger, "warn");
+            set(this, setOpts, logger, "info");
+            set(this, setOpts, logger, "debug");
+            set(this, setOpts, logger, "trace");
+            customLevels.forEach((level3)=>{
+                set(this, setOpts, logger, level3);
             });
         }
-        function child(setOpts, bindings, childOptions) {
+        function child(setOpts2, bindings, childOptions) {
             if (!bindings) {
-                throw new Error('missing bindings for child Pino');
+                throw new Error("missing bindings for child Pino");
             }
             childOptions = childOptions || {};
             if (serialize && bindings.serializers) {
@@ -49114,7 +49117,7 @@ export default theme;`;
                     this.serializers = childSerializers;
                     this._serialize = childSerialize;
                 }
-                if (transmit) {
+                if (transmit2) {
                     this._logEvent = createLogEventShape([].concat(parent._logEvent.bindings, bindings));
                 }
             }
@@ -49122,10 +49125,10 @@ export default theme;`;
             const newLogger = new Child(this);
             appendChildLogger(this, newLogger);
             newLogger.child = function(...args) {
-                return child.call(this, setOpts, ...args);
+                return child.call(this, setOpts2, ...args);
             };
             newLogger.level = childOptions.level || this.level;
-            setOpts.onChild(newLogger);
+            setOpts2.onChild(newLogger);
             return newLogger;
         }
         return logger;
@@ -49156,12 +49159,12 @@ export default theme;`;
             trace: 10
         },
         labels: {
-            10: 'trace',
-            20: 'debug',
-            30: 'info',
-            40: 'warn',
-            50: 'error',
-            60: 'fatal'
+            10: "trace",
+            20: "debug",
+            30: "info",
+            40: "warn",
+            50: "error",
+            60: "fatal"
         }
     };
     pino.stdSerializers = stdSerializers;
@@ -49185,26 +49188,26 @@ export default theme;`;
         }
         return bindings.reverse();
     }
-    function set(self, opts, rootLogger, level) {
-        Object.defineProperty(self, level, {
-            value: (levelToValue(self.level, rootLogger) > levelToValue(level, rootLogger) ? noop : rootLogger[baseLogFunctionSymbol][level]),
+    function set(self2, opts, rootLogger, level) {
+        Object.defineProperty(self2, level, {
+            value: levelToValue(self2.level, rootLogger) > levelToValue(level, rootLogger) ? noop : rootLogger[baseLogFunctionSymbol][level],
             writable: true,
             enumerable: true,
             configurable: true
         });
-        if (self[level] === noop) {
+        if (self2[level] === noop) {
             if (!opts.transmit) return;
-            const transmitLevel = opts.transmit.level || self.level;
+            const transmitLevel = opts.transmit.level || self2.level;
             const transmitValue = levelToValue(transmitLevel, rootLogger);
             const methodValue = levelToValue(level, rootLogger);
             if (methodValue < transmitValue) return;
         }
-        self[level] = createWrap(self, opts, rootLogger, level);
-        const bindings = getBindingChain(self);
+        self2[level] = createWrap(self2, opts, rootLogger, level);
+        const bindings = getBindingChain(self2);
         if (bindings.length === 0) {
             return;
         }
-        self[level] = prependBindingsInArguments(bindings, self[level]);
+        self2[level] = prependBindingsInArguments(bindings, self2[level]);
     }
     function prependBindingsInArguments(bindings, logFunc) {
         return function() {
@@ -49214,12 +49217,12 @@ export default theme;`;
             ]);
         };
     }
-    function createWrap(self, opts, rootLogger, level) {
-        return (function(write) {
+    function createWrap(self2, opts, rootLogger, level) {
+        return function(write) {
             return function LOG() {
                 const ts = opts.timestamp();
                 const args = new Array(arguments.length);
-                const proto = (Object.getPrototypeOf && Object.getPrototypeOf(this) === _console) ? _console : this;
+                const proto = Object.getPrototypeOf && Object.getPrototypeOf(this) === _console ? _console : this;
                 for(var i = 0; i < args.length; i++)args[i] = arguments[i];
                 var argsIsSerialized = false;
                 if (opts.serialize) {
@@ -49230,7 +49233,7 @@ export default theme;`;
                     write.call(proto, ...asObject(this, level, args, ts, opts));
                 } else write.apply(proto, args);
                 if (opts.transmit) {
-                    const transmitLevel = opts.transmit.level || self._level;
+                    const transmitLevel = opts.transmit.level || self2._level;
                     const transmitValue = levelToValue(transmitLevel, rootLogger);
                     const methodValue = levelToValue(level, rootLogger);
                     if (methodValue < transmitValue) return;
@@ -49238,13 +49241,13 @@ export default theme;`;
                         ts,
                         methodLevel: level,
                         methodValue,
-                        transmitValue: rootLogger.levels.values[opts.transmit.level || self._level],
+                        transmitValue: rootLogger.levels.values[opts.transmit.level || self2._level],
                         send: opts.transmit.send,
-                        val: levelToValue(self._level, rootLogger)
+                        val: levelToValue(self2._level, rootLogger)
                     }, args, argsIsSerialized);
                 }
             };
-        })(self[baseLogFunctionSymbol][level]);
+        }(self2[baseLogFunctionSymbol][level]);
     }
     function asObject(logger, level, args, ts, opts) {
         const { level: levelFormatter, log: logObjectFormatter = (obj)=>obj } = opts.formatters || {};
@@ -49263,8 +49266,8 @@ export default theme;`;
             logObject.level = logger.levels.values[level];
         }
         if (opts.asObjectBindingsOnly) {
-            if (msg !== null && typeof msg === 'object') {
-                while(lvl-- && typeof argsCloned[0] === 'object'){
+            if (msg !== null && typeof msg === "object") {
+                while(lvl-- && typeof argsCloned[0] === "object"){
                     Object.assign(logObject, argsCloned.shift());
                 }
             }
@@ -49274,13 +49277,13 @@ export default theme;`;
                 ...argsCloned
             ];
         } else {
-            if (msg !== null && typeof msg === 'object') {
-                while(lvl-- && typeof argsCloned[0] === 'object'){
+            if (msg !== null && typeof msg === "object") {
+                while(lvl-- && typeof argsCloned[0] === "object"){
                     Object.assign(logObject, argsCloned.shift());
                 }
-                msg = argsCloned.length ? format(argsCloned.shift(), argsCloned) : undefined;
-            } else if (typeof msg === 'string') msg = format(argsCloned.shift(), argsCloned);
-            if (msg !== undefined) logObject[opts.messageKey] = msg;
+                msg = argsCloned.length ? format(argsCloned.shift(), argsCloned) : void 0;
+            } else if (typeof msg === "string") msg = format(argsCloned.shift(), argsCloned);
+            if (msg !== void 0) logObject[opts.messageKey] = msg;
             const formattedLogObject = logObjectFormatter(logObject);
             return [
                 formattedLogObject
@@ -49291,7 +49294,7 @@ export default theme;`;
         for(const i in args){
             if (stdErrSerialize && args[i] instanceof Error) {
                 args[i] = pino.stdSerializers.err(args[i]);
-            } else if (typeof args[i] === 'object' && !Array.isArray(args[i]) && serialize) {
+            } else if (typeof args[i] === "object" && !Array.isArray(args[i]) && serialize) {
                 for(const k in args[i]){
                     if (serialize.indexOf(k) > -1 && k in serializers) {
                         args[i][k] = serializers[k](args[i][k]);
@@ -49308,7 +49311,7 @@ export default theme;`;
         const val = opts.val;
         const bindings = logger._logEvent.bindings;
         if (!argsIsSerialized) {
-            applySerializers(args, logger._serialize || Object.keys(logger.serializers), logger.serializers, logger._stdErrSerialize === undefined ? true : logger._stdErrSerialize);
+            applySerializers(args, logger._serialize || Object.keys(logger.serializers), logger.serializers, logger._stdErrSerialize === void 0 ? true : logger._stdErrSerialize);
         }
         logger._logEvent.ts = ts;
         logger._logEvent.messages = args.filter(function(arg) {
@@ -49325,7 +49328,7 @@ export default theme;`;
             messages: [],
             bindings: bindings || [],
             level: {
-                label: '',
+                label: "",
                 value: 0
             }
         };
@@ -49337,14 +49340,14 @@ export default theme;`;
             stack: err.stack
         };
         for(const key in err){
-            if (obj[key] === undefined) {
+            if (obj[key] === void 0) {
                 obj[key] = err[key];
             }
         }
         return obj;
     }
     function getTimeFunction(opts) {
-        if (typeof opts.timestamp === 'function') {
+        if (typeof opts.timestamp === "function") {
             return opts.timestamp;
         }
         if (opts.timestamp === false) {
@@ -49366,21 +49369,21 @@ export default theme;`;
         return Date.now();
     }
     function unixTime() {
-        return Math.round(Date.now() / 1000.0);
+        return Math.round(Date.now() / 1e3);
     }
     function isoTime() {
         return new Date(Date.now()).toISOString();
     }
     function pfGlobalThisOrFallback() {
         function defd(o) {
-            return typeof o !== 'undefined' && o;
+            return typeof o !== "undefined" && o;
         }
         try {
-            if (typeof globalThis !== 'undefined') return globalThis;
-            Object.defineProperty(Object.prototype, 'globalThis', {
+            if (typeof globalThis !== "undefined") return globalThis;
+            Object.defineProperty(Object.prototype, "globalThis", {
                 get: function() {
                     delete Object.prototype.globalThis;
-                    return (this.globalThis = this);
+                    return this.globalThis = this;
                 },
                 configurable: true
             });

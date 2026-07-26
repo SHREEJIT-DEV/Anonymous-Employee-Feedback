@@ -1,22 +1,22 @@
-let CostModel, QueryContext, StateValue, __vite__initWasm, getAugmentedNamespace, bigIntToValue$1, commonjsGlobal, dummyContractAddress$1, encodeShieldedCoinInfo$1, encodeQualifiedShieldedCoinInfo$1, getDefaultExportFromCjs, encodeCoinPublicKey$1, encodeContractAddress$1, ContractState, ChargedState, ContractOperation, maxField$1, commonjsRequire, persistentHash$1, valueToBigInt$1;
+let CostModel, QueryContext, StateValue, __vite__initWasm, getAugmentedNamespace, bigIntToValue$1, encodeQualifiedShieldedCoinInfo$1, dummyContractAddress$1, encodeShieldedCoinInfo$1, encodeCoinPublicKey$1, getDefaultExportFromCjs, encodeContractAddress$1, ContractState, ChargedState, ContractOperation, commonjsRequire, maxField$1, commonjsGlobal, persistentHash$1, valueToBigInt$1;
 let __tla = (async ()=>{
-    commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
+    commonjsGlobal = typeof globalThis !== "undefined" ? globalThis : typeof window !== "undefined" ? window : typeof globalThis !== "undefined" ? globalThis : typeof self !== "undefined" ? self : {};
     getDefaultExportFromCjs = function(x) {
-        return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
+        return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, "default") ? x["default"] : x;
     };
     getAugmentedNamespace = function(n) {
         if (n.__esModule) return n;
         var f = n.default;
         if (typeof f == "function") {
-            var a = function a() {
-                if (this instanceof a) {
+            var a = function a2() {
+                if (this instanceof a2) {
                     return Reflect.construct(f, arguments, this.constructor);
                 }
                 return f.apply(this, arguments);
             };
             a.prototype = f.prototype;
         } else a = {};
-        Object.defineProperty(a, '__esModule', {
+        Object.defineProperty(a, "__esModule", {
             value: true
         });
         Object.keys(n).forEach(function(k) {
@@ -87,7 +87,7 @@ let __tla = (async ()=>{
         }
         return cachedUint8ArrayMemory0;
     }
-    let cachedTextDecoder = new TextDecoder('utf-8', {
+    let cachedTextDecoder = new TextDecoder("utf-8", {
         ignoreBOM: true,
         fatal: true
     });
@@ -97,7 +97,7 @@ let __tla = (async ()=>{
     function decodeText(ptr, len) {
         numBytesDecoded += len;
         if (numBytesDecoded >= MAX_SAFARI_DECODE_BYTES) {
-            cachedTextDecoder = new TextDecoder('utf-8', {
+            cachedTextDecoder = new TextDecoder("utf-8", {
                 ignoreBOM: true,
                 fatal: true
             });
@@ -112,7 +112,7 @@ let __tla = (async ()=>{
     }
     let WASM_VECTOR_LEN = 0;
     const cachedTextEncoder = new TextEncoder();
-    if (!('encodeInto' in cachedTextEncoder)) {
+    if (!("encodeInto" in cachedTextEncoder)) {
         cachedTextEncoder.encodeInto = function(arg, view) {
             const buf = cachedTextEncoder.encode(arg);
             view.set(buf);
@@ -123,12 +123,12 @@ let __tla = (async ()=>{
         };
     }
     function passStringToWasm0(arg, malloc, realloc) {
-        if (realloc === undefined) {
+        if (realloc === void 0) {
             const buf = cachedTextEncoder.encode(arg);
-            const ptr = malloc(buf.length, 1) >>> 0;
-            getUint8ArrayMemory0().subarray(ptr, ptr + buf.length).set(buf);
+            const ptr2 = malloc(buf.length, 1) >>> 0;
+            getUint8ArrayMemory0().subarray(ptr2, ptr2 + buf.length).set(buf);
             WASM_VECTOR_LEN = buf.length;
-            return ptr;
+            return ptr2;
         }
         let len = arg.length;
         let ptr = malloc(len, 1) >>> 0;
@@ -136,7 +136,7 @@ let __tla = (async ()=>{
         let offset = 0;
         for(; offset < len; offset++){
             const code = arg.charCodeAt(offset);
-            if (code > 0x7F) break;
+            if (code > 127) break;
             mem[ptr + offset] = code;
         }
         if (offset !== len) {
@@ -154,13 +154,13 @@ let __tla = (async ()=>{
     }
     let cachedDataViewMemory0 = null;
     function getDataViewMemory0() {
-        if (cachedDataViewMemory0 === null || cachedDataViewMemory0.buffer.detached === true || (cachedDataViewMemory0.buffer.detached === undefined && cachedDataViewMemory0.buffer !== wasm$1.memory.buffer)) {
+        if (cachedDataViewMemory0 === null || cachedDataViewMemory0.buffer.detached === true || cachedDataViewMemory0.buffer.detached === void 0 && cachedDataViewMemory0.buffer !== wasm$1.memory.buffer) {
             cachedDataViewMemory0 = new DataView(wasm$1.memory.buffer);
         }
         return cachedDataViewMemory0;
     }
     function isLikeNone(x) {
-        return x === undefined || x === null;
+        return x === void 0 || x === null;
     }
     function getArrayU8FromWasm0(ptr, len) {
         ptr = ptr >>> 0;
@@ -168,38 +168,38 @@ let __tla = (async ()=>{
     }
     function debugString(val) {
         const type = typeof val;
-        if (type == 'number' || type == 'boolean' || val == null) {
+        if (type == "number" || type == "boolean" || val == null) {
             return `${val}`;
         }
-        if (type == 'string') {
+        if (type == "string") {
             return `"${val}"`;
         }
-        if (type == 'symbol') {
+        if (type == "symbol") {
             const description = val.description;
             if (description == null) {
-                return 'Symbol';
+                return "Symbol";
             } else {
                 return `Symbol(${description})`;
             }
         }
-        if (type == 'function') {
+        if (type == "function") {
             const name = val.name;
-            if (typeof name == 'string' && name.length > 0) {
+            if (typeof name == "string" && name.length > 0) {
                 return `Function(${name})`;
             } else {
-                return 'Function';
+                return "Function";
             }
         }
         if (Array.isArray(val)) {
             const length = val.length;
-            let debug = '[';
+            let debug = "[";
             if (length > 0) {
                 debug += debugString(val[0]);
             }
             for(let i = 1; i < length; i++){
-                debug += ', ' + debugString(val[i]);
+                debug += ", " + debugString(val[i]);
             }
-            debug += ']';
+            debug += "]";
             return debug;
         }
         const builtInMatches = /\[object ([^\]]+)\]/.exec(toString.call(val));
@@ -209,19 +209,20 @@ let __tla = (async ()=>{
         } else {
             return toString.call(val);
         }
-        if (className == 'Object') {
+        if (className == "Object") {
             try {
-                return 'Object(' + JSON.stringify(val) + ')';
+                return "Object(" + JSON.stringify(val) + ")";
             } catch (_) {
-                return 'Object';
+                return "Object";
             }
         }
         if (val instanceof Error) {
-            return `${val.name}: ${val.message}\n${val.stack}`;
+            return `${val.name}: ${val.message}
+${val.stack}`;
         }
         return className;
     }
-    const CLOSURE_DTORS = (typeof FinalizationRegistry === 'undefined') ? {
+    const CLOSURE_DTORS = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((state)=>{
@@ -358,7 +359,7 @@ let __tla = (async ()=>{
     function __wbg_adapter_258(arg0, arg1, arg2, arg3) {
         wasm$1.closure730_externref_shim(arg0, arg1, arg2, arg3);
     }
-    const ChargedStateFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const ChargedStateFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_chargedstate_free(ptr >>> 0, 1));
@@ -395,7 +396,7 @@ let __tla = (async ()=>{
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.chargedstate_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.chargedstate_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -405,7 +406,7 @@ let __tla = (async ()=>{
         }
     };
     if (Symbol.dispose) ChargedState.prototype[Symbol.dispose] = ChargedState.prototype.free;
-    const ContractMaintenanceAuthorityFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const ContractMaintenanceAuthorityFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_contractmaintenanceauthority_free(ptr >>> 0, 1));
@@ -469,7 +470,7 @@ let __tla = (async ()=>{
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.contractmaintenanceauthority_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.contractmaintenanceauthority_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -479,7 +480,7 @@ let __tla = (async ()=>{
         }
     }
     if (Symbol.dispose) ContractMaintenanceAuthority.prototype[Symbol.dispose] = ContractMaintenanceAuthority.prototype.free;
-    const ContractOperationFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const ContractOperationFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_contractoperation_free(ptr >>> 0, 1));
@@ -541,7 +542,7 @@ let __tla = (async ()=>{
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.contractoperation_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.contractoperation_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -551,7 +552,7 @@ let __tla = (async ()=>{
         }
     };
     if (Symbol.dispose) ContractOperation.prototype[Symbol.dispose] = ContractOperation.prototype.free;
-    const ContractStateFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const ContractStateFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_contractstate_free(ptr >>> 0, 1));
@@ -641,7 +642,7 @@ let __tla = (async ()=>{
             if (ret[2]) {
                 throw takeFromExternrefTable0(ret[1]);
             }
-            return ret[0] === 0 ? undefined : ContractOperation.__wrap(ret[0]);
+            return ret[0] === 0 ? void 0 : ContractOperation.__wrap(ret[0]);
         }
         serialize() {
             const ret = wasm$1.contractstate_serialize(this.__wbg_ptr);
@@ -654,7 +655,7 @@ let __tla = (async ()=>{
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.contractstate_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.contractstate_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -664,7 +665,7 @@ let __tla = (async ()=>{
         }
     };
     if (Symbol.dispose) ContractState.prototype[Symbol.dispose] = ContractState.prototype.free;
-    const CostModelFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const CostModelFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_costmodel_free(ptr >>> 0, 1));
@@ -703,7 +704,7 @@ let __tla = (async ()=>{
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.costmodel_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.costmodel_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -713,10 +714,10 @@ let __tla = (async ()=>{
         }
     };
     if (Symbol.dispose) CostModel.prototype[Symbol.dispose] = CostModel.prototype.free;
-    (typeof FinalizationRegistry === 'undefined') ? {} : new FinalizationRegistry((ptr)=>wasm$1.__wbg_intounderlyingbytesource_free(ptr >>> 0, 1));
-    (typeof FinalizationRegistry === 'undefined') ? {} : new FinalizationRegistry((ptr)=>wasm$1.__wbg_intounderlyingsink_free(ptr >>> 0, 1));
-    (typeof FinalizationRegistry === 'undefined') ? {} : new FinalizationRegistry((ptr)=>wasm$1.__wbg_intounderlyingsource_free(ptr >>> 0, 1));
-    const QueryContextFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    typeof FinalizationRegistry === "undefined" ? {} : new FinalizationRegistry((ptr)=>wasm$1.__wbg_intounderlyingbytesource_free(ptr >>> 0, 1));
+    typeof FinalizationRegistry === "undefined" ? {} : new FinalizationRegistry((ptr)=>wasm$1.__wbg_intounderlyingsink_free(ptr >>> 0, 1));
+    typeof FinalizationRegistry === "undefined" ? {} : new FinalizationRegistry((ptr)=>wasm$1.__wbg_intounderlyingsource_free(ptr >>> 0, 1));
+    const QueryContextFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_querycontext_free(ptr >>> 0, 1));
@@ -846,7 +847,7 @@ let __tla = (async ()=>{
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.querycontext_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.querycontext_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -856,7 +857,7 @@ let __tla = (async ()=>{
         }
     };
     if (Symbol.dispose) QueryContext.prototype[Symbol.dispose] = QueryContext.prototype.free;
-    const QueryResultsFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const QueryResultsFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_queryresults_free(ptr >>> 0, 1));
@@ -909,7 +910,7 @@ let __tla = (async ()=>{
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.queryresults_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.queryresults_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -919,7 +920,7 @@ let __tla = (async ()=>{
         }
     }
     if (Symbol.dispose) QueryResults.prototype[Symbol.dispose] = QueryResults.prototype.free;
-    const StateBoundedMerkleTreeFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const StateBoundedMerkleTreeFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_stateboundedmerkletree_free(ptr >>> 0, 1));
@@ -991,7 +992,7 @@ let __tla = (async ()=>{
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.stateboundedmerkletree_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.stateboundedmerkletree_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -1001,7 +1002,7 @@ let __tla = (async ()=>{
         }
     }
     if (Symbol.dispose) StateBoundedMerkleTree.prototype[Symbol.dispose] = StateBoundedMerkleTree.prototype.free;
-    const StateMapFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const StateMapFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_statemap_free(ptr >>> 0, 1));
@@ -1028,7 +1029,7 @@ let __tla = (async ()=>{
             if (ret[2]) {
                 throw takeFromExternrefTable0(ret[1]);
             }
-            return ret[0] === 0 ? undefined : StateValue.__wrap(ret[0]);
+            return ret[0] === 0 ? void 0 : StateValue.__wrap(ret[0]);
         }
         constructor(){
             const ret = wasm$1.statemap_new();
@@ -1064,7 +1065,7 @@ let __tla = (async ()=>{
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.statemap_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.statemap_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -1074,7 +1075,7 @@ let __tla = (async ()=>{
         }
     }
     if (Symbol.dispose) StateMap.prototype[Symbol.dispose] = StateMap.prototype.free;
-    const StateValueFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    const StateValueFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_statevalue_free(ptr >>> 0, 1));
@@ -1109,7 +1110,7 @@ let __tla = (async ()=>{
             if (ret[2]) {
                 throw takeFromExternrefTable0(ret[1]);
             }
-            return ret[0] === 0 ? undefined : StateBoundedMerkleTree.__wrap(ret[0]);
+            return ret[0] === 0 ? void 0 : StateBoundedMerkleTree.__wrap(ret[0]);
         }
         static newBoundedMerkleTree(tree) {
             _assertClass(tree, StateBoundedMerkleTree);
@@ -1142,7 +1143,7 @@ let __tla = (async ()=>{
             if (ret[2]) {
                 throw takeFromExternrefTable0(ret[1]);
             }
-            return ret[0] === 0 ? undefined : StateMap.__wrap(ret[0]);
+            return ret[0] === 0 ? void 0 : StateMap.__wrap(ret[0]);
         }
         static decode(value) {
             const ret = wasm$1.statevalue_decode(value);
@@ -1205,7 +1206,7 @@ let __tla = (async ()=>{
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.statevalue_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.statevalue_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -1215,8 +1216,8 @@ let __tla = (async ()=>{
         }
     };
     if (Symbol.dispose) StateValue.prototype[Symbol.dispose] = StateValue.prototype.free;
-    (typeof FinalizationRegistry === 'undefined') ? {} : new FinalizationRegistry((ptr)=>wasm$1.__wbg_vmresults_free(ptr >>> 0, 1));
-    const VmStackFinalization = (typeof FinalizationRegistry === 'undefined') ? {
+    typeof FinalizationRegistry === "undefined" ? {} : new FinalizationRegistry((ptr)=>wasm$1.__wbg_vmresults_free(ptr >>> 0, 1));
+    const VmStackFinalization = typeof FinalizationRegistry === "undefined" ? {
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_vmstack_free(ptr >>> 0, 1));
@@ -1243,7 +1244,7 @@ let __tla = (async ()=>{
         }
         get(idx) {
             const ret = wasm$1.vmstack_get(this.__wbg_ptr, idx);
-            return ret === 0 ? undefined : StateValue.__wrap(ret);
+            return ret === 0 ? void 0 : StateValue.__wrap(ret);
         }
         constructor(){
             const ret = wasm$1.vmstack_new();
@@ -1261,13 +1262,13 @@ let __tla = (async ()=>{
         }
         isStrong(idx) {
             const ret = wasm$1.vmstack_isStrong(this.__wbg_ptr, idx);
-            return ret === 0xFFFFFF ? undefined : ret !== 0;
+            return ret === 16777215 ? void 0 : ret !== 0;
         }
         toString(compact) {
             let deferred1_0;
             let deferred1_1;
             try {
-                const ret = wasm$1.vmstack_toString(this.__wbg_ptr, isLikeNone(compact) ? 0xFFFFFF : compact ? 1 : 0);
+                const ret = wasm$1.vmstack_toString(this.__wbg_ptr, isLikeNone(compact) ? 16777215 : compact ? 1 : 0);
                 deferred1_0 = ret[0];
                 deferred1_1 = ret[1];
                 return getStringFromWasm0(ret[0], ret[1]);
@@ -1460,11 +1461,11 @@ let __tla = (async ()=>{
                 a: arg0,
                 b: arg1
             };
-            var cb0 = (arg0, arg1)=>{
+            var cb0 = (arg02, arg12)=>{
                 const a = state0.a;
                 state0.a = 0;
                 try {
-                    return __wbg_adapter_258(a, state0.b, arg0, arg1);
+                    return __wbg_adapter_258(a, state0.b, arg02, arg12);
                 } finally{
                     state0.a = a;
                 }
@@ -1573,19 +1574,19 @@ let __tla = (async ()=>{
         return ret;
     }
     function __wbg_static_accessor_GLOBAL_8921f820c2ce3f12() {
-        const ret = typeof global === 'undefined' ? null : global;
+        const ret = typeof globalThis === "undefined" ? null : globalThis;
         return isLikeNone(ret) ? 0 : addToExternrefTable0(ret);
     }
     function __wbg_static_accessor_GLOBAL_THIS_f0a4409105898184() {
-        const ret = typeof globalThis === 'undefined' ? null : globalThis;
+        const ret = typeof globalThis === "undefined" ? null : globalThis;
         return isLikeNone(ret) ? 0 : addToExternrefTable0(ret);
     }
     function __wbg_static_accessor_SELF_995b214ae681ff99() {
-        const ret = typeof self === 'undefined' ? null : self;
+        const ret = typeof self === "undefined" ? null : self;
         return isLikeNone(ret) ? 0 : addToExternrefTable0(ret);
     }
     function __wbg_static_accessor_WINDOW_cde3890479c675ea() {
-        const ret = typeof window === 'undefined' ? null : window;
+        const ret = typeof window === "undefined" ? null : window;
         return isLikeNone(ret) ? 0 : addToExternrefTable0(ret);
     }
     function __wbg_subarray_70fd07feefe14294(arg0, arg1, arg2) {
@@ -1620,14 +1621,14 @@ let __tla = (async ()=>{
     }
     function __wbg_wbindgenbigintgetasi64_ac743ece6ab9bba1(arg0, arg1) {
         const v = arg1;
-        const ret = typeof (v) === 'bigint' ? v : undefined;
+        const ret = typeof v === "bigint" ? v : void 0;
         getDataViewMemory0().setBigInt64(arg0 + 8 * 1, isLikeNone(ret) ? BigInt(0) : ret, true);
         getDataViewMemory0().setInt32(arg0 + 4 * 0, !isLikeNone(ret), true);
     }
     function __wbg_wbindgenbooleanget_3fe6f642c7d97746(arg0) {
         const v = arg0;
-        const ret = typeof (v) === 'boolean' ? v : undefined;
-        return isLikeNone(ret) ? 0xFFFFFF : ret ? 1 : 0;
+        const ret = typeof v === "boolean" ? v : void 0;
+        return isLikeNone(ret) ? 16777215 : ret ? 1 : 0;
     }
     function __wbg_wbindgencbdrop_eb10308566512b88(arg0) {
         const obj = arg0.original;
@@ -1650,11 +1651,11 @@ let __tla = (async ()=>{
         return ret;
     }
     function __wbg_wbindgenisbigint_ecb90cc08a5a9154(arg0) {
-        const ret = typeof (arg0) === 'bigint';
+        const ret = typeof arg0 === "bigint";
         return ret;
     }
     function __wbg_wbindgenisfunction_8cee7dce3725ae74(arg0) {
-        const ret = typeof (arg0) === 'function';
+        const ret = typeof arg0 === "function";
         return ret;
     }
     function __wbg_wbindgenisnull_f3037694abe4d97a(arg0) {
@@ -1663,15 +1664,15 @@ let __tla = (async ()=>{
     }
     function __wbg_wbindgenisobject_307a53c6bd97fbf8(arg0) {
         const val = arg0;
-        const ret = typeof (val) === 'object' && val !== null;
+        const ret = typeof val === "object" && val !== null;
         return ret;
     }
     function __wbg_wbindgenisstring_d4fa939789f003b0(arg0) {
-        const ret = typeof (arg0) === 'string';
+        const ret = typeof arg0 === "string";
         return ret;
     }
     function __wbg_wbindgenisundefined_c4b71d073b92f3c5(arg0) {
-        const ret = arg0 === undefined;
+        const ret = arg0 === void 0;
         return ret;
     }
     function __wbg_wbindgenjsvaleq_e6f2ad59ccae1b58(arg0, arg1) {
@@ -1684,7 +1685,7 @@ let __tla = (async ()=>{
     }
     function __wbg_wbindgennumberget_f74b4c7525ac05cb(arg0, arg1) {
         const obj = arg1;
-        const ret = typeof (obj) === 'number' ? obj : undefined;
+        const ret = typeof obj === "number" ? obj : void 0;
         getDataViewMemory0().setFloat64(arg0 + 8 * 1, isLikeNone(ret) ? 0 : ret, true);
         getDataViewMemory0().setInt32(arg0 + 4 * 0, !isLikeNone(ret), true);
     }
@@ -1694,7 +1695,7 @@ let __tla = (async ()=>{
     }
     function __wbg_wbindgenstringget_0f16a6ddddef376f(arg0, arg1) {
         const obj = arg1;
-        const ret = typeof (obj) === 'string' ? obj : undefined;
+        const ret = typeof obj === "string" ? obj : void 0;
         var ptr1 = isLikeNone(ret) ? 0 : passStringToWasm0(ret, wasm$1.__wbindgen_malloc, wasm$1.__wbindgen_realloc);
         var len1 = WASM_VECTOR_LEN;
         getDataViewMemory0().setInt32(arg0 + 4 * 1, len1, true);
@@ -1728,14 +1729,14 @@ let __tla = (async ()=>{
         return ret;
     }
     function __wbindgen_cast_e7b45dd881f38ce3(arg0, arg1) {
-        const ret = (BigInt.asUintN(64, arg0) | (BigInt.asUintN(64, arg1) << BigInt(64)));
+        const ret = BigInt.asUintN(64, arg0) | BigInt.asUintN(64, arg1) << BigInt(64);
         return ret;
     }
     function __wbindgen_init_externref_table() {
         const table = wasm$1.__wbindgen_export_2;
         const offset = table.grow(4);
-        table.set(0, undefined);
-        table.set(offset + 0, undefined);
+        table.set(0, void 0);
+        table.set(offset + 0, void 0);
         table.set(offset + 1, null);
         table.set(offset + 2, true);
         table.set(offset + 3, false);
@@ -2030,4 +2031,4 @@ let __tla = (async ()=>{
     __wbg_set_wasm(wasm);
     __wbindgen_start();
 })();
-export { CostModel as C, QueryContext as Q, StateValue as S, __vite__initWasm as _, getAugmentedNamespace as a, bigIntToValue$1 as b, commonjsGlobal as c, dummyContractAddress$1 as d, encodeShieldedCoinInfo$1 as e, encodeQualifiedShieldedCoinInfo$1 as f, getDefaultExportFromCjs as g, encodeCoinPublicKey$1 as h, encodeContractAddress$1 as i, ContractState as j, ChargedState as k, ContractOperation as l, maxField$1 as m, commonjsRequire as n, persistentHash$1 as p, valueToBigInt$1 as v, __tla };
+export { CostModel as C, QueryContext as Q, StateValue as S, __vite__initWasm as _, getAugmentedNamespace as a, bigIntToValue$1 as b, encodeQualifiedShieldedCoinInfo$1 as c, dummyContractAddress$1 as d, encodeShieldedCoinInfo$1 as e, encodeCoinPublicKey$1 as f, getDefaultExportFromCjs as g, encodeContractAddress$1 as h, ContractState as i, ChargedState as j, ContractOperation as k, commonjsRequire as l, maxField$1 as m, commonjsGlobal as n, persistentHash$1 as p, valueToBigInt$1 as v, __tla };
