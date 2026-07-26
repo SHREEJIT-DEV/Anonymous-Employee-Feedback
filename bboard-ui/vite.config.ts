@@ -12,6 +12,7 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+import fs from 'node:fs';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import wasm from 'vite-plugin-wasm';
@@ -19,7 +20,13 @@ import topLevelAwait from 'vite-plugin-top-level-await';
 import { fileURLToPath, URL } from 'node:url';
 // import { nodePolyfills } from 'vite-plugin-node-polyfills';
 
-const localNodeModules = fileURLToPath(new URL('./node_modules', import.meta.url));
+const localModulesDir = fileURLToPath(new URL('./node_modules', import.meta.url));
+const rootModulesDir = fileURLToPath(new URL('../node_modules', import.meta.url));
+const getModulePath = (subpath: string) => {
+  const localPath = `${localModulesDir}/${subpath}`;
+  return fs.existsSync(localPath) ? localPath : `${rootModulesDir}/${subpath}`;
+};
+const localNodeModules = fs.existsSync(`${localModulesDir}/@midnight-ntwrk`) ? localModulesDir : rootModulesDir;
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -108,51 +115,48 @@ export default defineConfig({
         replacement: fileURLToPath(new URL('./src/shims/isomorphic-ws-browser.ts', import.meta.url)),
       },      {
         find: '@midnight-ntwrk/midnight-js-protocol/compact-js/effect/Contract',
-        replacement: `${localNodeModules}/@midnight-ntwrk/midnight-js-protocol/dist/compact-js-effect-contract.mjs`,
+        replacement: getModulePath('@midnight-ntwrk/midnight-js-protocol/dist/compact-js-effect-contract.mjs'),
       },
       {
         find: '@midnight-ntwrk/midnight-js-protocol/compact-js/effect',
-        replacement: `${localNodeModules}/@midnight-ntwrk/midnight-js-protocol/dist/compact-js-effect.mjs`,
+        replacement: getModulePath('@midnight-ntwrk/midnight-js-protocol/dist/compact-js-effect.mjs'),
       },
       {
         find: '@midnight-ntwrk/midnight-js-protocol/platform-js/effect/Configuration',
-        replacement: `${localNodeModules}/@midnight-ntwrk/midnight-js-protocol/dist/platform-effect-configuration.mjs`,
+        replacement: getModulePath('@midnight-ntwrk/midnight-js-protocol/dist/platform-effect-configuration.mjs'),
       },
       {
         find: '@midnight-ntwrk/midnight-js-protocol/platform-js/effect/ContractAddress',
-        replacement: `${localNodeModules}/@midnight-ntwrk/midnight-js-protocol/dist/platform-effect-contract-address.mjs`,
+        replacement: getModulePath('@midnight-ntwrk/midnight-js-protocol/dist/platform-effect-contract-address.mjs'),
       },
       {
         find: '@midnight-ntwrk/midnight-js-protocol/compact-runtime',
-        replacement: `${localNodeModules}/@midnight-ntwrk/midnight-js-protocol/dist/compact-runtime.mjs`,
+        replacement: getModulePath('@midnight-ntwrk/midnight-js-protocol/dist/compact-runtime.mjs'),
       },
       {
         find: '@midnight-ntwrk/midnight-js-protocol/compact-js',
-        replacement: `${localNodeModules}/@midnight-ntwrk/midnight-js-protocol/dist/compact-js.mjs`,
+        replacement: getModulePath('@midnight-ntwrk/midnight-js-protocol/dist/compact-js.mjs'),
       },
       {
         find: '@midnight-ntwrk/midnight-js-protocol/ledger',
-        replacement: `${localNodeModules}/@midnight-ntwrk/midnight-js-protocol/dist/ledger.mjs`,
+        replacement: getModulePath('@midnight-ntwrk/midnight-js-protocol/dist/ledger.mjs'),
       },
       {
         find: '@midnight-ntwrk/midnight-js-protocol/onchain-runtime',
-        replacement: `${localNodeModules}/@midnight-ntwrk/midnight-js-protocol/dist/onchain-runtime.mjs`,
+        replacement: getModulePath('@midnight-ntwrk/midnight-js-protocol/dist/onchain-runtime.mjs'),
       },
       {
         find: '@midnight-ntwrk/midnight-js-protocol/platform-js',
-        replacement: `${localNodeModules}/@midnight-ntwrk/midnight-js-protocol/dist/platform.mjs`,
+        replacement: getModulePath('@midnight-ntwrk/midnight-js-protocol/dist/platform.mjs'),
       },
-      {
-        find: /^@midnight-ntwrk\/(.+)/,
-        replacement: `${localNodeModules}/@midnight-ntwrk/$1`,
-      },
+
       {
         find: 'pino',
-        replacement: `${localNodeModules}/pino/browser.js`,
+        replacement: getModulePath('pino/browser.js'),
       },
       {
         find: 'rxjs',
-        replacement: `${localNodeModules}/rxjs/dist/esm5/index.js`,
+        replacement: getModulePath('rxjs/dist/esm5/index.js'),
       },
     ],    extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json', '.wasm'],
     mainFields: ['browser', 'module', 'main'],

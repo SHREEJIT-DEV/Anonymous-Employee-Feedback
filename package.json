@@ -14,5 +14,9 @@
     "build": "npm --prefix ./bboard-ui run build --",
     "typecheck": "npm --prefix ./bboard-ui run typecheck --",
     "preview": "npm --prefix ./bboard-ui run preview --"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "^4.22.4",
+    "@swc/core-linux-x64-gnu": "^1.15.41"
   }
 }
