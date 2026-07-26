@@ -33,6 +33,11 @@ export default defineConfig({
     target: 'esnext',
     minify: false,
     rollupOptions: {
+      external: [
+        '@midnight-ntwrk/midnight-js-contracts',
+        '@midnight-ntwrk/midnight-js-indexer-public-data-provider',
+        'isomorphic-ws',
+      ],
       output: {
         manualChunks: (id) => {
           // Separate chunk for WASM modules to avoid top-level await issues

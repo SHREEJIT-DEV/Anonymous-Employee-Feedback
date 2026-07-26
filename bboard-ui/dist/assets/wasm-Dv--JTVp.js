@@ -1,4 +1,4 @@
-let CostModel, QueryContext, StateValue, __vite__initWasm, getAugmentedNamespace, bigIntToValue$1, commonjsGlobal, dummyContractAddress$1, encodeShieldedCoinInfo$1, encodeQualifiedShieldedCoinInfo$1, getDefaultExportFromCjs, encodeCoinPublicKey$1, encodeContractAddress$1, decodeShieldedCoinInfo$1, decodeQualifiedShieldedCoinInfo$1, decodeCoinPublicKey$1, maxField$1, decodeContractAddress$1, ContractState, persistentHash$1, ChargedState, ContractOperation, commonjsRequire, sampleSigningKey$1, ContractMaintenanceAuthority, valueToBigInt$1, signatureVerifyingKey$1;
+let CostModel, QueryContext, StateValue, __vite__initWasm, getAugmentedNamespace, bigIntToValue$1, commonjsGlobal, dummyContractAddress$1, encodeShieldedCoinInfo$1, encodeQualifiedShieldedCoinInfo$1, getDefaultExportFromCjs, encodeCoinPublicKey$1, encodeContractAddress$1, ContractState, ChargedState, ContractOperation, maxField$1, commonjsRequire, persistentHash$1, valueToBigInt$1;
 let __tla = (async ()=>{
     commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
     getDefaultExportFromCjs = function(x) {
@@ -284,52 +284,12 @@ let __tla = (async ()=>{
         }
         return takeFromExternrefTable0(ret[0]);
     };
-    signatureVerifyingKey$1 = function(key) {
-        let deferred3_0;
-        let deferred3_1;
-        try {
-            const ptr0 = passStringToWasm0(key, wasm$1.__wbindgen_malloc, wasm$1.__wbindgen_realloc);
-            const len0 = WASM_VECTOR_LEN;
-            const ret = wasm$1.signatureVerifyingKey(ptr0, len0);
-            var ptr2 = ret[0];
-            var len2 = ret[1];
-            if (ret[3]) {
-                ptr2 = 0;
-                len2 = 0;
-                throw takeFromExternrefTable0(ret[2]);
-            }
-            deferred3_0 = ptr2;
-            deferred3_1 = len2;
-            return getStringFromWasm0(ptr2, len2);
-        } finally{
-            wasm$1.__wbindgen_free(deferred3_0, deferred3_1, 1);
-        }
-    };
     maxField$1 = function() {
         const ret = wasm$1.maxField();
         if (ret[2]) {
             throw takeFromExternrefTable0(ret[1]);
         }
         return takeFromExternrefTable0(ret[0]);
-    };
-    sampleSigningKey$1 = function() {
-        let deferred2_0;
-        let deferred2_1;
-        try {
-            const ret = wasm$1.sampleSigningKey();
-            var ptr1 = ret[0];
-            var len1 = ret[1];
-            if (ret[3]) {
-                ptr1 = 0;
-                len1 = 0;
-                throw takeFromExternrefTable0(ret[2]);
-            }
-            deferred2_0 = ptr1;
-            deferred2_1 = len1;
-            return getStringFromWasm0(ptr1, len1);
-        } finally{
-            wasm$1.__wbindgen_free(deferred2_0, deferred2_1, 1);
-        }
     };
     persistentHash$1 = function(align, val) {
         const ret = wasm$1.persistentHash(align, val);
@@ -354,25 +314,6 @@ let __tla = (async ()=>{
         }
         return takeFromExternrefTable0(ret[0]);
     };
-    decodeCoinPublicKey$1 = function(pk) {
-        let deferred2_0;
-        let deferred2_1;
-        try {
-            const ret = wasm$1.decodeCoinPublicKey(pk);
-            var ptr1 = ret[0];
-            var len1 = ret[1];
-            if (ret[3]) {
-                ptr1 = 0;
-                len1 = 0;
-                throw takeFromExternrefTable0(ret[2]);
-            }
-            deferred2_0 = ptr1;
-            deferred2_1 = len1;
-            return getStringFromWasm0(ptr1, len1);
-        } finally{
-            wasm$1.__wbindgen_free(deferred2_0, deferred2_1, 1);
-        }
-    };
     encodeCoinPublicKey$1 = function(pk) {
         const ptr0 = passStringToWasm0(pk, wasm$1.__wbindgen_malloc, wasm$1.__wbindgen_realloc);
         const len0 = WASM_VECTOR_LEN;
@@ -384,39 +325,6 @@ let __tla = (async ()=>{
     };
     encodeShieldedCoinInfo$1 = function(coin) {
         const ret = wasm$1.encodeShieldedCoinInfo(coin);
-        if (ret[2]) {
-            throw takeFromExternrefTable0(ret[1]);
-        }
-        return takeFromExternrefTable0(ret[0]);
-    };
-    decodeShieldedCoinInfo$1 = function(coin) {
-        const ret = wasm$1.decodeShieldedCoinInfo(coin);
-        if (ret[2]) {
-            throw takeFromExternrefTable0(ret[1]);
-        }
-        return takeFromExternrefTable0(ret[0]);
-    };
-    decodeContractAddress$1 = function(addr) {
-        let deferred2_0;
-        let deferred2_1;
-        try {
-            const ret = wasm$1.decodeContractAddress(addr);
-            var ptr1 = ret[0];
-            var len1 = ret[1];
-            if (ret[3]) {
-                ptr1 = 0;
-                len1 = 0;
-                throw takeFromExternrefTable0(ret[2]);
-            }
-            deferred2_0 = ptr1;
-            deferred2_1 = len1;
-            return getStringFromWasm0(ptr1, len1);
-        } finally{
-            wasm$1.__wbindgen_free(deferred2_0, deferred2_1, 1);
-        }
-    };
-    decodeQualifiedShieldedCoinInfo$1 = function(coin) {
-        const ret = wasm$1.decodeQualifiedShieldedCoinInfo(coin);
         if (ret[2]) {
             throw takeFromExternrefTable0(ret[1]);
         }
@@ -501,7 +409,7 @@ let __tla = (async ()=>{
         register: ()=>{},
         unregister: ()=>{}
     } : new FinalizationRegistry((ptr)=>wasm$1.__wbg_contractmaintenanceauthority_free(ptr >>> 0, 1));
-    ContractMaintenanceAuthority = class {
+    class ContractMaintenanceAuthority {
         static __wrap(ptr) {
             ptr = ptr >>> 0;
             const obj = Object.create(ContractMaintenanceAuthority.prototype);
@@ -569,7 +477,7 @@ let __tla = (async ()=>{
                 wasm$1.__wbindgen_free(deferred1_0, deferred1_1, 1);
             }
         }
-    };
+    }
     if (Symbol.dispose) ContractMaintenanceAuthority.prototype[Symbol.dispose] = ContractMaintenanceAuthority.prototype.free;
     const ContractOperationFinalization = (typeof FinalizationRegistry === 'undefined') ? {
         register: ()=>{},
@@ -2122,4 +2030,4 @@ let __tla = (async ()=>{
     __wbg_set_wasm(wasm);
     __wbindgen_start();
 })();
-export { CostModel as C, QueryContext as Q, StateValue as S, __vite__initWasm as _, getAugmentedNamespace as a, bigIntToValue$1 as b, commonjsGlobal as c, dummyContractAddress$1 as d, encodeShieldedCoinInfo$1 as e, encodeQualifiedShieldedCoinInfo$1 as f, getDefaultExportFromCjs as g, encodeCoinPublicKey$1 as h, encodeContractAddress$1 as i, decodeShieldedCoinInfo$1 as j, decodeQualifiedShieldedCoinInfo$1 as k, decodeCoinPublicKey$1 as l, maxField$1 as m, decodeContractAddress$1 as n, ContractState as o, persistentHash$1 as p, ChargedState as q, ContractOperation as r, commonjsRequire as s, sampleSigningKey$1 as t, ContractMaintenanceAuthority as u, valueToBigInt$1 as v, signatureVerifyingKey$1 as w, __tla };
+export { CostModel as C, QueryContext as Q, StateValue as S, __vite__initWasm as _, getAugmentedNamespace as a, bigIntToValue$1 as b, commonjsGlobal as c, dummyContractAddress$1 as d, encodeShieldedCoinInfo$1 as e, encodeQualifiedShieldedCoinInfo$1 as f, getDefaultExportFromCjs as g, encodeCoinPublicKey$1 as h, encodeContractAddress$1 as i, ContractState as j, ChargedState as k, ContractOperation as l, maxField$1 as m, commonjsRequire as n, persistentHash$1 as p, valueToBigInt$1 as v, __tla };
