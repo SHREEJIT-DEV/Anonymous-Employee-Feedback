@@ -6,12 +6,30 @@
     "baseUrl": ".",
     "typeRoots": ["node_modules/@types", "../node_modules/@types"],
     "paths": {
-      "@midnight-ntwrk/midnight-js-protocol/compact-runtime": ["node_modules/@midnight-ntwrk/midnight-js-protocol/dist/compact-runtime.d.ts"],
-      "@midnight-ntwrk/midnight-js-protocol/compact-js": ["node_modules/@midnight-ntwrk/midnight-js-protocol/dist/compact-js.d.ts"],
-      "@midnight-ntwrk/midnight-js-protocol/ledger": ["node_modules/@midnight-ntwrk/midnight-js-protocol/dist/ledger.d.ts"],
-      "@midnight-ntwrk/*": ["node_modules/@midnight-ntwrk/*"],
-      "pino": ["node_modules/pino"],
-      "rxjs": ["node_modules/rxjs"]
+      "@midnight-ntwrk/midnight-js-protocol/compact-runtime": [
+        "node_modules/@midnight-ntwrk/midnight-js-protocol/dist/compact-runtime.d.ts",
+        "../node_modules/@midnight-ntwrk/midnight-js-protocol/dist/compact-runtime.d.ts"
+      ],
+      "@midnight-ntwrk/midnight-js-protocol/compact-js": [
+        "node_modules/@midnight-ntwrk/midnight-js-protocol/dist/compact-js.d.ts",
+        "../node_modules/@midnight-ntwrk/midnight-js-protocol/dist/compact-js.d.ts"
+      ],
+      "@midnight-ntwrk/midnight-js-protocol/ledger": [
+        "node_modules/@midnight-ntwrk/midnight-js-protocol/dist/ledger.d.ts",
+        "../node_modules/@midnight-ntwrk/midnight-js-protocol/dist/ledger.d.ts"
+      ],
+      "@midnight-ntwrk/*": [
+        "node_modules/@midnight-ntwrk/*",
+        "../node_modules/@midnight-ntwrk/*"
+      ],
+      "pino": [
+        "node_modules/pino",
+        "../node_modules/pino"
+      ],
+      "rxjs": [
+        "node_modules/rxjs",
+        "../node_modules/rxjs"
+      ]
     },
     "allowJs": false,
     "forceConsistentCasingInFileNames": true,
