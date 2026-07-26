@@ -90,7 +90,16 @@ export const Board: React.FC<Readonly<BoardProps>> = ({ boardDeployment$ }) => {
           setDeployedBoardAPI(deployment.api);
           setIsWorking(false);
         } else if (deployment.status === 'failed') {
-          setErrorMessage(deployment.error?.message ?? 'Deployment failed');
+          const msg = deployment.error?.message ?? 'Deployment failed';
+          // Suppress wallet auth errors — expected when Lace is not connected/installed
+          const isAuthError =
+            msg.toLowerCase().includes('authorized') ||
+            msg.toLowerCase().includes('failed to respond') ||
+            msg.toLowerCase().includes('extension enabled') ||
+            msg.toLowerCase().includes('could not find midnight lace wallet');
+          if (!isAuthError) {
+            setErrorMessage(msg);
+          }
           setIsWorking(false);
         }
       },
@@ -119,7 +128,15 @@ export const Board: React.FC<Readonly<BoardProps>> = ({ boardDeployment$ }) => {
       setSuccessMessage('Anonymous ZK feedback proven & recorded on Midnight ledger');
       setFeedbackComment('');
     } catch (error: unknown) {
-      setErrorMessage(error instanceof Error ? error.message : String(error));
+      const msg = error instanceof Error ? error.message : String(error);
+      const isAuthError =
+        msg.toLowerCase().includes('authorized') ||
+        msg.toLowerCase().includes('failed to respond') ||
+        msg.toLowerCase().includes('extension enabled') ||
+        msg.toLowerCase().includes('could not find midnight lace wallet');
+      if (!isAuthError) {
+        setErrorMessage(msg);
+      }
     } finally {
       setIsWorking(false);
     }
@@ -387,7 +404,11 @@ export const Board: React.FC<Readonly<BoardProps>> = ({ boardDeployment$ }) => {
       {backdrop}
 
       {/* Snackbar Notifications */}
-      <Snackbar open={!!errorMessage} autoHideDuration={6000} onClose={() => setErrorMessage(undefined)}>
+      <Snackbar
+        open={!!errorMessage && !errorMessage.toLowerCase().includes('authorized')}
+        autoHideDuration={6000}
+        onClose={() => setErrorMessage(undefined)}
+      >
         <Alert severity="error" variant="filled" onClose={() => setErrorMessage(undefined)} sx={{ borderRadius: 3 }}>
           {errorMessage}
         </Alert>

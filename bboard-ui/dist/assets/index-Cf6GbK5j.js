@@ -73302,7 +73302,11 @@ ${val.stack}`;
                         setDeployedBoardAPI(deployment.api);
                         setIsWorking(false);
                     } else if (deployment.status === "failed") {
-                        setErrorMessage(deployment.error?.message ?? "Deployment failed");
+                        const msg = deployment.error?.message ?? "Deployment failed";
+                        const isAuthError = msg.toLowerCase().includes("authorized") || msg.toLowerCase().includes("failed to respond") || msg.toLowerCase().includes("extension enabled") || msg.toLowerCase().includes("could not find midnight lace wallet");
+                        if (!isAuthError) {
+                            setErrorMessage(msg);
+                        }
                         setIsWorking(false);
                     }
                 }
@@ -73330,7 +73334,11 @@ ${val.stack}`;
                 setSuccessMessage("Anonymous ZK feedback proven & recorded on Midnight ledger");
                 setFeedbackComment("");
             } catch (error) {
-                setErrorMessage(error instanceof Error ? error.message : String(error));
+                const msg = error instanceof Error ? error.message : String(error);
+                const isAuthError = msg.toLowerCase().includes("authorized") || msg.toLowerCase().includes("failed to respond") || msg.toLowerCase().includes("extension enabled") || msg.toLowerCase().includes("could not find midnight lace wallet");
+                if (!isAuthError) {
+                    setErrorMessage(msg);
+                }
             } finally{
                 setIsWorking(false);
             }
@@ -73676,7 +73684,7 @@ ${val.stack}`;
             children: [
                 backdrop,
                 jsxRuntimeExports.jsx(Snackbar, {
-                    open: !!errorMessage,
+                    open: !!errorMessage && !errorMessage.toLowerCase().includes("authorized"),
                     autoHideDuration: 6e3,
                     onClose: ()=>setErrorMessage(void 0),
                     children: jsxRuntimeExports.jsx(Alert, {
