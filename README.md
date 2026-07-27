@@ -13,6 +13,30 @@ An enterprise-grade Zero-Knowledge (ZK) **Anonymous Employee Feedback & Survey P
 
 ---
 
+## 📸 Screenshots & UI Showcase
+
+### 1. Landing Page & Contract Setup
+Deploy a fresh confidential survey contract on Midnight Preprod testnet or connect to an active contract address.
+
+![Landing Page & Contract Setup](docs/screenshots/01-landing-page.png)
+
+### 2. Confidential Feedback & ZK Privacy Dashboard
+Submit 1–5 star ratings, department tags, and private feedback messages with real-time Zero-Knowledge Privacy Model guidance.
+
+![Anonymous Feedback Dashboard](docs/screenshots/02-feedback-dashboard.png)
+
+### 3. Lace Wallet Integration & Sync Status
+Seamless integration with Lace Midnight wallet for proof generation, network height synchronization, and testnet token dust generation.
+
+![Lace Wallet Integration & Sync](docs/screenshots/03-lace-wallet-sync.png)
+
+### 4. Connected Wallet Header & Network Badge
+Real-time indicator showing active Midnight Preprod network status and formatted employee wallet address (`mn_addr_preprod1...`).
+
+![Lace Wallet Connected Status](docs/screenshots/04-wallet-connection.png)
+
+---
+
 ## 💡 Product Proposal & Category
 
 - **Category**: `Anonymous Feedback / Survey` (Level 3 Category)
