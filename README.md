@@ -6,6 +6,12 @@ An enterprise-grade Zero-Knowledge (ZK) **Anonymous Employee Feedback & Survey P
 
 ---
 
+## 🚀 Live Demo & Deployment
+
+- 🌐 **Live Web Application**: [https://anonymous-employee-feedback-bboard.vercel.app/](https://anonymous-employee-feedback-bboard.vercel.app/)
+
+---
+
 ## 💡 Product Proposal & Category
 
 - **Category**: `Anonymous Feedback / Survey` (Level 3 Category)
@@ -103,6 +109,8 @@ Open `http://localhost:5173` in your browser. Connect Lace Wallet or use simulat
 ---
 
 ## 🌐 Preview / Preprod Deployment Status
+
+- 🚀 **Vercel Production Deployment**: [https://anonymous-employee-feedback-bboard.vercel.app/](https://anonymous-employee-feedback-bboard.vercel.app/)
 
 ### Attempting Preprod Deployment:
 ```bash
