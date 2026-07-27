@@ -1,6 +1,6 @@
 # Anonymous Employee Feedback — Midnight ZK dApp
 
-[![CI Pipeline](https://github.com/midnight-ntwrk/anonymous-employee-feedback/actions/workflows/ci.yml/badge.svg)](https://github.com/midnight-ntwrk/anonymous-employee-feedback/actions/workflows/ci.yml)
+
 
 An enterprise-grade Zero-Knowledge (ZK) **Anonymous Employee Feedback & Survey Platform** built on the **Midnight Network**. This full-stack application allows employees to submit ratings, department categories, and confidential feedback messages with Zero-Knowledge proof verification without revealing their identity or raw comments on the public ledger.
 
