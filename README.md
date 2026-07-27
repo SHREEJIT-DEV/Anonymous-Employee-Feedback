@@ -9,6 +9,7 @@ An enterprise-grade Zero-Knowledge (ZK) **Anonymous Employee Feedback & Survey P
 ## 🚀 Live Demo & Deployment
 
 - 🌐 **Live Web Application**: [https://anonymous-employee-feedback-bboard.vercel.app/](https://anonymous-employee-feedback-bboard.vercel.app/)
+- ▶️ **Live Video Demo**: [https://youtu.be/1rR7TygPcPQ](https://youtu.be/1rR7TygPcPQ?si=9up4oj9vO8IERGIN)
 
 ---
 
